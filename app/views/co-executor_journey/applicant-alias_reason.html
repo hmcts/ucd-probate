@@ -1,0 +1,123 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+How is your name written in the will or any codicils? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="applicant-number" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4">
+              Why is your name different to how it is written in the will or any codicils?
+            </h1>
+          </legend>
+
+          <p class="govuk-body">
+            You must explain the reason for the difference, for example, you changed your name since the will was written, or your middle name was not included.
+          </p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-aliasReason" name="applicant-aliasReason" type="radio" value="I got married or formed a civil partnership">
+              <label class="govuk-label govuk-radios__label" for="applicant-aliasReason">
+                I got married or formed a civil partnership
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-aliasReason-2" name="applicant-aliasReason" type="radio" value="I got divorced or ended my civil partnership">
+              <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-2">
+                I got divorced or ended my civil partnership
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-aliasReason-3" name="applicant-aliasReason" type="radio" value="I changed my name by deed poll">
+              <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-3">
+                I changed my name by deed poll
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-aliasReason-4" name="applicant-aliasReason" type="radio" value="My name was spelled differently">
+              <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-4">
+                My name was spelled differently
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-aliasReason-5" name="applicant-aliasReason" type="radio" value="Part of my name was not included">
+              <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-5">
+                Part of my name was not included
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-aliasReason-6" name="applicant-aliasReason" type="radio" value="text" data-aria-controls="conditional-applicant-aliasReason">
+              <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-6">
+                Other
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-applicant-aliasReason">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="applicant-aliasReason-other">
+                  Reason for difference
+                </label>
+                <input class="govuk-input govuk-!-width-full-width" id="applicant-aliasReason-other" name="applicant-aliasReason" type="text" spellcheck="false" autocomplete="text">
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>    
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Conact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}
