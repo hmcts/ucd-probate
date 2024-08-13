@@ -1,0 +1,67 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+<!-- Header -->
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "index.html",
+  serviceName: "Apply for probate - GOV.UK",
+  serviceUrl: "index.html",
+  navigationClasses: "right",
+  navigation: [
+    {
+      href: "application_dashboard.html",
+      text: "My applications"
+    },
+    {
+      href: "sign-out.html",
+      text: "Sign out"
+    }
+  ]
+}) }}
+{% endblock %}
+
+<!-- Phase banner -->
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+<!-- Back link -->
+
+  {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+<!-- Footer -->
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "#",
+         text: "Privacy policy"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
