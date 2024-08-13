@@ -1,0 +1,49 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Equality and diversity questions – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="#" method="post" novalidate>
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Equality and diversity questions
+        </h1>
+        <div class="govuk-body">
+          These are optional questions about you.
+          <br><br>
+          Your answers will not affect your application.
+        </div>
+      </div>
+
+      <p class="govuk-body">
+        Your answers will help us check we are treating people fairly and equally.
+      </p>
+
+      <p class="govuk-body govuk-!-padding-bottom-4">
+        Find out how we use this information in our <a href="#">privacy policy</a>.
+      </p>
+
+      <div class="govuk-button-group">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue to the questions
+        </button>
+
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          I don’t want to answer these questions
+        </button>
+
+      </div>
+
+    </form>
+    
+  </div>
+</div>
+
+{% endblock %}
