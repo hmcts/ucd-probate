@@ -1,0 +1,72 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Check the original will and codicils now – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="executor-summary" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+          <label class="govuk-label govuk-label--l" for="sameName">
+            Check the original will and codicils now
+          </label>
+        </h1>
+
+        <p class="govuk-body">
+          We need to know about everyone {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }} named as an executor in the will and any codicils.
+        </p>
+
+        <p class="govuk-body">This includes anyone who:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>has died since the will was signed – even if the will names a substitute executor</li>
+            <li>does not want to apply for probate (also known as holding ‘power reserved’)</li>
+            <li>has given up their right to apply (also known as ‘renunciation’)</li>
+          </ul>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Conact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}
