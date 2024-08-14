@@ -1,0 +1,123 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Why is {{ data['executor4-idName'] }}’s name different to how it is written in the will or any codicils? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="executor-contact2" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4">
+              Why is {{ data['executor4-idName'] }}’s name different to how it is written in the will or any codicils?
+            </h1>
+          </legend>
+
+          <p class="govuk-body">
+            You must explain the reason for the difference, for example, {{ data['executor4-idName'] }} changed their name since the will was written, or their middle name was not included.
+          </p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="executor-aliasReason3" name="executor-aliasReason3" type="radio" value="executor got married or formed a civil partnership">
+              <label class="govuk-label govuk-radios__label" for="executor-aliasReason3">
+                {{ data['executor4-idName'] }} got married or formed a civil partnership
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="executor-aliasReason3-2" name="executor-aliasReason3" type="radio" value="executor got divorced or ended my civil partnership">
+              <label class="govuk-label govuk-radios__label" for="executor-aliasReason3-2">
+                {{ data['executor4-idName'] }} got divorced or ended their civil partnership
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="executor-aliasReason3-3" name="executor-aliasReason3" type="radio" value="executor changed my name by deed poll">
+              <label class="govuk-label govuk-radios__label" for="executor-aliasReason3-3">
+                {{ data['executor4-idName'] }} changed their name by deed poll
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="executor-aliasReason3-4" name="executor-aliasReason3" type="radio" value="executor name was spelled differently">
+              <label class="govuk-label govuk-radios__label" for="executor-aliasReason3-4">
+                {{ data['executor4-idName'] }}’s name was spelled differently
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="executor-aliasReason3-5" name="executor-aliasReason3" type="radio" value="Part of executor name was not included">
+              <label class="govuk-label govuk-radios__label" for="executor-aliasReason3-5">
+                Part of {{ data['executor4-idName'] }}’s name was not included
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="executor-aliasReason3-6" name="executor-aliasReason3" type="radio" value="text" data-aria-controls="conditional-executor-aliasReason">
+              <label class="govuk-label govuk-radios__label" for="executor-aliasReason3-6">
+                Other
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-executor-aliasReason3">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="executor-aliasReason3-other">
+                  Reason for difference
+                </label>
+                <input class="govuk-input govuk-!-width-full-width" id="executor-aliasReason3-other" name="executor-aliasReason3" type="text" spellcheck="false" autocomplete="text">
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>    
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Conact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

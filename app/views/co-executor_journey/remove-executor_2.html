@@ -1,34 +1,34 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Have any of the executors died since the will was signed? – {{ serviceName }} – GOV.UK Prototype Kit
+  Are you sure you want to remove {{ data['executor2-willName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
- 
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/deceased-executors-answer" method="post">
+    <form class="govuk-form" action="/remove-executor_answer2" method="post">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="deceasedExecutors-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="removeExecutor2">
 
           <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
-            <label class="govuk-label govuk-label--l" for="deceasedExecutors">
-              Have any of the executors died since the will was signed?
+            <label class="govuk-label govuk-label--l" for="removeExecutor2">
+              Are you sure you want to remove {{ data['executor5-willName'] }}?
             </label>
           </h1>
 
           <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deceasedExecutors" name="deceasedExecutors" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="deceasedExecutors">
+              <input class="govuk-radios__input" id="removeExecutor2" name="removeExecutor2" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="removeExecutor2">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deceasedExecutors-2" name="deceasedExecutors" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="deceasedExecutors-2">
+              <input class="govuk-radios__input" id="removeExecutor2-2" name="removeExecutor2" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="removeExecutor2-2">
                 No
               </label>
             </div>

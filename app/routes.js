@@ -30,11 +30,41 @@ router.post('/other-executors', function(request, response) {
 
 router.post('/other-executors_2', function(request, response) {
 
-    var sameName = request.session.data['otherExecutors']
+    var sameName = request.session.data['2otherExecutors']
     if (sameName == "yes"){
         response.redirect("co-executor_journey/executor-name_2")
     } else {
         response.redirect("co-executor_journey/deceased-executor")
+    }
+})
+
+router.post('/other-executors_3', function(request, response) {
+
+    var sameName = request.session.data['3otherExecutors']
+    if (sameName == "yes"){
+        response.redirect("co-executor_journey/executor-name_3")
+    } else {
+        response.redirect("co-executor_journey/deceased-executors")
+    }
+})
+
+router.post('/other-executors_4', function(request, response) {
+
+    var sameName = request.session.data['4otherExecutors']
+    if (sameName == "yes"){
+        response.redirect("co-executor_journey/executor-name_4")
+    } else {
+        response.redirect("co-executor_journey/deceased-executors")
+    }
+})
+
+router.post('/other-executors_5', function(request, response) {
+
+    var sameName = request.session.data['5otherExecutors']
+    if (sameName == "yes"){
+        response.redirect("co-executor_journey/executor-summary_5")
+    } else {
+        response.redirect("co-executor_journey/deceased-executors")
     }
 })
 
@@ -48,13 +78,13 @@ router.post('/remove-executor_answer', function(request, response) {
     }
 })
 
-router.post('/other-executors_3', function(request, response) {
+router.post('/remove-executor_answer2', function(request, response) {
 
-    var sameName = request.session.data['otherExecutors']
+    var sameName = request.session.data['removeExecutor2']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-name_3")
+        response.redirect("co-executor_journey/executor-summary_4")
     } else {
-        response.redirect("#s")
+        response.redirect("co-executor_journey/executor-summary_5")
     }
 })
 
@@ -68,21 +98,31 @@ router.post('/deceased-executor-answer', function(request, response) {
     }
 })
 
+router.post('/deceased-executors-answer', function(request, response) {
+
+    var sameName = request.session.data['deceasedExecutors']
+    if (sameName == "yes"){
+        response.redirect("co-executor_journey/deceased-executors_select")
+    } else {
+        response.redirect("co-executor_journey/executors-applying")
+    }
+})
+
+router.post('/selected-deceased_executors', function(request, response) {
+
+    var exports = request.session.data['select-deceasedExecutors']
+    if (exports.includes("executor2")){
+        response.redirect("co-executor_journey/executor-deceased_before2")
+    } else {
+        response.redirect("co-executor_journey//executors-applying")
+    }
+})
+
 router.post('/applying-executor', function(request, response) {
 
     var sameName = request.session.data['applyingExecutor']
     if (sameName == "yes"){
         response.redirect("co-executor_journey/executor-name_match")
-    } else {
-        response.redirect("co-executor_journey/executor-not_applying")
-    }
-})
-
-router.post('/not-applying_reason', function(request, response) {
-
-    var sameName = request.session.data['not-applyingReason']
-    if (sameName == "powerReserved"){
-        response.redirect("co-executor_journey/executor-power_reserved")
     } else {
         response.redirect("co-executor_journey/executor-not_applying")
     }
@@ -95,5 +135,35 @@ router.post('/executor-name-answer', function(request, response) {
         response.redirect("co-executor_journey/executor-alias")
     } else {
         response.redirect("co-executor_journey/executor-not_applying")
+    }
+})
+
+router.post('/executor-name2-answer', function(request, response) {
+
+    var sameName = request.session.data['executorName2-answer']
+    if (sameName == "yes"){
+        response.redirect("co-executor_journey/executor-name_match3")
+    } else {
+        response.redirect("co-executor_journey/executor-alias2")
+    }
+})
+
+router.post('/executor-name3-answer', function(request, response) {
+
+    var sameName = request.session.data['executorName3-answer']
+    if (sameName == "yes"){
+        response.redirect("co-executor_journey/executor-contact2")
+    } else {
+        response.redirect("co-executor_journey/executor-alias3")
+    }
+})
+
+router.post('/not-applying_reason', function(request, response) {
+
+    var sameName = request.session.data['not-applyingReason']
+    if (sameName == "powerReserved"){
+        response.redirect("co-executor_journey/executor-power_reserved")
+    } else {
+        response.redirect("co-executor_journey/E&D-questions")
     }
 })
