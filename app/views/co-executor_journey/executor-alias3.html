@@ -1,41 +1,32 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Have any of the executors died since the will was signed? – {{ serviceName }} – GOV.UK Prototype Kit
+How is {{ data['executor4-willName'] }}’s name written in their passport or other form of ID?   – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
- 
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/deceased-executors-answer" method="post">
+    <form action="executor-alias_reason3" method="post" novalidate>
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="deceasedExecutors-hint">
 
-          <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
-            <label class="govuk-label govuk-label--l" for="deceasedExecutors">
-              Have any of the executors died since the will was signed?
-            </label>
-          </h1>
+        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+          <label class="govuk-label govuk-label--l" for="executor4-idName">
+            How is {{ data['executor4-willName'] }}’s name written in their passport or other form of ID?
+          </label>
+        </h1>
 
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deceasedExecutors" name="deceasedExecutors" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="deceasedExecutors">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deceasedExecutors-2" name="deceasedExecutors" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="deceasedExecutors-2">
-                No
-              </label>
-            </div>
-          </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+            Name
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor4-idName" name="executor4-idName" type="text" value="{{ data['executor4-idName'] }}" maxlength="100">
+        </div>
 
-        </fieldset>
       </div>
+    
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue

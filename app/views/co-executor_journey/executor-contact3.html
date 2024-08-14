@@ -1,40 +1,48 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Have any of the executors died since the will was signed? – {{ serviceName }} – GOV.UK Prototype Kit
+What are {{ data['executor4-idName'] }}’s contact details? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
- 
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/deceased-executors-answer" method="post">
+    <form action="executor-address3" method="post" novalidate>
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="deceasedExecutors-hint">
 
-          <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
-            <label class="govuk-label govuk-label--l" for="deceasedExecutors">
-              Have any of the executors died since the will was signed?
-            </label>
-          </h1>
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l">
+            What are {{ data['executor4-idName'] }}’s contact details?
+          </label>
+        </h1>
 
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deceasedExecutors" name="deceasedExecutors" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="deceasedExecutors">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="deceasedExecutors-2" name="deceasedExecutors" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="deceasedExecutors-2">
-                No
-              </label>
-            </div>
-          </div>
+        <p class="govuk-body govuk-!-padding-top-4">
+          We will send {{ data['executor4-idName'] }} an email and text message to verify their identity and to confirm details of the estate.
+        </p>
 
-        </fieldset>
+        <p class="govuk-body">
+          You must provide their current email address and mobile phone number. For international numbers include the country code.
+        </p>
+
+        <div class="govuk-form-group govuk-!-padding-top-2">
+          <label class="govuk-label" for="width-20">
+            Email address
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor3-email" name="executor3-email" type="text" value="{{ data['executor3-email'] }}" maxlength="100">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-padding-top-2" for="width-20">
+            Phone number
+          </label>
+          <p class="govuk-hint">
+            For example, 07700900900 or +39133457090
+          </p>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor3-number" name="executor3-number" type="text" value="{{ data['executor3-number'] }}" maxlength="100">
+        </div>
+
       </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">

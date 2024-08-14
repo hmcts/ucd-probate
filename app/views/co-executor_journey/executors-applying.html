@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-
+ 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="#" method="post" novalidate>
+    <form action="executor-name_match2" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -53,32 +53,40 @@
           <fieldset class="govuk-fieldset" aria-describedby="select-applyingExecutors-hint">
   
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">
+              <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-2">
                 Which executors are also applying for probate?
               </h1>
             </legend>
   
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+   
+              {% if (data['2otherExecutors'] == "yes" ) %}
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="select-applyingExecutors-3" name="select-applyingExecutors" type="checkbox" value="executor3">
+                  <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-3">
+                    {{ data['executor3-willName'] }}
+                  </label>
+                </div>
+              {% endif %}
   
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="select-applyingExecutors" name="select-applyingExecutors" type="checkbox" value="{{ data['executor2-willName'] }}">
-                <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors">
-                  {{ data['executor2-willName'] }}
-                </label>
-              </div>
+              {% if (data['3otherExecutors'] == "yes" ) %}
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="select-applyingExecutors-4" name="select-applyingExecutors" type="checkbox" value="executor4">
+                  <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-4">
+                    {{ data['executor4-willName'] }}
+                  </label>
+                </div>
+              {% endif %}
   
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="select-applyingExecutors-2" name="select-applyingExecutors" type="checkbox" value="{{ data['executor3-willName'] }}">
-                <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-2">
-                  {{ data['executor3-willName'] }}
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="select-applyingExecutors-3" name="select-applyingExecutors" type="checkbox" value="{{ data['executor4-willName'] }}">
-                <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-3">
-                  {{ data['executor4-willName'] }}
-                </label>
-              </div>
+              {% if (data['4otherExecutors'] == "yes" ) %}
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="select-applyingExecutors-5" name="select-applyingExecutors" type="checkbox" value="executor5">
+                  <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-5">
+                    {{ data['executor5-willName'] }}
+                  </label>
+                </div>
+              {% endif %}
+              
             </div>
           </fieldset>
         </div>
