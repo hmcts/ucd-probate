@@ -11,9 +11,9 @@ const router = govukPrototypeKit.requests.setupRouter()
 router.post('/applicant-name_answer', function(request, response) {
 
     var sameName = request.session.data['sameName']
-    if (sameName == "Yes"){
-        response.redirect("/age")
+    if (sameName == "yes"){
+        response.redirect("co-executor_journey/applicant-number")
     } else {
-        response.redirect("/ineligible-country")
+        response.redirect("co-executor_journey/applicant-alias")
     }
 })

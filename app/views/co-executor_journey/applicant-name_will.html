@@ -8,14 +8,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/applicant-name_answer" method="post" novalidate>
+    <form class="form" action="/applicant-name_answer" method="post">
 
       <div class="govuk-form-group">
 
-        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
-          <label class="govuk-label govuk-label--l" for="sameName">
+        <h1 class="govuk-heading-l">
             Check the original will and codicils now
-          </label>
         </h1>
 
         <p class="govuk-body">
@@ -38,7 +36,7 @@
           <fieldset class="govuk-fieldset" aria-describedby="sameName-hint">
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
+              <h2 class="govuk-fieldset__heading"  for="sameName">
                 Is '{{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}' exactly how your name is written in the will or any codicils?
               </h2>
             </legend>
