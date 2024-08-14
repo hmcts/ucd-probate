@@ -1,41 +1,32 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Have you notified {{ data['executor2-willName'] }} in writing that you are making this application? – {{ serviceName }} – GOV.UK Prototype Kit
+  How is the executor’s name written in the will or codicil? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="E&D-questions" method="post" novalidate>
+    <form action="executor-summary_3" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+          <label class="govuk-label govuk-label--l" for="executor3-willName">
+            How is the executor’s name written in the will or codicil?
+          </label>
+        </h1>
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="powerReserved-hint">
-
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-fieldset__heading">
-                Have you notified {{ data['executor2-willName'] }} in writing that you are making this application?
-              </h2>
-            </legend>
-
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="powerReserved" name="powerReserved" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="powerReserved">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="powerReserved-2" name="powerReserved" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="powerReserved-2">
-                  No
-                </label>
-              </div>
-            </div>
-
-          </fieldset>
+          <label class="govuk-label" for="width-20">
+            Name
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor3-willName" name="executor3-willName" type="text" value="{{ data['executor3-willName'] }}" maxlength="100">
         </div>
+
+      </div>
+    
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
