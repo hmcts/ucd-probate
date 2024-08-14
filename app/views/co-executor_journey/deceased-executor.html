@@ -1,41 +1,41 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Have you notified {{ data['executor2-willName'] }} in writing that you are making this application? – {{ serviceName }} – GOV.UK Prototype Kit
+Have any of the executors died since the will was signed? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="E&D-questions" method="post" novalidate>
+    <form class="form" action="/deceased-executor-answer" method="post">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="powerReserved-hint">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="deceasedExecutor-hint">
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-fieldset__heading">
-                Have you notified {{ data['executor2-willName'] }} in writing that you are making this application?
-              </h2>
-            </legend>
+          <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+            <label class="govuk-label govuk-label--l" for="deceasedExecutor">
+              Has {{ data['executor2-willName'] }} died since the will was signed?
+            </label>
+          </h1>
 
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="powerReserved" name="powerReserved" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="powerReserved">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="powerReserved-2" name="powerReserved" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="powerReserved-2">
-                  No
-                </label>
-              </div>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="deceasedExecutor" name="deceasedExecutor" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="deceasedExecutor">
+                Yes
+              </label>
             </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="deceasedExecutor-2" name="deceasedExecutor" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="deceasedExecutor-2">
+                No
+              </label>
+            </div>
+          </div>
 
-          </fieldset>
-        </div>
+        </fieldset>
+      </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
