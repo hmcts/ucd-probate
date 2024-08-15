@@ -22,29 +22,25 @@ Which executors have died? – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="select-deceasedExecutors" name="select-deceasedExecutors" type="checkbox" value="executor2">
+              <input class="govuk-checkboxes__input" id="select-deceasedExecutors" name="select-deceasedExecutors" type="checkbox" value="johnDoe">
               <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors">
-                {{ data['executor2-willName'] }}
+                John Thomas Doe
               </label>
             </div>
  
-            {% if (data['2otherExecutors'] == "yes" ) %}
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="select-deceasedExecutors-2" name="select-deceasedExecutors" type="checkbox" value="executor3">
                 <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-2">
-                  {{ data['executor3-willName'] }}
+                  Deborah Elizabeth Doe
                 </label>
               </div>
-            {% endif %}
 
-            {% if (data['3otherExecutors'] == "yes" ) %}
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="select-deceasedExecutors-3" name="select-deceasedExecutors" type="checkbox" value="executor4">
                 <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-3">
-                  {{ data['executor4-willName'] }}
+                  Stephen Thomas Doe
                 </label>
               </div>
-            {% endif %}
 
             {% if (data['4otherExecutors'] == "yes" ) %}
               <div class="govuk-checkboxes__item">
