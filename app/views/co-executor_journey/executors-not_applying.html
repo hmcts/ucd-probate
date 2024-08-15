@@ -1,32 +1,32 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Why is {{ data['executor2-willName'] }} not applying for probate? – {{ serviceName }} – GOV.UK Prototype Kit
+  Why is {{ data['executor4-willName'] }} not applying for probate? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/not-applying_reason" method="post">
+    <form class="form" action="/not-applying_reason2" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4">
-              Why is {{ data['executor2-willName'] }} not applying for probate?
+              Why is {{ data['executor4-willName'] }} not applying for probate?
             </h1>
           </legend>
           
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="not-applyingReason" name="not-applyingReason" type="radio" value="powerReserved" data-aria-controls="conditional-not-applyingReason">
-              <label class="govuk-label govuk-radios__label" for="not-applyingReason">
-                {{ data['executor2-willName'] }} is reserving the right to apply later (also known as holding ‘power reserved’) and has informed you of this in writing
+              <input class="govuk-radios__input" id="not-applyingReason2" name="not-applyingReason2" type="radio" value="powerReserved" data-aria-controls="conditional-not-applyingReason2">
+              <label class="govuk-label govuk-radios__label" for="not-applyingReason2">
+                {{ data['executor4-willName'] }} is reserving the right to apply later (also known as holding ‘power reserved’) and has informed you of this in writing
               </label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason">
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason2">
               <div class="govuk-form-group">
                 <p class="govuk-body" for="not-applyingReason-powerReserved">
                   You will need to inform them in writing that you are making this application.
@@ -35,12 +35,12 @@
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="not-applyingReason-2" name="not-applyingReason" type="radio" value="renunciation" data-aria-controls="conditional-not-applyingReason-2">
-              <label class="govuk-label govuk-radios__label" for="not-applyingReason-2">
-                {{ data['executor2-willName'] }} is giving up their right to apply (also known as ‘renunciation’) – you will need to send us their completed renunciation form along with your other documents
+              <input class="govuk-radios__input" id="not-applyingReason2-2" name="not-applyingReason2" type="radio" value="renunciation" data-aria-controls="conditional-not-applyingReason2-2">
+              <label class="govuk-label govuk-radios__label" for="not-applyingReason2-2">
+                {{ data['executor4-willName'] }} is giving up their right to apply (also known as ‘renunciation’) – you will need to send us their completed renunciation form along with your other documents
               </label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason-2">
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason2-2">
               <div class="govuk-form-group">
                 <p class="govuk-body" for="not-applyingReason-renunciation">
                   You will need to send us their completed <a href="https://www.gov.uk/government/publications/form-pa15-give-up-probate-executor-rights" class="govuk-link" rel="noreferrer noopener" target="_blank">PA15 renunciation form (opens in a new tab)</a> along with your other documents.
