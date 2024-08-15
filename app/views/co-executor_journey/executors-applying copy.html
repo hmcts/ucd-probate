@@ -60,19 +60,23 @@
   
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
    
+              {% if (data['2otherExecutors'] == "yes" ) %}
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="select-applyingExecutors-3" name="select-applyingExecutors" type="checkbox" value="executor3">
                   <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-3">
-                    Deborah Elizabeth Doe
+                    {{ data['executor3-willName'] }}
                   </label>
                 </div>
+              {% endif %}
   
+              {% if (data['3otherExecutors'] == "yes" ) %}
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="select-applyingExecutors-4" name="select-applyingExecutors" type="checkbox" value="executor4">
                   <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-4">
-                    Stephen Thomas Doe
+                    {{ data['executor4-willName'] }}
                   </label>
                 </div>
+              {% endif %}
   
               {% if (data['4otherExecutors'] == "yes" ) %}
                 <div class="govuk-checkboxes__item">
