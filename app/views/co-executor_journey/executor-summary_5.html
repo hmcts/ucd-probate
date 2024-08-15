@@ -22,7 +22,17 @@
               <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
                 Executor (you)
               </dt>
-              <dd class="govuk-summary-list__value">{{ data['applicant-willName'] }}</dd>
+              <dd class="govuk-summary-list__value">
+                {% if (data['sameName'] == "yes") %}
+
+                  {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}
+
+                {% else %}
+
+                  {{ data['applicant-willName'] }}
+
+                {% endif %}
+              </dd>
               <dd class="govuk-summary-list__actions"> </dd>
           </div>
 
