@@ -131,7 +131,7 @@ router.post('/deceased-executors-answer', function(request, response) {
 router.post('/selected-deceased_executors', function(request, response) {
 
     var exports = request.session.data['select-deceasedExecutors']
-    if (exports.includes("executor2")){
+    if (exports.includes("johnDoe")){
         response.redirect("co-executor_journey/executor-deceased_before2")
     } else {
         response.redirect("co-executor_journey//executors-applying")
