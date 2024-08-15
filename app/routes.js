@@ -162,7 +162,7 @@ router.post('/executor-name2-answer', function(request, response) {
 
     var sameName = request.session.data['executorName2-answer']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-name_match3")
+        response.redirect("co-executor_journey/executor-contact2")
     } else {
         response.redirect("co-executor_journey/executor-alias2")
     }
