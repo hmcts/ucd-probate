@@ -148,21 +148,21 @@ router.post('/executor-name2-answer', function(request, response) {
     }
 })
 
-router.post('/executor-name3-answer', function(request, response) {
-
-    var sameName = request.session.data['executorName3-answer']
-    if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-contact2")
-    } else {
-        response.redirect("co-executor_journey/executor-alias3")
-    }
-})
-
 router.post('/not-applying_reason', function(request, response) {
 
     var sameName = request.session.data['not-applyingReason']
     if (sameName == "powerReserved"){
         response.redirect("co-executor_journey/executor-power_reserved")
+    } else {
+        response.redirect("co-executor_journey/E&D-questions")
+    }
+})
+
+router.post('/not-applying_reason2', function(request, response) {
+
+    var sameName = request.session.data['not-applyingReason2']
+    if (sameName == "powerReserved"){
+        response.redirect("co-executor_journey/executor-power_reserved2")
     } else {
         response.redirect("co-executor_journey/E&D-questions")
     }
