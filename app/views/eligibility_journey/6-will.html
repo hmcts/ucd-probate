@@ -1,0 +1,95 @@
+{% extends "layouts/sign_in.html" %}
+
+{% block pageTitle %}
+Did the person who died leave a will? – Apply for probate – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/EC_will-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="EC_will-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">
+                Eligibility to apply online
+              </span>
+              <h1 class="govuk-fieldset__heading">
+                Did the person who died leave a will?
+              </h1>
+            </legend>
+
+            <div id="EC_will-hint" class="govuk-hint">
+              <p class="govuk-hint">Check the <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">will is legal (opens in a new tab)</a>. Wills made according to the laws of England or Wales must be signed in wet ink by:</p>
+              <ul class="govuk-hint govuk-list govuk-list--bullet">
+                <li>the person making the will (‘testator’)</li>
+                <li>2 witnesses</li>
+              </ul>
+            </div>
+
+            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="EC_will" name="EC_will" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="EC_will">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="EC_will-2" name="EC_will" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="EC_will-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+            <details class="govuk-details">
+
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Contact us for help
+                </span>
+              </summary>
+        
+              <div class="govuk-details__text">
+                <h3 class="govuk-heading-s">Webchat</h3>
+                  <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+                <h3 class="govuk-heading-s">Telephone</h3>
+                  <p class="govuk-body">0300 303 0648</p>
+                <h3 class="govuk-heading-s">Email</h3>
+                  <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+                <br>
+                <h3 class="govuk-heading-s">Opening times</h3>
+                <h3 class="govuk-heading-s">Telephone</h3>
+                  <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+                <h3 class="govuk-heading-s">Webchat</h3>
+                  <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+                <br>
+                <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+              </div>
+              
+            </details>
+          
+          </fieldset>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

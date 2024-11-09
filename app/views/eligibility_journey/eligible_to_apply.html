@@ -1,0 +1,46 @@
+{% extends "layouts/sign_in.html" %}
+
+{% block pageTitle %}
+Eligible to apply: create an account - Apply for probate – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Create an account
+      </h1>
+
+      <form class="form" action="#" method="post">
+
+        <p>
+          Based on the information you have given, you have everything you need to make your application for probate online.
+        </p>
+
+        <p>
+          You will need an email address to create your account.
+        </p>
+
+        <p>
+          You must use your own email address even if someone helps with your application. That is because we cannot discuss details with anyone but the person making the application.
+        </p>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Create your account",
+          isStartButton: true
+        }) }}
+
+        <p class="govuk-body">
+          Already registered? <a href="sign_in.html" class="govuk-link govuk-link--no-visited-state">Log in</a>
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
