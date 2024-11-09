@@ -1,0 +1,87 @@
+{% extends "layouts/sign_in.html" %}
+
+{% block pageTitle %}
+Do you have an English translation of the death certificate? – Apply for probate – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/EC_deathCertificate-translation-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="EC_deathCertificate-translation-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">
+                Eligibility to apply online
+              </span>
+              <h1 class="govuk-fieldset__heading">
+                Do you have an English translation of the death certificate?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="EC_deathCertificate-translation" name="EC_deathCertificate-translation" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="EC_deathCertificate-translation">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="EC_deathCertificate-translation-2" name="EC_deathCertificate-translation" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="EC_deathCertificate-translation-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+            <details class="govuk-details">
+
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Contact us for help
+                </span>
+              </summary>
+        
+              <div class="govuk-details__text">
+                <h3 class="govuk-heading-s">Webchat</h3>
+                  <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+                <h3 class="govuk-heading-s">Telephone</h3>
+                  <p class="govuk-body">0300 303 0648</p>
+                <h3 class="govuk-heading-s">Email</h3>
+                  <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+                <br>
+                <h3 class="govuk-heading-s">Opening times</h3>
+                <h3 class="govuk-heading-s">Telephone</h3>
+                  <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+                <h3 class="govuk-heading-s">Webchat</h3>
+                  <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+                <br>
+                <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+              </div>
+              
+            </details>
+          
+          </fieldset>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layouts/sign_in.html" %}
+
+{% block pageTitle %}
+You must apply for probate by post - Apply for probate – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        Eligibility to apply online
+      </span>
+      <h1 class="govuk-heading-l">
+        You must apply for probate by post
+      </h1>
+
+      <form class="form" action="#" method="post">
+
+        <p class="govuk-body">
+          If the person died before 1 October 2014, You can’t apply for probate online.
+        </p>
+
+        <p class="govuk-body govuk-!-padding-bottom-4">
+          Fill in <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Form PA1A (opens in a new tab)</a>.
+        </p>
+
+        <details class="govuk-details">
+
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+    
+          <div class="govuk-details__text">
+            <h3 class="govuk-heading-s">Webchat</h3>
+              <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+            <h3 class="govuk-heading-s">Telephone</h3>
+              <p class="govuk-body">0300 303 0648</p>
+            <h3 class="govuk-heading-s">Email</h3>
+              <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+            <br>
+            <h3 class="govuk-heading-s">Opening times</h3>
+            <h3 class="govuk-heading-s">Telephone</h3>
+              <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+            <h3 class="govuk-heading-s">Webchat</h3>
+              <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+            <br>
+            <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+          </div>
+          
+        </details>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layouts/sign_in.html" %}
+
+{% block pageTitle %}
+Important: read before you start - Apply for probate – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Important: read before you start
+      </h1>
+
+      <form class="form" action="1-death_certificate" method="post">
+
+        <p>
+          Probate gives you the legal right to deal with a person’s property, money and possessions (their ‘estate’) after they’ve died.
+        </p>
+
+        <p>
+          You will need to submit an application and send your documents to the probate registry. We’ll tell you exactly what you need to send once you have completed your application.
+        </p>
+        
+        <div class="govuk-inset-text">
+          You can apply in Welsh by post. Use <a href="#" class="govuk-link govuk-link--no-visited-state">Form PA1P</a> if the person who died left a will, or <a href="#" class="govuk-link govuk-link--no-visited-state">Form PA1A</a> if there is no will.
+        </div>
+        
+        <h2 class="govuk-heading-m">
+          What you will need
+        </h2>
+
+        <p class="govuk-body">Before you start your application, you will need:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-2">
+            <li>the details of the person who died</li>
+            <li>the original will, if the person who died left one, and any codicils</li>
+            <li>the name, email address and mobile phone number for each person applying for probate</li>
+            <li>the values of the estate for Inheritance Tax (IHT) – you can estimate these using HMRC’s <a href="#" class="govuk-link govuk-link--no-visited-state">online IHT checker</a></li>
+            <li>a debit or credit card, if you need to pay a fee</li>
+          </ul>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <h3 class="govuk-heading-s govuk-!-padding-top-2">
+        Have you already started an application?
+      </h3>
+  
+      <p class="govuk-body">
+        <a href="sign_in.html" class="govuk-link govuk-link--no-visited-state">Return to an existing application</a>
+      </p>
+  
+      <details class="govuk-details">
+  
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Contact us for help
+          </span>
+        </summary>
+  
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Webchat</h3>
+            <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+          <h3 class="govuk-heading-s">Telephone</h3>
+            <p class="govuk-body">0300 303 0648</p>
+          <h3 class="govuk-heading-s">Email</h3>
+            <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+          <br>
+          <h3 class="govuk-heading-s">Opening times</h3>
+          <h3 class="govuk-heading-s">Telephone</h3>
+            <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+          <h3 class="govuk-heading-s">Webchat</h3>
+            <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+          <br>
+          <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+        </div>
+        
+      </details>
+
+    </div>
+  </div>
+
+{% endblock %}
