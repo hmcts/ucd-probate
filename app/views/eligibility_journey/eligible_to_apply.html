@@ -4,6 +4,13 @@
 Eligible to apply: create an account - Apply for probate – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
