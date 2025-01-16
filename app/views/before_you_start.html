@@ -13,7 +13,7 @@ Important: read before you start - Apply for probate – GOV.UK Prototype Kit
         Important: read before you start
       </h1>
 
-      <form class="form" action="1-death_certificate" method="post">
+      <form class="form" action="eligibility_journey/1-death_certificate" method="post">
 
         <p>
           Probate gives you the legal right to deal with a person’s property, money and possessions (their ‘estate’) after they’ve died.
@@ -22,10 +22,6 @@ Important: read before you start - Apply for probate – GOV.UK Prototype Kit
         <p>
           You will need to submit an application and send your documents to the probate registry. We’ll tell you exactly what you need to send once you have completed your application.
         </p>
-        
-        <div class="govuk-inset-text">
-          You can apply in Welsh by post. Use <a href="#" class="govuk-link govuk-link--no-visited-state">Form PA1P</a> if the person who died left a will, or <a href="#" class="govuk-link govuk-link--no-visited-state">Form PA1A</a> if there is no will.
-        </div>
         
         <h2 class="govuk-heading-m">
           What you will need
@@ -36,9 +32,13 @@ Important: read before you start - Apply for probate – GOV.UK Prototype Kit
             <li>the details of the person who died</li>
             <li>the original will, if the person who died left one, and any codicils</li>
             <li>the name, email address and mobile phone number for each person applying for probate</li>
-            <li>the values of the estate for Inheritance Tax (IHT) – you can estimate these using HMRC’s <a href="#" class="govuk-link govuk-link--no-visited-state">online IHT checker</a></li>
+            <li>the values of the estate for Inheritance Tax (IHT) – you can estimate these using HMRC’s <a href="https://www.gov.uk/valuing-estate-of-someone-who-died/estimate-estate-value" class="govuk-link govuk-link--no-visited-state">online IHT checker</a></li>
             <li>a debit or credit card, if you need to pay a fee</li>
           </ul>
+        
+          <p>
+            If the person who died did not leave a will, you must also <a href="https://www.gov.uk/inherits-someone-dies-without-will" class="govuk-link govuk-link--no-visited-state">check if you are the most entitled person to apply</a> before you start.
+          </p>
 
         {{ govukButton({
           text: "Continue"
