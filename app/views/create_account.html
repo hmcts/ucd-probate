@@ -1,0 +1,73 @@
+{% extends "layouts/sign_in.html" %}
+
+{% block pageTitle %}
+Create an account or sign in - Apply for probate – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      Create an account or sign in
+    </h1>
+
+    <div class="grid-row">
+
+      <div class="govuk-grid-column-one-half" style="border-right: 3px solid #a1acb2;padding-left: 0px;">
+        <div class="form-section">
+            <h2 class="govuk-heading-m" style="margin-top: 20px;">
+              Create an account
+            </h2>
+
+            <div class="govuk-form-group">
+                <label for="firstName">
+                    <span class="govuk-label"><strong>First name</strong></span>
+                </label>
+                <input id="firstName" name="firstName" type="text" class="govuk-input govuk-input--width-20" value="" autocomplete="off">
+            </div>
+
+            <div class="govuk-form-group">
+                <label for="lastName">
+                    <span class="govuk-label"><strong>Last name</strong></span>
+                </label>
+                <input id="lastName" name="lastName" type="text" class="govuk-input govuk-input--width-20" value="" autocomplete="off">
+            </div>
+
+            <div class="govuk-form-group">
+              <label for="email">
+                  <span class="govuk-label"><strong>Email address</strong></span>
+              </label>
+              <input id="email" name="email" type="text" class="govuk-input govuk-input--width-20" value="" autocomplete="off">
+            </div>
+
+            <div class="govuk-form-group">
+                <p>Read our <a href="#" class="govuk-link govuk-link--no-visited-state">privacy policy</a> and <a href="#" class="govuk-link govuk-link--no-visited-state">terms and conditions</a></p>
+            </div>
+
+            <form action="#">
+
+              <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+              </div>
+
+            </form>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-half" style="padding-left: 15px;">
+        <h2 class="govuk-heading-m" style="margin-top: 20px;">Already have an account?</h2>
+        <p><a href="sign_in.html">Sign in to your account</a></p>
+      </div>
+
+</div>
+
+      <div>
+          <input type="hidden" name="_csrf" value="7c9c1bf6-2c6a-48c3-9640-8aface67b621">
+      </div>
+
+{% endblock %}
+

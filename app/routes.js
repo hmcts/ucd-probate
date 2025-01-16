@@ -104,7 +104,7 @@ router.post('/EC_relationship-answer', function(request, response) {
 
     var country = request.session.data['EC_relationship']
     if (country == "other"){
-        response.redirect("eligibility_journey/intestacy/8a-apply_by_post")
+        response.redirect("eligibility_journey/intestacy/8a-cannot_apply_online")
     } else {
         response.redirect("eligibility_journey/eligible_to_apply")
     }
