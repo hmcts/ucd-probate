@@ -117,10 +117,10 @@ router.post('/EC_relationship-answer', function(request, response) {
 router.post('/deceased-marital_status-answer', function(request, response) {
 
     var sameName = request.session.data['deceased-marital_status']
-    if (sameName == "divorced"){
+    if (sameName == "Divorced or had ended their civil partnership (also known as a dissolution)"){
         response.redirect("intestacy/person_who_died/divorce_jurisdiction")
     }
-    else if (sameName == "separated"){
+    else if (sameName == "Legally separated (also known as judicially separated)"){
         response.redirect("intestacy/person_who_died/separation_jurisdiction")
     } else {
         response.redirect("intestacy/people_applying/task-list")
@@ -130,7 +130,7 @@ router.post('/deceased-marital_status-answer', function(request, response) {
 router.post('/divorce_jurisdiction-answer', function(request, response) {
 
     var sameName = request.session.data['divorceJurisdiction-answer']
-    if (sameName == "yes"){
+    if (sameName == "Yes"){
         response.redirect("intestacy/person_who_died/divorce_date")
     } else {
         response.redirect("intestacy/person_who_died/divorced-apply_by_post")
@@ -140,7 +140,7 @@ router.post('/divorce_jurisdiction-answer', function(request, response) {
 router.post('/separation_jurisdiction-answer', function(request, response) {
 
     var sameName = request.session.data['separationJurisdiction-answer']
-    if (sameName == "yes"){
+    if (sameName == "Yes"){
         response.redirect("intestacy/person_who_died/separation_date")
     } else {
         response.redirect("intestacy/person_who_died/separated-apply_by_post")
