@@ -110,6 +110,42 @@ router.post('/EC_relationship-answer', function(request, response) {
     }
 })
 
+// Intestacy
+
+// Deceased details
+
+router.post('/deceased-marital_status-answer', function(request, response) {
+
+    var sameName = request.session.data['deceased-marital_status']
+    if (sameName == "divorced"){
+        response.redirect("intestacy/person_who_died/divorce_jurisdiction")
+    }
+    else if (sameName == "separated"){
+        response.redirect("intestacy/person_who_died/separation_jurisdiction")
+    } else {
+        response.redirect("intestacy/people_applying/task-list")
+    }
+})
+
+router.post('/divorce_jurisdiction-answer', function(request, response) {
+
+    var sameName = request.session.data['divorceJurisdiction-answer']
+    if (sameName == "yes"){
+        response.redirect("intestacy/person_who_died/divorce_date")
+    } else {
+        response.redirect("intestacy/person_who_died/divorced-apply_by_post")
+    }
+})
+
+router.post('/separation_jurisdiction-answer', function(request, response) {
+
+    var sameName = request.session.data['separationJurisdiction-answer']
+    if (sameName == "yes"){
+        response.redirect("intestacy/person_who_died/separation_date")
+    } else {
+        response.redirect("intestacy/person_who_died/separated-apply_by_post")
+    }
+})
 
 // co-executor journey
 

@@ -1,14 +1,7 @@
-{% extends "layouts/sign_in.html" %}
+{% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-You cannot apply for probate online - Apply for probate – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+You must apply for probate by post – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -16,25 +9,18 @@ You cannot apply for probate online - Apply for probate – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">
-        Check if you can apply online
-      </span>
       <h1 class="govuk-heading-l">
-        You cannot apply for probate online
+        You must apply for probate by post
       </h1>
 
       <form class="form" action="#" method="post">
 
         <p class="govuk-body">
-          If you are not the closest living relative, you cannot use the online service to apply for probate.
+          As you have told us that {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} got legally separated outside of England and Wales, you cannot apply for probate online.
         </p>
-
-        <p class="govuk-body">
-          You may still be able to apply for probate by post. <a href="https://www.gov.uk/inherits-someone-dies-without-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Check if you are the most entitled person to apply (opens in a new tab)</a> before you start.
-        </p>
-
+        
         <p class="govuk-body govuk-!-padding-bottom-4">
-          If you are the most entitled person, you can use <a href="https://www.gov.uk/government/publications/apply-for-probate-by-post-if-there-is-not-a-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Form PA1A (opens in a new tab)</a> to apply.
+          Fill in and submit <a href="https://www.gov.uk/government/publications/apply-for-probate-by-post-if-there-is-not-a-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">form PA1A (opens in a new tab)</a> instead.
         </p>
 
         <details class="govuk-details">
