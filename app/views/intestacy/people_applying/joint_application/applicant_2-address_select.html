@@ -1,0 +1,95 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="applicant_2-address_select" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="applicant_2-address">
+            What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address?
+          </label>
+        </h1>
+
+        <p class="govuk-body">
+          This will be printed on the grant of probate.
+        </p>
+
+        <div class="govuk-!-padding-bottom-4">
+          <label class="govuk-label" for="applicant_2-address_postcode">
+            Enter a UK postcode
+          </label>
+          <input class="govuk-input govuk-!-width-one-quarter" id="applicant_2-address_postcode" name="applicant_2-address_postcode" type="text" autocomplete="postal-code" value="{{ data['applicant_2-address_postcode'] }}">
+          <button class="govuk-button" data-module="govuk-button">
+            Find address
+          </button>
+
+          <label class="govuk-label" for="applicant_2-address_select">
+            Select an address
+          </label>
+
+          <select class="govuk-select govuk-!-width-three-quarters" id="applicant_2-address_select" name="applicant_2-address_select" value="{{ data['applicant_2-address_select'] }}">
+            <option>5 addresses found</option>
+            <option>1 Main Street, London, {{ data['applicant_2-address_postcode'] }} </option>
+            <option>2 Main Street, London, {{ data['applicant_2-address_postcode'] }} </option>
+            <option>3 Main Street, London, {{ data['applicant_2-address_postcode'] }} </option>
+            <option>4 Main Street, London, {{ data['applicant_2-address_postcode'] }} </option>
+            <option>5 Main Street, London, {{ data['applicant_2-address_postcode'] }} </option>
+          </select>
+
+        </div>
+
+        <p class="govuk-body govuk-!-padding-bottom-4">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">I can’t enter a UK postcode</a>
+        </p>
+
+        <a href="applicant_summary" class="govuk-button">
+          Save and continue
+        </a>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        </p>
+
+      </div>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

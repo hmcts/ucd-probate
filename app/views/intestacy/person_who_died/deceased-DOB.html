@@ -1,7 +1,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-What was their date of birth? – {{ serviceName }} – GOV.UK Prototype Kit
+What was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s date of birth? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@ What was their date of birth? – {{ serviceName }} – GOV.UK Prototype Kit
 
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="deceased-DOB">
-            What was their date of birth?
+            What was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s date of birth?
           </label>
         </h1>
 

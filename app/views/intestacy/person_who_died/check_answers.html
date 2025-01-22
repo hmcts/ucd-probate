@@ -31,7 +31,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                        What was their date of birth?
+                      What was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s date of birth?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['deceased-DOB-day'] }}/{{ data['deceased-DOB-month'] }}/{{ data['deceased-DOB-year'] }}</dd>
                     <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
@@ -39,7 +39,7 @@
             
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                        What was the date that they died?
+                      What was the date that {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} died?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['deceased-DOD-day'] }}/{{ data['deceased-DOD-month'] }}/{{ data['deceased-DOD-year'] }}</dd>
                     <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
