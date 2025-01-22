@@ -1,7 +1,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-What was the date that they died? – {{ serviceName }} – GOV.UK Prototype Kit
+What was the date that {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} died? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -14,12 +14,12 @@ What was the date that they died? – {{ serviceName }} – GOV.UK Prototype Kit
 
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="deceased-DOD">
-            What was the date that they died?
+            What was the date that {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} died?
           </label>
         </h1>
 
         <div id="deceased-DOD-hint" class="govuk-hint">
-          Use the date from the death certificate. For example, 30 06 2016
+          Use the date from the death certificate. For example, 30 01 2025
         </div>
 
         <div class="govuk-date-input" id="deceased-DOD">

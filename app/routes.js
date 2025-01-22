@@ -119,8 +119,7 @@ router.post('/deceased-marital_status-answer', function(request, response) {
     var sameName = request.session.data['deceased-marital_status']
     if (sameName == "Divorced or had ended their civil partnership (also known as a dissolution)"){
         response.redirect("intestacy/person_who_died/divorce_jurisdiction")
-    }
-    else if (sameName == "Legally separated (also known as judicially separated)"){
+    } else if (sameName == "Legally separated (also known as judicially separated)"){
         response.redirect("intestacy/person_who_died/separation_jurisdiction")
     } else {
         response.redirect("intestacy/people_applying/task-list")
@@ -144,6 +143,154 @@ router.post('/separation_jurisdiction-answer', function(request, response) {
         response.redirect("intestacy/person_who_died/separation_date")
     } else {
         response.redirect("intestacy/person_who_died/separated-apply_by_post")
+    }
+})
+
+// Applicants
+ 
+router.post('/relationship-answer', function(request, response) {
+
+    var sameName = request.session.data['relationship']
+    if (sameName == "I am their child"){
+        response.redirect("intestacy/people_applying/adopted_in")
+    } else if (sameName == "I am their parent"){
+        response.redirect("intestacy/people_applying/adopted_in")
+    } else if (sameName == "other"){
+        response.redirect("intestacy/people_applying/relationship-cannot_apply_online")
+    } else {
+        response.redirect("#")
+    }
+})
+
+router.post('/adopted_in-answer', function(request, response) {
+
+    var sameName = request.session.data['adoptedIn']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/adoption_jurisdiction")
+    } else {
+        response.redirect("intestacy/people_applying/adopted_out")
+    }
+})
+
+router.post('/adoption_jurisdiction-answer', function(request, response) {
+
+    var sameName = request.session.data['adoption_jursdiction']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/other_children")
+    } else {
+        response.redirect("intestacy/people_applying/adoption_jurisdiction-cannot_apply_online")
+    }
+})
+
+router.post('/adopted_out-answer', function(request, response) {
+
+    var sameName = request.session.data['adoptedOut']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/adopted_out-cannot_apply_online")
+    } else {
+        response.redirect("intestacy/people_applying/other_children")
+    }
+})
+
+router.post('/other_children-answer', function(request, response) {
+
+    var sameName = request.session.data['other_children']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/deceased_children")
+    } else {
+        response.redirect("intestacy/people_applying/applicant_name")
+    }
+})
+
+router.post('/deceased_children-answer', function(request, response) {
+
+    var sameName = request.session.data['deceased_children']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/children_over_18")
+    } else {
+        response.redirect("intestacy/people_applying/surviving_grandchildren")
+    }
+})
+
+router.post('/surviving_grandchildren-answer', function(request, response) {
+
+    var sameName = request.session.data['surviving_grandchildren']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/grandchildren_over_18")
+    } else {
+        response.redirect("intestacy/people_applying/applicant-name")
+    }
+})
+
+router.post('/grandchildren_over_18-answer', function(request, response) {
+
+    var sameName = request.session.data['grandchildren_over_18']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/applicant-name")
+    } else {
+        response.redirect("intestacy/people_applying/grandchild_under_18-cannot_apply_online")
+    }
+})
+
+router.post('/children_over_18-answer', function(request, response) {
+
+    var sameName = request.session.data['children_over_18']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/applicant-name")
+    } else {
+        response.redirect("intestacy/people_applying/child_under_18-cannot_apply_online")
+    }
+})
+
+router.post('/applicant_summary', function(request, response) {
+
+    var sameName = request.session.data['otherApplicants']
+    if (sameName == "yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-name")
+    } else {
+        response.redirect("intestacy/CYA-legal_dec/task-list")
+    }
+})
+
+// joint application
+
+router.post('/applicant_2-relationship_answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_2-relationship']
+    if (sameName == "Other"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-not_entitled")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-adopted_in")
+    }
+})
+
+router.post('/applicant_2-adopted_in-answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_2-adoptedIn']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-adoption_jurisdiction")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-adopted_out")
+    }
+})
+
+router.post('/applicant_2-adoption_jurisdiction-answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_2-adoption_jursdiction']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-email")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-adoption_jurisdiction-cannot_apply_online")
+    }
+})
+
+router.post('/applicant_2-adopted_out-answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_2-adoptedOut']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-adopted_out-cannot_apply_online")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-email")
     }
 })
 

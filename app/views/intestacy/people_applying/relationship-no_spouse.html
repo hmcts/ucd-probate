@@ -1,0 +1,114 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+What is your relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/relationship-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="relationship-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is your relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-2" name="relationship" type="radio" value="I am their child" aria-describedby="relationship-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="relationship-2">
+                  I am their child
+                </label>
+                <div id="relationship-2-item-hint" class="govuk-hint govuk-radios__hint">
+                  Including adopted children, but not step-children
+                </div>
+              </div>
+                
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-3" name="relationship" type="radio" value="I am their grandchild" aria-describedby="relationship-3-item-hint">
+                <label class="govuk-label govuk-radios__label" for="relationship-3">
+                  I am their grandchild
+                </label>
+                <div id="relationship-3-item-hint" class="govuk-hint govuk-radios__hint">
+                  Including adopted grandchildren, but not step-grandchildren
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-4" name="relationship" type="radio" value="I am their parent" aria-describedby="relationship-4-item-hint">
+                <label class="govuk-label govuk-radios__label" for="relationship-4">
+                  I am their parent
+                </label>
+                <div id="relationship-4-item-hint" class="govuk-hint govuk-radios__hint">
+                  Including adoptive parents, but not step-parents
+                </div>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-5" name="relationship" type="radio" value="I am their sibling" aria-describedby="relationship-5-item-hint">
+                <label class="govuk-label govuk-radios__label" for="relationship-5">
+                  I am their sibling
+                </label>
+                <div id="relationship-5-item-hint" class="govuk-hint govuk-radios__hint">
+                  Including adopted and half-siblings, but not step-siblings
+                </div>
+              </div>
+              
+              <div class="govuk-radios__divider">or</div>
+              
+              <div class="govuk-radios__item govuk-!-padding-bottom-4">
+                <input class="govuk-radios__input" id="relationship-7" name="relationship" type="radio" value="other">
+                <label class="govuk-label govuk-radios__label" for="relationship-7">
+                  None of the above
+                </label>
+              </div>
+            </div>
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+            <details class="govuk-details">
+
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Contact us for help
+                </span>
+              </summary>
+        
+              <div class="govuk-details__text">
+                <h3 class="govuk-heading-s">Webchat</h3>
+                  <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+                <h3 class="govuk-heading-s">Telephone</h3>
+                  <p class="govuk-body">0300 303 0648</p>
+                <h3 class="govuk-heading-s">Email</h3>
+                  <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+                <br>
+                <h3 class="govuk-heading-s">Opening times</h3>
+                <h3 class="govuk-heading-s">Telephone</h3>
+                  <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+                <h3 class="govuk-heading-s">Webchat</h3>
+                  <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+                <br>
+                <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+              </div>
+              
+            </details>
+          
+          </fieldset>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

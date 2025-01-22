@@ -1,0 +1,66 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+You cannot apply for probate online – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You cannot apply for probate online
+      </h1>
+
+      <form class="form" action="../applicant_summary" method="post">
+
+        <p class="govuk-body">
+          You cannot use the online service if the person was adopted out of the family.
+        </p>
+
+        <p class="govuk-body">
+          They may still be eligible to apply in some situations, but we will need to ask you for more information.
+        </p>
+
+        <p class="govuk-body">
+          You can apply for probate by post using <a href="https://www.gov.uk/government/publications/apply-for-probate-by-post-if-there-is-not-a-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Form PA1A (opens in a new tab)</a> instead.
+        </p>
+
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Return to application
+        </button>
+
+        <details class="govuk-details">
+
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+    
+          <div class="govuk-details__text">
+            <h3 class="govuk-heading-s">Webchat</h3>
+              <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+            <h3 class="govuk-heading-s">Telephone</h3>
+              <p class="govuk-body">0300 303 0648</p>
+            <h3 class="govuk-heading-s">Email</h3>
+              <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+            <br>
+            <h3 class="govuk-heading-s">Opening times</h3>
+            <h3 class="govuk-heading-s">Telephone</h3>
+              <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+            <h3 class="govuk-heading-s">Webchat</h3>
+              <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+            <br>
+            <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+          </div>
+          
+        </details>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
