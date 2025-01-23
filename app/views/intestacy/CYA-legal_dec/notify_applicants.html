@@ -1,0 +1,119 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+Notify the other applicants  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="task-list_awaiting-applicants" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="applicant-summary">
+            Notify the other applicants 
+          </label>
+        </h1>
+
+        <p class="govuk-body">
+          We will send the other applicants an email 
+        </p>
+
+        <p class="govuk-body">
+          Once you’ve notified the other applicants, they’ll be sent an email telling them the legal statement is ready to agree. 
+        </p>
+        
+        <div class="govuk-inset-text">
+          A grant of probate can’t be issued until all the executors who are applying agree that the legal statement is correct.
+        </div>
+
+        <h2 class="govuk-heading-m">
+          If the other applicants do not agree with the information
+        </h2>
+
+        <p class="govuk-body">
+          Applicants who do not agree with the legal statement will be asked to contact you to discuss what needs changing.
+        </p>
+
+        <p class="govuk-body">
+          You can continue to make changes to the application until everyone has made their declaration.
+        </p>
+
+        <h3 class="govuk-heading-m">
+          If you change the information on your application
+        </h3>
+
+        <p class="govuk-body">
+          If you make any changes, you will need to contact the other applicants to let them know the legal statement has been updated.
+        </p>
+
+        <p class="govuk-body">
+          They can always see the most up to date version of the legal statement using the link we email them.
+        </p>
+
+        <h4 class="govuk-heading-s">
+          Heading TBC
+        </h4>
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third">
+              {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['applicant_2-email'] }} email address
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../people_applying/joint_application/applicant_2-name.html">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+        </div>
+
+        </dl>
+
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Send notification
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}
