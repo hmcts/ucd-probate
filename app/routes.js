@@ -198,7 +198,7 @@ router.post('/other_children-answer', function(request, response) {
     if (sameName == "Yes"){
         response.redirect("intestacy/people_applying/deceased_children")
     } else {
-        response.redirect("intestacy/people_applying/applicant_name")
+        response.redirect("intestacy/people_applying/applicant-name")
     }
 })
 
@@ -291,6 +291,16 @@ router.post('/applicant_2-adopted_out-answer', function(request, response) {
         response.redirect("intestacy/people_applying/joint_application/applicant_2-adopted_out-cannot_apply_online")
     } else {
         response.redirect("intestacy/people_applying/joint_application/applicant_2-email")
+    }
+})
+
+router.post('/applicant_summary_2', function(request, response) {
+
+    var sameName = request.session.data['applicant_summary_2']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-name")
+    } else {
+        response.redirect("intestacy/CYA-legal_dec/task-list")
     }
 })
 
