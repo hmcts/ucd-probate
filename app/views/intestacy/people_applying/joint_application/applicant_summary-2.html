@@ -1,0 +1,143 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+People applying for probate – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/applicant_summary_3" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="applicant-summary">
+            People applying for probate
+          </label>
+        </h1>
+
+        <dl class="govuk-summary-list">
+                
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+                Applicant (you)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions"> </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+              Applicant
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="applicant_2-name">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+              Applicant
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="applicant_3-name">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <p class="govuk-body">
+          Up to 4 people, including yourself, can apply for probate.
+        </p>
+
+        <p class="govuk-body">All applicants will be given the legal right to deal with {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s estate. This includes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>collecting the estate’s assets (property, money and possessions)</li>
+            <li>paying any taxes and debts</li>
+            <li>distributing what is left to the people entitled to it</li>
+          </ul>
+        
+        <p class="govuk-body">
+          Not applying does not affect a person’s entitlement to inherit.
+        </p>
+
+        <div class="govuk-form-group govuk-!-padding-top-4">
+          <fieldset class="govuk-fieldset" aria-describedby="applicant_summary_2-hint">
+  
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="applicant_summary_2">
+                Do you want to apply with anyone else?
+              </label>
+            </h1>
+  
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applicant_summary_3" name="applicant_summary_3" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="applicant_summary_3">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applicant_summary_3-2" name="applicant_summary_3" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="applicant_summary_3-2">
+                  No
+                </label>
+              </div>
+            </div>
+  
+          </fieldset>
+        </div>
+
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

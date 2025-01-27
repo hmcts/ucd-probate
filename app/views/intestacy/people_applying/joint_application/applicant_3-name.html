@@ -1,0 +1,97 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+What is the other applicant’s name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="applicant_3-relationship" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="applicant_3-name">
+            What is the other applicant’s name?
+          </label>
+        </h1>
+
+        <p class="govuk-body">
+          The name you give us will be written on the grant of probate.
+        </p>
+
+        <p class="govuk-body">
+          Their name should match exactly what is written on their passport or other official identification document, such as a driving licence.
+        </p>
+
+        <p class="govuk-body">
+          You should make sure that this is the same form of identification they use when they are dealing with the estate of the person who died.
+        </p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+            First name and any middle names
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="applicant_3-firstName" name="applicant_3-firstName" type="text" value="{{ data['applicant_3-firstName'] }}" maxlength="100">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+            Last name
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="applicant_3-lastName" name="applicant_3-lastName" type="text" value="{{ data['applicant_3-lastName'] }}" maxlength="100">
+        </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            If the name on the grant does not match the identification they use, they may have difficulties dealing with the estate.
+          </strong>
+        </div>
+
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

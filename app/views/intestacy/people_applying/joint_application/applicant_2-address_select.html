@@ -8,7 +8,7 @@ What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}â€
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="applicant_2-address_select" method="post" novalidate>
+    <form action="applicant_summary" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -27,9 +27,9 @@ What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}â€
             Enter a UK postcode
           </label>
           <input class="govuk-input govuk-!-width-one-quarter" id="applicant_2-address_postcode" name="applicant_2-address_postcode" type="text" autocomplete="postal-code" value="{{ data['applicant_2-address_postcode'] }}">
-          <button class="govuk-button" data-module="govuk-button">
+          <a href="#" class="govuk-button">
             Find address
-          </button>
+          </a>
 
           <label class="govuk-label" for="applicant_2-address_select">
             Select an address
@@ -50,9 +50,9 @@ What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}â€
           <a href="#" class="govuk-link govuk-link--no-visited-state">I canâ€™t enter a UK postcode</a>
         </p>
 
-        <a href="applicant_summary" class="govuk-button">
+        <button class="govuk-button" data-module="govuk-button">
           Save and continue
-        </a>
+        </button>
 
         <p class="govuk-body">
           <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>

@@ -22,11 +22,11 @@
             <dl class="govuk-summary-list">
     
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
                         What is the full name of the person who died?
                     </dt>
-                    <dd class="govuk-summary-list__value">{{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                    <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-name">Change</a></dd>
                 </div>
 
                 <!--
@@ -35,7 +35,7 @@
                       What was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s date of birth?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['deceased-DOB-day'] }}/{{ data['deceased-DOB-month'] }}/{{ data['deceased-DOB-year'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="deceased-DOB">Change</a></dd>
                 </div>
                 -->
             
@@ -44,7 +44,7 @@
                       What was the date that {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} died?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['deceased-DOD-day'] }}/{{ data['deceased-DOD-month'] }}/{{ data['deceased-DOD-year'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-DOD">Change</a></dd>
                 </div>
         
                 <div class="govuk-summary-list__row">
@@ -52,7 +52,7 @@
                         What was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s marital status?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['deceased-marital_status'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-marital_status">Change</a></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -60,7 +60,7 @@
                         Did the divorce or dissolution take place in England or Wales?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['divorceJurisdiction-answer'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="divorce_jurisdiction">Change</a></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -68,7 +68,7 @@
                         Do you know the date the divorce or dissolution took place?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['divorce_date-answer'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="divorce_date">Change</a></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -76,7 +76,7 @@
                         Date of divorce or dissolution
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['divorce_date-day'] }}/{{ data['divorce_date-month'] }}/{{ data['divorce_date-year'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="divorce_date">Change</a></dd>
                 </div>
 
             </dl>
