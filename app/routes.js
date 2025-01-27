@@ -298,9 +298,59 @@ router.post('/applicant_summary_2', function(request, response) {
 
     var sameName = request.session.data['applicant_summary_2']
     if (sameName == "Yes"){
-        response.redirect("intestacy/people_applying/joint_application/applicant_2-name")
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-name")
     } else {
         response.redirect("intestacy/CYA-legal_dec/task-list")
+    }
+})
+
+router.post('/applicant_3-relationship_answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_3-relationship']
+    if (sameName == "Other"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-not_entitled")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-adopted_in")
+    }
+})
+
+router.post('/applicant_3-adopted_in-answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_3-adoptedIn']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-adoption_jurisdiction")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-adopted_out")
+    }
+})
+
+router.post('/applicant_3-adoption_jurisdiction-answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_3-adoption_jursdiction']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-email")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-adoption_jurisdiction-cannot_apply_online")
+    }
+})
+
+router.post('/applicant_3-adopted_out-answer', function(request, response) {
+
+    var sameName = request.session.data['applicant_3-adoptedOut']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-adopted_out-cannot_apply_online")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-email")
+    }
+})
+
+router.post('/applicant_summary_3', function(request, response) {
+
+    var sameName = request.session.data['applicant_summary_3']
+    if (sameName == "No"){
+        response.redirect("intestacy/CYA-legal_dec/task-list")
+    } else {
+        response.redirect("#")
     }
 })
 

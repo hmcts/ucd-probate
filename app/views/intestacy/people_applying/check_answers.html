@@ -1,0 +1,169 @@
+
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-full">
+                        
+        <div>
+            <h1 class="govuk-heading-l">Check your answers</h1>
+                    
+            <p class="govuk-body">
+                Check the information below carefully. This will form a record of your application for probate. It will also be stored as a public record, and will be able to be viewed online.
+            </p>
+
+            <h2 class="govuk-heading-m">About the people applying</h2>
+            
+            <dl class="govuk-summary-list">
+    
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                      What is your relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['relationship'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="relationship-no_spouse">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Were you legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['adoptedIn'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="adopted_in">Change</a></dd>
+                </div>
+            
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Were you legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family (given up for adoption)?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['adoptedOut'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="adopted_out">Change</a></dd>
+                </div>
+        
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any other children?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['other_children'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="other_children">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Did any of these children die before {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['deceased_children'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased_children">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Are all of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s children 18 or older?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['children_over_18'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="children_over_18">Change</a></dd>
+                </div>
+
+            </dl>
+
+            <h3 class="govuk-heading-s">About you</h3>
+
+            <dl class="govuk-summary-list">
+    
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                    What is your relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                  </dt>
+                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['relationship'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="relationship-no_spouse">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Were you legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['adoptedIn'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="adopted_in">Change</a></dd>
+              </div>
+          
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Were you legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family (given up for adoption)?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['adoptedOut'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="adopted_out">Change</a></dd>
+              </div>
+      
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any other children?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['other_children'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="other_children">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Did any of these children die before {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['deceased_children'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased_children">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Are all of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s children 18 or older?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['children_over_18'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="children_over_18">Change</a></dd>
+              </div>
+
+          </dl>
+
+        </div>
+                
+            <br>
+                
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+                {{ govukButton({
+                  text: "Save and continue",
+                  href:"../people_applying/task-list"
+                }) }}
+            
+                <details class="govuk-details">
+
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Contact us for help
+                      </span>
+                    </summary>
+
+                    <div class="govuk-details__text">
+                      <h3 class="govuk-heading-s">Webchat</h3>
+                        <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+                      <h3 class="govuk-heading-s">Telephone</h3>
+                        <p class="govuk-body">0300 303 0648</p>
+                      <h3 class="govuk-heading-s">Email</h3>
+                        <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+                      <br>
+                      <h3 class="govuk-heading-s">Opening times</h3>
+                      <h3 class="govuk-heading-s">Telephone</h3>
+                        <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+                      <h3 class="govuk-heading-s">Webchat</h3>
+                        <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+                      <br>
+                      <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+                    </div>
+
+                </details>
+        
+    </div>
+</div>
+
+{% endblock %}
