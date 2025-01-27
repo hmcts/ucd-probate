@@ -28,6 +28,15 @@ What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}â€
                   Child
                 </label>
               </div>
+
+              {% if data['grandchildren_over_18'] === "Yes" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applicant_2-relationship" name="applicant_2-relationship" type="radio" value="Child">
+                <label class="govuk-label govuk-radios__label" for="applicant_2-relationship">
+                  Grandchild
+                </label>
+              </div>
+              {%endif %}
                 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="applicant_2-relationship-2" name="applicant_2-relationship" type="radio" value="Other">
