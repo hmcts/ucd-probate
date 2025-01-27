@@ -19,27 +19,19 @@ Notify the other applicants  – {{ serviceName }} – GOV.UK Prototype Kit
         </h1>
 
         <p class="govuk-body">
-          We will send the other applicants an email 
+          We will send the other applicants an email asking them to confirm the information you have provided and make their declaration. 
         </p>
-
-        <p class="govuk-body">
-          Once you’ve notified the other applicants, they’ll be sent an email telling them the legal statement is ready to agree. 
-        </p>
-        
-        <div class="govuk-inset-text">
-          A grant of probate can’t be issued until all the executors who are applying agree that the legal statement is correct.
-        </div>
 
         <h2 class="govuk-heading-m">
           If the other applicants do not agree with the information
         </h2>
 
         <p class="govuk-body">
-          Applicants who do not agree with the legal statement will be asked to contact you to discuss what needs changing.
+          If the other applicants do not agree with the information you have provided, or if they no longer want to apply, we will ask them to contact you to discuss the application.
         </p>
 
         <p class="govuk-body">
-          You can continue to make changes to the application until everyone has made their declaration.
+          You can continue to make changes to the application until all applicants have made their declaration.
         </p>
 
         <h3 class="govuk-heading-m">
@@ -47,30 +39,42 @@ Notify the other applicants  – {{ serviceName }} – GOV.UK Prototype Kit
         </h3>
 
         <p class="govuk-body">
-          If you make any changes, you will need to contact the other applicants to let them know the legal statement has been updated.
+          If you make any changes to your application, you will need to contact the other applicants to let them know the legal statement has been updated.
         </p>
+        
+        <div class="govuk-inset-text">
+          You will not be able to submit your application until all applicants have made their declaration.
+        </div>
 
-        <p class="govuk-body">
-          They can always see the most up to date version of the legal statement using the link we email them.
-        </p>
-
-        <h4 class="govuk-heading-s">
-          Heading TBC
+        <h4 class="govuk-heading-m">
+          Other applicants
         </h4>
 
         <dl class="govuk-summary-list">
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-quarter">
               {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['applicant_2-email'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../people_applying/joint_application/applicant_2-email.html">Change<span class="govuk-visually-hidden"> name</span></a>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <a class="govuk-link" href="../people_applying/joint_application/applicant_2-email.html">Change email address<span class="govuk-visually-hidden"> name</span></a>
             </dd>
         </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-quarter">
+            Ridiculously long name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Ridiculously long name @ ridiculously long email.com
+          </dd>
+          <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+            <a class="govuk-link" href="../people_applying/joint_application/applicant_2-email.html">Change email address<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+      </div>
 
         </dl>
 

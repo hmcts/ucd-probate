@@ -212,14 +212,19 @@ router.post('/deceased_children-answer', function(request, response) {
     }
 })
 
-router.post('/surviving_grandchildren-answer', function(request, response) {
+router.post('/surviving_grandchildren-answer', function (req, res) {
 
-    var sameName = request.session.data['surviving_grandchildren']
-    if (sameName == "Yes"){
-        response.redirect("intestacy/people_applying/grandchildren_over_18")
+    var survivingGrandchildren = req.session.data['surviving_grandchildren']
+    var deceasedChildren = req.session.data['deceased_children']
+    
+    if (survivingGrandchildren.includes("No") && deceasedChildren.includes("some")) {
+    res.redirect('intestacy/people_applying/children_over_18')
+    } else if (survivingGrandchildren.includes("No") && deceasedChildren.includes("all")){
+    res.redirect("intestacy/people_applying/applicant-name")
     } else {
-        response.redirect("intestacy/people_applying/applicant-name")
+    res.redirect("intestacy/people_applying/grandchildren_over_18")
     }
+
 })
 
 router.post('/grandchildren_over_18-answer', function(request, response) {
