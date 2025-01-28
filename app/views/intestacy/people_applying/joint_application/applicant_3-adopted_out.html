@@ -1,7 +1,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Was {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)? – {{ serviceName }} – GOV.UK Prototype Kit
+Was {{ data['applicant_3-name'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@ Was {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} legal
   
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--l" for="applicant_3-adoptedOut">
-                Was {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
+                Was {{ data['applicant_3-name'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
               </label>
             </h1>
     

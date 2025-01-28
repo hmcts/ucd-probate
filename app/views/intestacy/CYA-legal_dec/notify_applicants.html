@@ -54,7 +54,7 @@ Notify the other applicants  – {{ serviceName }} – GOV.UK Prototype Kit
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-quarter">
-              {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}
+              {{ data['applicant_2-name'] }}
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['applicant_2-email'] }}
@@ -62,19 +62,21 @@ Notify the other applicants  – {{ serviceName }} – GOV.UK Prototype Kit
             <dd class="govuk-summary-list__actions govuk-!-width-one-third">
               <a class="govuk-link" href="../people_applying/joint_application/applicant_2-email.html">Change email address<span class="govuk-visually-hidden"> name</span></a>
             </dd>
-        </div>
+          </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-quarter">
-            Ridiculously long name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Ridiculously long name @ ridiculously long email.com
-          </dd>
-          <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-            <a class="govuk-link" href="../people_applying/joint_application/applicant_2-email.html">Change email address<span class="govuk-visually-hidden"> name</span></a>
-          </dd>
-      </div>
+          {% if data['applicant_summary_2'] === "Yes" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-quarter">
+              {{ data['applicant_3-name'] }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['applicant_3-email'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+              <a class="govuk-link" href="../people_applying/joint_application/applicant_3-email.html">Change email address<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          {% endif%}
 
         </dl>
 
