@@ -1,7 +1,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Did the adoption take place in England or Wales? – {{ serviceName }} – GOV.UK Prototype Kit
+Are you sure you want to remove {{ data['applicant_2-name'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@ Did the adoption take place in England or Wales? – {{ serviceName }} – GOV.U
   
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--l" for="remove-applicant_3">
-                Are you sure you want to remove {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}?
+                Are you sure you want to remove {{ data['applicant_3-name'] }}?
               </label>
             </h1>
     

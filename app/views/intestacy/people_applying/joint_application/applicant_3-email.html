@@ -1,7 +1,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s email address? – {{ serviceName }} – GOV.UK Prototype Kit
+What is {{ data['applicant_3-name'] }}’s email address? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -14,12 +14,12 @@ What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}�
 
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="applicant_3-email">
-            What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s email address?
+            What is {{ data['applicant_3-name'] }}’s email address?
           </label>
         </h1>
 
         <p class="govuk-body">
-          We will send {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} an email to verify their identity and to confirm details of the estate.
+          We will send {{ data['applicant_3-name'] }} an email to verify their identity and to confirm details of the estate.
         </p>
 
         <div class="govuk-form-group">

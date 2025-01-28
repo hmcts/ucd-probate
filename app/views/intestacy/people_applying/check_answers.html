@@ -123,13 +123,13 @@
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
                     What is the other applicant’s name?
                   </dt>
-                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}</dd>
+                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_2-name'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-name">Change</a></dd>
               </div>
 
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                    What is {{ data['applicant_2-name'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_2-relationship'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-relationship">Change</a></dd>
@@ -137,7 +137,7 @@
           
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Was {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }} legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family?
+                    Was {{ data['applicant_2-name'] }} legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_2-adoptedIn'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-adopted_in">Change</a></dd>
@@ -156,7 +156,7 @@
               {% if data['applicant_2-adoptedIn'] === "No" %}
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Was {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
+                    Was {{ data['applicant_2-name'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_2-adoptedOut'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-adopted_out">Change</a></dd>
@@ -165,7 +165,7 @@
 
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s email address?
+                    What is {{ data['applicant_2-name'] }}’s email address?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_2-email'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-email">Change</a></dd>
@@ -173,7 +173,7 @@
 
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address?
+                    What is {{ data['applicant_2-name'] }}’s address?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_2-address_select'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-address">Change</a></dd>
@@ -190,13 +190,13 @@
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
                     What is the other applicant’s name?
                   </dt>
-                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}</dd>
+                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_3-name'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_3-name">Change</a></dd>
               </div>
 
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                    What is {{ data['applicant_3-name'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_3-relationship'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_3-relationship">Change</a></dd>
@@ -204,7 +204,7 @@
           
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Was {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family?
+                    Was {{ data['applicant_3-name'] }} legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_3-adoptedIn'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_3-adopted_in">Change</a></dd>
@@ -223,7 +223,7 @@
               {% if data['applicant_3-adoptedIn'] === "No" %}
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Was {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
+                    Was {{ data['applicant_3-name'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_3-adoptedOut'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_3-adopted_out">Change</a></dd>
@@ -232,7 +232,7 @@
 
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s email address?
+                    What is {{ data['applicant_3-name'] }}’s email address?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_3-email'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_3-email">Change</a></dd>
@@ -240,7 +240,7 @@
 
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s address?
+                    What is {{ data['applicant_3-name'] }}’s address?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_3-address_select'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_3-address">Change</a></dd>

@@ -1,7 +1,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address? – {{ serviceName }} – GOV.UK Prototype Kit
+What is {{ data['applicant_2-name'] }}’s address? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@ What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}�
 
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="applicant_2-address">
-            What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address?
+            What is {{ data['applicant_2-name'] }}’s address?
           </label>
         </h1>
 
@@ -24,7 +24,7 @@ What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}�
 
         <div class="govuk-!-padding-bottom-4">
           <label class="govuk-label" for="applicant_2-address_postcode">
-            Enter a UK postcode
+            UK postcode
           </label>
           <input class="govuk-input govuk-!-width-one-quarter" id="applicant_2-address_postcode" name="applicant_2-address_postcode" type="text" autocomplete="postal-code" value="{{ data['applicant_2-address_postcode'] }}">
           <a href="#" class="govuk-button govuk-button--secondary">
@@ -47,7 +47,7 @@ What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}�
         </div>
 
         <p class="govuk-body govuk-!-padding-bottom-4">
-          <a href="#" class="govuk-link govuk-link--no-visited-state">I can’t enter a UK postcode</a>
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Enter their address instead</a>
         </p>
 
         <button class="govuk-button" data-module="govuk-button">

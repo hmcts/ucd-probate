@@ -105,10 +105,18 @@
                   </thead>
                   <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                      <td scope="row" class="govuk-table__cell">{{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}</th>
+                      <td scope="row" class="govuk-table__cell">{{ data['applicant_2-name'] }}</th>
                       <td class="govuk-table__cell">Not declared</td>
                     </tr>
                   </tbody>
+                   {% if data['applicant_summary_2'] === "Yes" %}
+                   <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td scope="row" class="govuk-table__cell">{{ data['applicant_3-name'] }}</th>
+                      <td class="govuk-table__cell">Not declared</td>
+                    </tr>
+                  </tbody>
+                  {% endif%}
                 </table>
 
               </div>
@@ -173,4 +181,5 @@
 
     </div>
   </div>
+  
 {% endblock %}
