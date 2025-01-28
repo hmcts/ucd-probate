@@ -28,6 +28,18 @@ What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}â€
                   Child
                 </label>
               </div>
+
+              {% if data['grandchildren_over_18'] === "Yes" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applicant_3-relationship" name="applicant_3-relationship" type="radio" value="Grandchild" aria-describedby="applicant_3-relationship-item-hint">
+                <label class="govuk-label govuk-radios__label" for="applicant_3-relationship">
+                  Grandchild
+                </label>
+                <div id="applicant_3-relationship-item-hint" class="govuk-hint govuk-radios__hint">
+                  This can only be through any of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}â€™s children that died before {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}
+                </div>
+              </div>
+              {%endif %}
                 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="applicant_3-relationship-2" name="applicant_3-relationship" type="radio" value="Other">
