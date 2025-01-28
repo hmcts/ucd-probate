@@ -27,7 +27,7 @@ What is your address? – {{ serviceName }} – GOV.UK Prototype Kit
             Enter a UK postcode
           </label>
           <input class="govuk-input govuk-!-width-one-quarter" id="applicant-address_postcode" name="applicant-address_postcode" type="text" autocomplete="postal-code" value="{{ data['applicant-address_postcode'] }}">
-          <button class="govuk-button" data-module="govuk-button">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Find address
           </button>
         </div>
@@ -37,6 +37,10 @@ What is your address? – {{ serviceName }} – GOV.UK Prototype Kit
         </p>
 
       </div>
+
+      <a href="#" class="govuk-button">
+        Save and continue
+      </a>
 
       <p class="govuk-body">
         <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>

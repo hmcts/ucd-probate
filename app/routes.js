@@ -227,14 +227,19 @@ router.post('/surviving_grandchildren-answer', function (req, res) {
 
 })
 
-router.post('/grandchildren_over_18-answer', function(request, response) {
+router.post('/grandchildren_over_18-answer', function (req, res) {
 
-    var sameName = request.session.data['grandchildren_over_18']
-    if (sameName == "Yes"){
-        response.redirect("intestacy/people_applying/applicant-name")
+    var survivingGrandchildren = req.session.data['grandchildren_over_18']
+    var deceasedChildren = req.session.data['deceased_children']
+    
+    if (survivingGrandchildren.includes("Yes") && deceasedChildren.includes("some")) {
+    res.redirect('intestacy/people_applying/children_over_18')
+    } else if (survivingGrandchildren.includes("Yes") && deceasedChildren.includes("all")){
+    res.redirect("intestacy/people_applying/applicant-name")
     } else {
-        response.redirect("intestacy/people_applying/grandchild_under_18-cannot_apply_online")
+    res.redirect("intestacy/people_applying/grandchild_under_18-cannot_apply_online")
     }
+
 })
 
 router.post('/children_over_18-answer', function(request, response) {
@@ -250,7 +255,7 @@ router.post('/children_over_18-answer', function(request, response) {
 router.post('/applicant_summary', function(request, response) {
 
     var sameName = request.session.data['otherApplicants']
-    if (sameName == "yes"){
+    if (sameName == "Yes"){
         response.redirect("intestacy/people_applying/joint_application/applicant_2-name")
     } else {
         response.redirect("intestacy/CYA-legal_dec/task-list")
@@ -309,6 +314,16 @@ router.post('/applicant_summary_2', function(request, response) {
     }
 })
 
+router.post('/remove-applicant_2-answer', function(request, response) {
+
+    var sameName = request.session.data['remove-applicant_2']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/applicant_summary")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_summary-2")
+    }
+})
+
 router.post('/applicant_3-relationship_answer', function(request, response) {
 
     var sameName = request.session.data['applicant_3-relationship']
@@ -356,6 +371,16 @@ router.post('/applicant_summary_3', function(request, response) {
         response.redirect("intestacy/CYA-legal_dec/task-list")
     } else {
         response.redirect("#")
+    }
+})
+
+router.post('/remove-applicant_3-answer', function(request, response) {
+
+    var sameName = request.session.data['remove-applicant_3']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/joint_application/applicant_summary-2")
+    } else {
+        response.redirect("intestacy/people_applying/joint_application/applicant_summary-3")
     }
 })
 

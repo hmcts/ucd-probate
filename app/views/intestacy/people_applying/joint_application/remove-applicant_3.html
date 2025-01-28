@@ -1,46 +1,44 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address? – {{ serviceName }} – GOV.UK Prototype Kit
+Did the adoption take place in England or Wales? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="applicant_2-address_select" method="post" novalidate>
+    <form class="form" action="/remove-applicant_3-answer" method="post">
 
       <div class="govuk-form-group">
 
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="applicant_2-address">
-            What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address?
-          </label>
-        </h1>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="remove-applicant_3-hint">
+  
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="remove-applicant_3">
+                Are you sure you want to remove {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}?
+              </label>
+            </h1>
+    
+            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="remove-applicant_3" name="remove-applicant_3" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="remove-applicant_3">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="remove-applicant_3-2" name="remove-applicant_3" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="remove-applicant_3-2">
+                  No
+                </label>
+              </div>
+            </div>
 
-        <p class="govuk-body">
-          This will be printed on the grant of probate.
-        </p>
-
-        <div>
-          <label class="govuk-label" for="applicant_2-address_postcode">
-            Enter a UK postcode
-          </label>
-          <input class="govuk-input govuk-!-width-one-quarter" id="applicant_2-address_postcode" name="applicant_2-address_postcode" type="text" autocomplete="postal-code" value="{{ data['applicant_2-address_postcode'] }}">
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Find address
-          </button>
-        </div>
-
-        <p class="govuk-body">
-          <a href="#" class="govuk-link govuk-link--no-visited-state">I can’t enter a UK postcode</a>
-        </p>
-
-      </div>
-
-      <a href="#" class="govuk-button">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
-      </a>
+      </button>
 
       <p class="govuk-body">
         <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
