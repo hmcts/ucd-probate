@@ -37,13 +37,25 @@
                     <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="adopted_in">Change</a></dd>
                 </div>
             
+                {% if data['adoptedIn'] === "Yes" %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Did the adoption take place in England or Wales?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['adoption_jursdiction'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/adoption_jurisdiction">Change</a></dd>
+                </div>
+                {% endif%}
+            
+                {% if data['adoptedIn'] === "No" %}
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
                       Were you legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family (given up for adoption)?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['adoptedOut'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="adopted_out">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/adopted_out">Change</a></dd>
                 </div>
+                {% endif%}
         
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
