@@ -8,7 +8,7 @@ People applying for probate – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/applicant_summary_3" method="post" novalidate>
+    <form action="/applicant_summary_2" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -38,21 +38,9 @@ People applying for probate – {{ serviceName }} – GOV.UK Prototype Kit
               {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="applicant_2-name">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="remove-applicant_2">Remove<span class="govuk-visually-hidden"> name</span></a>
             </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
-              Applicant
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="applicant_3-name">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
+        </div>
 
         </dl>
 
@@ -82,14 +70,14 @@ People applying for probate – {{ serviceName }} – GOV.UK Prototype Kit
   
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="applicant_summary_3" name="applicant_summary_3" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="applicant_summary_3">
+                <input class="govuk-radios__input" id="applicant_summary_2" name="applicant_summary_2" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="applicant_summary_2">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="applicant_summary_3-2" name="applicant_summary_3" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="applicant_summary_3-2">
+                <input class="govuk-radios__input" id="applicant_summary_2-2" name="applicant_summary_2" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="applicant_summary_2-2">
                   No
                 </label>
               </div>

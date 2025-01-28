@@ -26,7 +26,7 @@
                         What is the full name of the person who died?
                     </dt>
                     <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-name">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/deceased-name">Change</a></dd>
                 </div>
 
                 <!--
@@ -44,7 +44,7 @@
                       What was the date that {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} died?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['deceased-DOD-day'] }}/{{ data['deceased-DOD-month'] }}/{{ data['deceased-DOD-year'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-DOD">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/deceased-DOD">Change</a></dd>
                 </div>
         
                 <div class="govuk-summary-list__row">
@@ -52,34 +52,302 @@
                         What was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s marital status?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['deceased-marital_status'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-marital_status">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/deceased-marital_status">Change</a></dd>
                 </div>
 
+                {% if data['divorceJurisdiction-answer'] %}
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
                         Did the divorce or dissolution take place in England or Wales?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['divorceJurisdiction-answer'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="divorce_jurisdiction">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/divorce_jurisdiction">Change</a></dd>
                 </div>
+                {% endif %}
 
+                {% if data['divorce_date-answer'] === "No, I do not know the date" %}
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
                         Do you know the date the divorce or dissolution took place?
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['divorce_date-answer'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="divorce_date">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/divorce_date">Change</a></dd>
                 </div>
+                {%endif %}
 
+                {% if data['divorce_date-day'] %}
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
                         Date of divorce or dissolution
                     </dt>
                     <dd class="govuk-summary-list__value">{{ data['divorce_date-day'] }}/{{ data['divorce_date-month'] }}/{{ data['divorce_date-year'] }}</dd>
-                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="divorce_date">Change</a></dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/divorce_date">Change</a></dd>
+                </div>
+                {%endif %}
+
+                {% if data['separationJurisdiction-answer'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Did the legal separation take place in England or Wales?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['separationJurisdiction-answer'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/separation_jurisdiction">Change</a></dd>
+                </div>
+                {% endif %}
+
+                {% if data['separation_date-answer'] === "No, I do not know the date" %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Do you know the date the legal separation took place?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['separation_date-answer'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/separation_date">Change</a></dd>
+                </div>
+                {%endif %}
+
+                {% if data['separation_date-day'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Date of legal separation
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['separation_date-day'] }}/{{ data['separation_date-month'] }}/{{ data['separation_date-year'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../person_who_died/separation_date">Change</a></dd>
+                </div>
+                {%endif %}
+
+            </dl>
+
+            <h3 class="govuk-heading-m">About the people applying</h3>
+            
+            <dl class="govuk-summary-list">
+    
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                      What is your relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['relationship'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/relationship-no_spouse">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Were you legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['adoptedIn'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/adopted_in">Change</a></dd>
+                </div>
+            
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Were you legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family (given up for adoption)?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['adoptedOut'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/adopted_out">Change</a></dd>
+                </div>
+        
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any other children?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['other_children'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/other_children">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Did any of these children die before {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['deceased_children'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/deceased_children">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Are all of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s children 18 or older?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['children_over_18'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/children_over_18">Change</a></dd>
                 </div>
 
             </dl>
+
+            <h4 class="govuk-heading-s">About you</h4>
+            
+            <dl class="govuk-summary-list">
+    
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                      What is your full name?
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/applicant-name">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      What is your phone number?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['applicantNumber'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/applicant-number">Change</a></dd>
+                </div>
+            
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      What is your address?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['applicant-address_select'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/applicant-address">Change</a></dd>
+                </div>
+
+            </dl>
+
+            <h5 class="govuk-heading-s">Other people applying for probate</h5>
+
+            <dl class="govuk-summary-list">
+    
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                    Do you want to apply with anyone else?
+                  </dt>
+                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['otherApplicants'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_summary-2">Change</a></dd>
+              </div>
+
+            </dl>
+
+            <h6 class="govuk-heading-s">Second person applying</h6>
+
+            <dl class="govuk-summary-list">
+        
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                    What is the other applicant’s name?
+                  </dt>
+                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-name">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_2-relationship'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-relationship">Change</a></dd>
+              </div>
+          
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Was {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }} legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_2-adoptedIn'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-adopted_in">Change</a></dd>
+              </div>
+
+              {% if data['applicant_2-adoptedIn'] === "Yes" %}
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Did the adoption take place in England or Wales?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_2-adoption_jursdiction'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-adoption_jurisdiction">Change</a></dd>
+              </div>
+              {% endif%}
+
+              {% if data['applicant_2-adoptedIn'] === "No" %}
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Was {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_2-adoptedOut'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-adopted_out">Change</a></dd>
+              </div>
+              {% endif%}
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s email address?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_2-email'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-email">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    What is {{ data['applicant_2-firstName'] }} {{ data['applicant_2-lastName'] }}’s address?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_2-address_select'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-address">Change</a></dd>
+              </div>
+
+           </dl>
+
+          {% if data['applicant_summary_2'] === "Yes" %}
+           <h7 class="govuk-heading-s">Third person applying</h7>
+
+            <dl class="govuk-summary-list">
+        
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                    What is the other applicant’s name?
+                  </dt>
+                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-name">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_3-relationship'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-relationship">Change</a></dd>
+              </div>
+          
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Was {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} legally adopted in to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_3-adoptedIn'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-adopted_in">Change</a></dd>
+              </div>
+
+              {% if data['applicant_3-adoptedIn'] === "Yes" %}
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Did the adoption take place in England or Wales?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_3-adoption_jursdiction'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-adoption_jurisdiction">Change</a></dd>
+              </div>
+              {% endif%}
+
+              {% if data['applicant_3-adoptedIn'] === "No" %}
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    Was {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }} legally adopted out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s family (given up for adoption)?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_3-adoptedOut'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-adopted_out">Change</a></dd>
+              </div>
+              {% endif%}
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s email address?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_3-email'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-email">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    What is {{ data['applicant_3-firstName'] }} {{ data['applicant_3-lastName'] }}’s address?
+                  </dt>
+                  <dd class="govuk-summary-list__value">{{ data['applicant_3-address_select'] }}</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-address">Change</a></dd>
+              </div>
+
+           </dl>
+          {% endif%}
 
         </div>
                 

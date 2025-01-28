@@ -85,6 +85,36 @@
                 </div>
                 {%endif %}
 
+                {% if data['separationJurisdiction-answer'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Did the legal separation take place in England or Wales?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['separationJurisdiction-answer'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="separation_jurisdiction">Change</a></dd>
+                </div>
+                {% endif %}
+
+                {% if data['separation_date-answer'] === "No, I do not know the date" %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Do you know the date the legal separation took place?
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['separation_date-answer'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="separation_date">Change</a></dd>
+                </div>
+                {%endif %}
+
+                {% if data['separation_date-day'] %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                      Date of legal separation
+                    </dt>
+                    <dd class="govuk-summary-list__value">{{ data['separation_date-day'] }}/{{ data['separation_date-month'] }}/{{ data['separation_date-year'] }}</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="separation_date">Change</a></dd>
+                </div>
+                {%endif %}
+
             </dl>
 
         </div>
