@@ -256,7 +256,7 @@ router.post('/applicant_summary', function(request, response) {
 
     var sameName = request.session.data['otherApplicants']
     if (sameName == "Yes"){
-        response.redirect("intestacy/people_applying/joint_application/applicant_2-name")
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-relationship")
     } else {
         response.redirect("intestacy/CYA-legal_dec/task-list")
     }
@@ -270,7 +270,7 @@ router.post('/applicant_2-relationship_answer', function(request, response) {
     if (sameName == "Other"){
         response.redirect("intestacy/people_applying/joint_application/applicant_2-not_entitled")
     } else {
-        response.redirect("intestacy/people_applying/joint_application/applicant_2-adopted_in")
+        response.redirect("intestacy/people_applying/joint_application/applicant_2-name")
     }
 })
 
@@ -308,7 +308,7 @@ router.post('/applicant_summary_2', function(request, response) {
 
     var sameName = request.session.data['applicant_summary_2']
     if (sameName == "Yes"){
-        response.redirect("intestacy/people_applying/joint_application/applicant_3-name")
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-relationship")
     } else {
         response.redirect("intestacy/CYA-legal_dec/task-list")
     }
@@ -330,7 +330,7 @@ router.post('/applicant_3-relationship_answer', function(request, response) {
     if (sameName == "Other"){
         response.redirect("intestacy/people_applying/joint_application/applicant_3-not_entitled")
     } else {
-        response.redirect("intestacy/people_applying/joint_application/applicant_3-adopted_in")
+        response.redirect("intestacy/people_applying/joint_application/applicant_3-name")
     }
 })
 

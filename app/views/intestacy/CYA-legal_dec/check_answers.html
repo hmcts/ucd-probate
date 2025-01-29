@@ -232,19 +232,19 @@
             <dl class="govuk-summary-list">
         
               <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  What is the other applicant’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                </dt>
+                <dd class="govuk-summary-list__value">{{ data['applicant_2-relationship'] }}</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-relationship">Change</a></dd>
+              </div>
+        
+              <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
                     What is the other applicant’s name?
                   </dt>
                   <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_2-name'] }}</dd>
-                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-name">Change</a></dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_2-name'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
-                  </dt>
-                  <dd class="govuk-summary-list__value">{{ data['applicant_2-relationship'] }}</dd>
-                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_2-relationship">Change</a></dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="joint_application/applicant_2-name">Change</a></dd>
               </div>
           
               <div class="govuk-summary-list__row">
@@ -297,21 +297,21 @@
            <h7 class="govuk-heading-s">Third person applying</h7>
 
             <dl class="govuk-summary-list">
-        
-              <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
-                    What is the other applicant’s name?
-                  </dt>
-                  <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_3-name'] }}</dd>
-                  <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-name">Change</a></dd>
-              </div>
 
               <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    What is {{ data['applicant_3-name'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                    What is the other applicant’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['applicant_3-relationship'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-relationship">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                  What is the other applicant’s name?
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">{{ data['applicant_3-name'] }}</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/joint_application/applicant_3-name">Change</a></dd>
               </div>
           
               <div class="govuk-summary-list__row">

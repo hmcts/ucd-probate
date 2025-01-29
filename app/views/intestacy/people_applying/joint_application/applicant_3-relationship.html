@@ -1,7 +1,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-What is {{ data['applicant_3-name'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
+What is the other applicant’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -16,9 +16,13 @@ What is {{ data['applicant_3-name'] }}’s relationship to {{ data['deceased-fir
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                What is {{ data['applicant_3-name'] }}’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+                What is the other applicant’s relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
               </h1>
             </legend>
+
+            <p class="govuk-body">
+              Based on the information you have given us, there are other people entitled to inherit who you can apply with.
+            </p>
 
             <div class="govuk-radios govuk-!-padding-bottom-4" data-module="govuk-radios">
               
