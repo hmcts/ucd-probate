@@ -1,0 +1,97 @@
+{% extends "layouts/co-applicant.html" %}
+
+{% block pageTitle %}
+Apply for probate - Apply for probate – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="deceased-DOD" method="post">
+
+        <h1 class="govuk-heading-l">
+          Apply for probate
+        </h1>
+
+        <p class="govuk-body">
+          APPLICANT NAME has started an application for a grant of probate to deal with DECEASED NAME’s estate, and has named you as an applicant.
+        </p>
+
+        <p class="govuk-body">This will give you the legal right to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>collect the estate’s assets (property, money and possessions)</li>
+            <li>pay any taxes and debts</li>
+            <li>distribute what is left to the people entitled to it</li>
+          </ul>
+
+        <p class="govuk-body">You will need to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>check the information Jane Doe has given is correct</li>
+            <li>confirm you agree with the legal statement</li>
+          </ul>
+        
+        <p class="govuk-body">
+          You will need DECEASED NAME’s date of death to access the legal statement.
+        </p>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Start now",
+          isStartButton: true
+        }) }}
+        
+        <h2 class="govuk-heading-m">
+          If you do not want to apply for probate
+        </h2>
+
+        <p class="govuk-body">
+          You can choose not to apply if you do not want to manage the estate. This does not affect your right to inherit.
+        </p>
+
+        <p class="govuk-body">You can either:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>let APPLICANT NAME apply without you</li>
+            <li>appoint someone else to apply on your behalf – you will need to <a href="https://www.gov.uk/government/publications/form-pa12-apply-for-power-of-attorney-intestate" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">complete Form PA12 (opens in a new tab)</a></li>
+          </ul>
+        
+          <p>
+            You will need to contact APPLICANT NAME and ask them to change the information they have given if you do not want to apply.
+          </p>
+        
+      </form>
+  
+      <!--
+      <details class="govuk-details">
+  
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Contact us for help
+          </span>
+        </summary>
+  
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Webchat</h3>
+            <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+          <h3 class="govuk-heading-s">Telephone</h3>
+            <p class="govuk-body">0300 303 0648</p>
+          <h3 class="govuk-heading-s">Email</h3>
+            <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+          <br>
+          <h3 class="govuk-heading-s">Opening times</h3>
+          <h3 class="govuk-heading-s">Telephone</h3>
+            <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+          <h3 class="govuk-heading-s">Webchat</h3>
+            <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+          <br>
+          <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+        </div>
+        
+      </details>
+      -->
+
+    </div>
+  </div>
+
+{% endblock %}
