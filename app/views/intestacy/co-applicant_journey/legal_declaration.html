@@ -10,6 +10,8 @@ Check the legal statement and make your declaration – {{ serviceName }} – GO
 
     <div class="govuk-width-container">
 
+      <form action="/declaration-answer" method="post" novalidate>
+
     <!-- Left panel -->
 
       <div class="govuk-grid-row">
@@ -21,7 +23,7 @@ Check the legal statement and make your declaration – {{ serviceName }} – GO
             </h1>
 
             <p class="govuk-body">
-              This statement is based on the information APPLICANT NAME has given in their application. It will be stored as a public record.
+              This statement is based on the information Max Mustermann has given in their application. It will be stored as a public record.
             </p>
 
         </div>
@@ -48,43 +50,58 @@ Check the legal statement and make your declaration – {{ serviceName }} – GO
               </h4>
 
               <p class="govuk-body">
-                We, {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}, of {{ data['applicant-address_select'] }}, and {{ data['applicant_2-name'] }}, of {{ data['applicant_2-address_select'] }}, make the following statement:
+                We, Max Mustermann, of 3 High Street, London SW11 6AA, and Caroline Gillis, of 76 Main Avenue, London, SW13 2LH, make the following statement:
               </p>
 
               <h5 class="govuk-heading-s">
                 The person who died
               </h5>
               <p class="govuk-body">
-                That {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}, died on {{ data['deceased-DOD-day'] }}/{{ data['deceased-DOD-month'] }}/{{ data['deceased-DOD-year'] }} intestate.
+                That Erika Mustermann, died on 29 November 2024 intestate.
               </p>
               <p class="govuk-body">
-                They were {{ data['deceased-marital_status'] }} and domiciled in England and Wales.
+                They were never married and domiciled in England and Wales.
               </p>
               <p class="govuk-body">
                 No children under 18 are entitled to the estate.
               </p>
 
               <h6 class="govuk-heading-s">
-                People applying for probate
+                The estate of the person who died
               </h6>
               <p class="govuk-body">
-                {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}, the child of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}, is applying for probate.
+                The gross value for the estate amounts to £265000.00 and the net value for the estate amounts to £245000.00.
+              </p>
+              <!--
+              <p class="govuk-body">
+                We confirm that the estate is an excepted estate.
+              </p>
+              -->
+              <p class="govuk-body">
+                To the best of our knowledge, information and belief, there was no land vested in Erika Mustermann which was settled previously to the death of Erika Mustermann and which remained settled land notwithstanding such death.
+              </p>
+
+              <h7 class="govuk-heading-s">
+                People applying for probate
+              </h7>
+              <p class="govuk-body">
+                Max Mustermann, the child of Erika Mustermann, is applying for probate.
               </p>
               <p class="govuk-body">
-                {{ data['applicant_2-name'] }}, the child of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}, is also applying for probate.
+                Caroline Gillis, the child of Erika Mustermann, is also applying for probate.
               </p>
               <p class="govuk-body">
                 We are some of the people now entitled to a share in the estate.
               </p>
               <p class="govuk-body">
-                We are applying for letters of administration. We have provided what we believe to be true and accurate information about {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}.
+                We are applying for letters of administration. We have provided what we believe to be true and accurate information about Erika Mustermann.
               </p>
 
-              <h7 class="govuk-heading-m">
+              <h8 class="govuk-heading-m">
                 Declaration
-              </h7>
+              </h8>
 
-              <p class="govuk-body">We confirm that we will administer the estate of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} according to law. We will:</p>
+              <p class="govuk-body">We confirm that we will administer the estate of Erika Mustermann according to law. We will:</p>
                 <ul class="govuk-list govuk-list--bullet">
                   <li>collect the whole estate</li>
                   <li>keep full details (an inventory) of the estate</li>
@@ -107,16 +124,40 @@ Check the legal statement and make your declaration – {{ serviceName }} – GO
 
           </div>
 
-          <div class="govuk-checkboxes govuk-!-padding-top-4" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="legal_dec" name="legal_dec" type="checkbox" value="confirm">
-              <label class="govuk-label govuk-checkboxes__label" for="legal_dec">
-                I confirm that I will administer the estate of the person who died according to law, and that my application is truthful.
-              </label>
-            </div>
+          <div class="govuk-form-group govuk-!-padding-top-4">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h9 class="govuk-fieldset__heading">
+                  Do you agree with this information?
+                </h9>
+              </legend>
+
+              <p class="govuk-body">
+                If you are not sure about any of the information in the legal statement, you should contact Max Mustermann before you continue.
+              </p>
+
+              <p class="govuk-body">
+                By agreeing, you confirm that you will administer Erika Mustermann’s estate according to law, and that your application is truthful.
+              </p>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="declaration" name="declaration" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="declaration">
+                    Yes, I agree that the information is correct
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="declaration-2" name="declaration" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="declaration-2">
+                    No, something is wrong with the information
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
 
-          <div class="govuk-warning-text govuk-!-padding-top-4">
+          <div class="govuk-warning-text govuk-!-padding-top-2">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-visually-hidden">Warning</span>
@@ -127,14 +168,9 @@ Check the legal statement and make your declaration – {{ serviceName }} – GO
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "Save and continue",
-            href:"notify_applicants"
+            text: "Submit your response"
           }) }}
 
-          <p class="govuk-body">
-            <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
-          </p>
-            
           <details class="govuk-details">
 
             <summary class="govuk-details__summary">
@@ -179,6 +215,8 @@ Check the legal statement and make your declaration – {{ serviceName }} – GO
         </p>
     
       </div> 
+
+    </form>
 
     </div> 
 </div>

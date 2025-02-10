@@ -1,7 +1,7 @@
 {% extends "layouts/co-applicant+back_link.html" %}
 
 {% block pageTitle %}
-What was the date that DECEASED NAME died? – {{ serviceName }} – GOV.UK Prototype Kit
+What was the date that Erika Mustermann died? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@ What was the date that DECEASED NAME died? – {{ serviceName }} – GOV.UK Prot
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#deceased-DOD-day">ERROR</a>
+                <a href="#deceased-DOD-day">Date of death does not match the date Max Mustermann has given</a>
               </li>
             </ul>
           </div>
@@ -27,20 +27,16 @@ What was the date that DECEASED NAME died? – {{ serviceName }} – GOV.UK Prot
 
       <div class="govuk-form-group">
 
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="deceased-DOD">
-            What was the date that DECEASED NAME died?
-          </label>
-        </h1>
-
-        <p class="govuk-body">
-          Before making an application we need to confirm who you are.
-        </p>
-
         <div class="govuk-form-group--error">
 
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="deceased-DOD">
+              What was the date that Erika Mustermann died?
+            </label>
+          </h1>
+
           <p id="passport-issued-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> ERROR
+            <span class="govuk-visually-hidden">Error:</span> Date of death does not match the date Max Mustermann has given
           </p>
 
           <div id="deceased-DOD-hint" class="govuk-hint">
@@ -83,7 +79,7 @@ What was the date that DECEASED NAME died? – {{ serviceName }} – GOV.UK Prot
             </span>
           </summary>
           <div class="govuk-details__text">
-            Content
+            You can find the date of death on the death certificate. If you do not have this, ask Max Mustermann to tell you.
           </div>
         </details>
 

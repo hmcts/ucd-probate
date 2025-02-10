@@ -1,0 +1,69 @@
+{% extends "layouts/co-applicant.html" %}
+
+{% block pageTitle %}
+You have disagreed with the legal statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="#" method="post">
+
+      <h1 class="govuk-heading-l">
+        You have disagreed with the legal statement
+      </h1>
+
+      <p class="govuk-body">
+        You now need to contact Max Mustermann to discuss changing the information they have given.
+      </p>
+
+      <p>
+        As soon as Max Mustermann updates the information, they should contact you. You will then be able to access the updated legal statement using the same link we emailed you.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        If you cannot reach an agreement
+      </h2>
+
+      <p class="govuk-body">
+        Probate staff cannot help with any disagreements between applicants. You will need to find another way to reach an agreement, which may include <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">getting legal advice (opens in a new tab)</a>.
+      </p>
+
+      <p>
+        Max Mustermann will not be able to submit the application until all applicants have agreed with the legal statement and made their declaration.
+      </p>
+      
+    </form>
+
+    <details class="govuk-details govuk-!-padding-top-4">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+
+  </div>
+</div>
+
+{% endblock %}

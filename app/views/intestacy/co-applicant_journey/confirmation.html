@@ -1,0 +1,39 @@
+{% extends "layouts/co-applicant.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "You have made your legal declaration"
+      }) }}
+
+      <p>
+        Once all applicants have made their legal declaration, Max Mustermann can complete and submit the application.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        Max Mustermann should get the grant of probate within 12 weeks of submitting the application. It can take longer if they need to provide additional information.
+      </p>
+
+      <p>
+        Contact Max Mustermann if you need an update on the application.
+      </p>
+
+      <p>
+        Once you have the grant of probate, you can <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">start dealing with the estate (opens in a new tab)</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
