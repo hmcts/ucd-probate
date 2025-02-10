@@ -384,6 +384,18 @@ router.post('/remove-applicant_3-answer', function(request, response) {
     }
 })
 
+// co-applicant journey
+
+router.post('/declaration-answer', function(request, response) {
+
+    var sameName = request.session.data['declaration']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/co-applicant_journey/confirmation")
+    } else {
+        response.redirect("intestacy/co-applicant_journey/disagree")
+    }
+})
+
 // co-executor journey
 
 router.post('/applicant-name_answer', function(request, response) {

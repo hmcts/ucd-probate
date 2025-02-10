@@ -1,54 +1,42 @@
-{% extends "layouts/co-applicant+back_link.html" %}
+{% extends "layouts/co-applicant.html" %}
 
 {% block pageTitle %}
-You have been named as an applicant – {{ serviceName }} – GOV.UK Prototype Kit
+You have disagreed with the legal statement – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="legal_declaration" method="post">
+    <form class="form" action="#" method="post">
 
       <h1 class="govuk-heading-l">
-        You have been named as an applicant
+        You have disagreed with the legal statement
       </h1>
 
       <p class="govuk-body">
-        APPLICANT NAME has started an application for a grant of probate to deal with DECEASED NAME’s estate, and has named you as an applicant.
+        You now need to contact Max Mustermann to discuss changing the information they have given.
+      </p>
+
+      <p>
+        As soon as Max Mustermann updates the information, they should contact you. You will then be able to access the updated legal statement using the same link we emailed you.
       </p>
 
       <h2 class="govuk-heading-m">
-        What you need to do
+        If you cannot reach an agreement
       </h2>
 
       <p class="govuk-body">
-        Check that the legal statement based on the information APPLICANT NAME has given is correct and tell us if you agree with it.
+        Probate staff cannot help with any disagreements between applicants. You will need to find another way to reach an agreement, which may include <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">getting legal advice (opens in a new tab)</a>.
       </p>
 
-      <h3 class="govuk-heading-m">
-        If you do not agree with the information
-      </h3>
-
-      <p class="govuk-body">You will need to contact APPLICANT NAME if:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>you disagree with the information they have given</li>
-          <li>you have questions about the information</li>
-        </ul>
-      
-      <p class="govuk-body">
-        You will need DECEASED NAME’s date of death to access the legal statement.
+      <p>
+        Max Mustermann will not be able to submit the application until all applicants have agreed with the legal statement and made their declaration.
       </p>
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
       
     </form>
 
-    <details class="govuk-details">
+    <details class="govuk-details govuk-!-padding-top-4">
 
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
