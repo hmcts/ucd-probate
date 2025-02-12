@@ -1,3 +1,4 @@
 {
-  "serviceName": "Apply for probate"
+  "serviceName": "Apply for probate",
+  "useAuth": "False"
 }
