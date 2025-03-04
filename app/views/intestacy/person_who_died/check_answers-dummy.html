@@ -1,0 +1,215 @@
+
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-full">
+                        
+        <div>
+            <h1 class="govuk-heading-l">
+              Check your answers
+            </h1>
+                    
+            <p class="govuk-body">
+                Check the information below carefully. This will form a record of your application for probate. It will also be stored as a public record, and will be able to be viewed online.
+            </p>
+
+            <h2 class="govuk-heading-m">
+              About the person who died
+            </h2>
+            
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Do you require a bilingual grant in English and Welsh?	
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">No</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  First name and any middle names
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">Max</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-name">Change</a></dd>
+              </div>
+    
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Last name
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">Mustermann</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-name">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  What was Max Mustermann’s date of birth?
+                </dt>
+                <dd class="govuk-summary-list__value">30 April 1973</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-DOB">Change</a></dd>
+              </div>
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  What was the date that Max Mustermann died?
+                </dt>
+                <dd class="govuk-summary-list__value">20 January 2025</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-DOD">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Did Max Mustermann have assets in another name?	
+                </dt>
+                <dd class="govuk-summary-list__value">No</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                    What was Max Mustermann's marital status?
+                </dt>
+                <dd class="govuk-summary-list__value">Never married or never in a civil partnership</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="deceased-marital_status">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Did Max Mustermann die in England or Wales?	
+                </dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  What was Max Mustermann's permanent address at the time of their death?
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">5 Quay Street, London, SW11 1PL</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Do you have a death certificate or an interim death certificate?		
+                </dt>
+                <dd class="govuk-summary-list__value">Death certificate	</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+            </dl>
+
+            <h3 class="govuk-heading-m">
+              Inheritance tax
+            </h3>
+
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Have you checked whether you need to report the estate value to HMRC?		
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">Yes</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Which forms did you submit to HMRC?			
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">No forms required</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Gross estate value for IHT:<br><br>for the estate for inheritance tax in £
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">300000</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Net estate value for IHT:<br><br>for the estate for inheritance tax in £	
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">300000</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Net qualifying estate value for IHT:<br><br>in £
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">300000</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Gross value for probate in £		
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">300000</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-font-weight-regular  govuk-!-width-one-half">
+                  Net value for probate in £	
+                </dt>
+                <dd class="govuk-summary-list__value govuk-!-width-one-half">300000</dd>
+                <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#">Change</a></dd>
+              </div>
+
+            </dl>
+
+        </div>
+                
+            <br>
+                
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+                {{ govukButton({
+                  text: "Save and continue",
+                  href:"../people_applying/task-list"
+                }) }}
+            
+                <details class="govuk-details">
+
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Contact us for help
+                      </span>
+                    </summary>
+
+                    <div class="govuk-details__text">
+                      <h3 class="govuk-heading-s">Webchat</h3>
+                        <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+                      <h3 class="govuk-heading-s">Telephone</h3>
+                        <p class="govuk-body">0300 303 0648</p>
+                      <h3 class="govuk-heading-s">Email</h3>
+                        <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+                      <br>
+                      <h3 class="govuk-heading-s">Opening times</h3>
+                      <h3 class="govuk-heading-s">Telephone</h3>
+                        <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+                      <h3 class="govuk-heading-s">Webchat</h3>
+                        <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+                      <br>
+                      <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+                    </div>
+
+                </details>
+        
+    </div>
+</div>
+
+{% endblock %}

@@ -155,6 +155,8 @@ router.post('/relationship-answer', function(request, response) {
         response.redirect("intestacy/people_applying/adopted_in")
     } else if (sameName == "I am their parent"){
         response.redirect("intestacy/people_applying/adopted_in")
+    } else if (sameName == "I am their sibling"){
+        response.redirect("intestacy/people_applying/living_descendants")
     } else if (sameName == "other"){
         response.redirect("intestacy/people_applying/relationship-cannot_apply_online")
     } else {
