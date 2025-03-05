@@ -1,47 +1,36 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Does {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any living descendants? – {{ serviceName }} – GOV.UK Prototype Kit
+Was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} legally adopted? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/living_descendants-answer" method="post">
+    <form class="form" action="/deceased-adopted_in-answer" method="post">
 
       <div class="govuk-form-group">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="living_descendants-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="deceased_adoptedIn-hint">
   
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="living_descendants">
-                Does {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any living descendants?
+              <label class="govuk-label govuk-label--l" for="deceased_adoptedIn">
+                Was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} legally adopted?
               </label>
             </h1>
-
-            <p class="govuk-body">These are {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>children</li>
-                <li>grandchildren</li>
-                <li>great-grandchildren</li>
-              </ul>
-            
-            <p class="govuk-body">
-              This includes anyone who was legally adopted (either in or out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family), but not any stepchildren or their descendants.
-            </p>
     
             <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="living_descendants" name="living_descendants" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="living_descendants">
+                <input class="govuk-radios__input" id="deceased_adoptedIn" name="deceased_adoptedIn" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="deceased_adoptedIn">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="living_descendants-2" name="living_descendants" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="living_descendants-2">
+                <input class="govuk-radios__input" id="deceased_adoptedIn-2" name="deceased_adoptedIn" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="deceased_adoptedIn-2">
                   No
                 </label>
               </div>

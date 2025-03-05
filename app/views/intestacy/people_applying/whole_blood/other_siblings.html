@@ -1,47 +1,46 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Does {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any living descendants? – {{ serviceName }} – GOV.UK Prototype Kit
+Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any other siblings who have the same parents? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/living_descendants-answer" method="post">
+    <form class="form" action="/whole-other_siblings-answer" method="post">
 
       <div class="govuk-form-group">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="living_descendants-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="whole-other_siblings-hint">
   
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="living_descendants">
-                Does {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any living descendants?
+              <label class="govuk-label govuk-label--l" for="whole-other_siblings">
+                Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} have any other siblings who have the same parents?
               </label>
             </h1>
 
-            <p class="govuk-body">These are {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s:</p>
+            <p class="govuk-body">We need to know about all siblings {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} had who have the same parents, including any siblings who:</p>
               <ul class="govuk-list govuk-list--bullet">
-                <li>children</li>
-                <li>grandchildren</li>
-                <li>great-grandchildren</li>
+                <li>were legally adopted or given up for adoption by both parents</li>
+                <li>have died, either before or after {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}</li>
               </ul>
             
             <p class="govuk-body">
-              This includes anyone who was legally adopted (either in or out of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s family), but not any stepchildren or their descendants.
+              This does not include any step-siblings.
             </p>
     
             <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="living_descendants" name="living_descendants" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="living_descendants">
+                <input class="govuk-radios__input" id="whole-other_siblings" name="whole-other_siblings" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="whole-other_siblings">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="living_descendants-2" name="living_descendants" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="living_descendants-2">
+                <input class="govuk-radios__input" id="whole-other_siblings-2" name="whole-other_siblings" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="whole-other_siblings-2">
                   No
                 </label>
               </div>
