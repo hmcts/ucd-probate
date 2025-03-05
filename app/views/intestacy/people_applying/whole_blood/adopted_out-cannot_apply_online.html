@@ -1,4 +1,3 @@
-
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
@@ -17,15 +16,15 @@ You cannot apply for probate online – {{ serviceName }} – GOV.UK Prototype K
       <form class="form" action="#" method="post">
 
         <p class="govuk-body">
-          As your relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} is not listed, you cannot use the online service to apply for probate. 
+          You cannot use the online service if you were adopted out of the family.
         </p>
 
         <p class="govuk-body">
-          You may still be able to apply for probate by post. <a href="https://www.gov.uk/inherits-someone-dies-without-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Check if you are the most entitled person to apply (opens in a new tab)</a> before you start.
+          You may still be entitled to apply in some situations, but we will need to ask you for more information.
         </p>
 
         <p class="govuk-body govuk-!-padding-bottom-4">
-          If you are the most entitled person, you can use <a href="https://www.gov.uk/government/publications/apply-for-probate-by-post-if-there-is-not-a-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Form PA1A (opens in a new tab)</a> to apply.
+          You can apply for probate by post using <a href="https://www.gov.uk/government/publications/apply-for-probate-by-post-if-there-is-not-a-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Form PA1A (opens in a new tab)</a> instead.
         </p>
 
         <details class="govuk-details">

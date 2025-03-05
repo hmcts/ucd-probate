@@ -204,6 +204,108 @@ router.post('/other_children-answer', function(request, response) {
     }
 })
 
+router.post('/living_descendants-answer', function(request, response) {
+
+    var sameName = request.session.data['living_descendants']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/living_descendants-not_entitled")
+    } else {
+        response.redirect("intestacy/people_applying/living_parents")
+    }
+})
+
+router.post('/living_parents-answer', function(request, response) {
+
+    var sameName = request.session.data['living_parents']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/living_parents-not_entitled")
+    } else {
+        response.redirect("intestacy/people_applying/deceased-adopted_in")
+    }
+})
+
+router.post('/deceased-adopted_in-answer', function(request, response) {
+
+    var sameName = request.session.data['deceased_adoptedIn']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/deceased-adopted_out")
+    } else {
+        response.redirect("intestacy/people_applying/deceased-adoption_jurisdiction")
+    }
+})
+
+router.post('/deceased-adoption_jurisdiction-answer', function(request, response) {
+
+    var sameName = request.session.data['deceased-adoption_jurisdiction']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/deceased-adoption_jurisdiction-cannot_apply_online")
+    } else {
+        response.redirect("intestacy/people_applying/same_parents")
+    }
+})
+
+router.post('/deceased-adopted_out-answer', function(request, response) {
+
+    var sameName = request.session.data['deceased_adoptedOut']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/same_parents")
+    } else {
+        response.redirect("intestacy/people_applying/deceased-adopted_out-cannot_apply_online")
+    }
+})
+
+router.post('/same_parents-answer', function(request, response) {
+
+    var sameName = request.session.data['same_parents']
+    if (sameName == "Both of my parents are the same"){
+        response.redirect("intestacy/people_applying/whole_blood/adopted_in")
+    } else if (sameName == "One of my parents is the same"){
+        response.redirect("intestacy/people_applying/half_blood")
+    } else {
+        response.redirect("intestacy/people_applying/same_parents-not_entitled")
+    }
+})
+
+router.post('/whole-adopted_in-answer', function(request, response) {
+
+    var sameName = request.session.data['whole_adoptedIn']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/whole_blood/adopted_out")
+    } else {
+        response.redirect("intestacy/people_applying/whole_blood/adoption_jurisdiction")
+    }
+})
+
+router.post('/whole-adoption_jurisdiction-answer', function(request, response) {
+
+    var sameName = request.session.data['whole-adoption_jurisdiction']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/whole_blood/adoption_jurisdiction-cannot_apply_online")
+    } else {
+        response.redirect("intestacy/people_applying/whole_blood/other_siblings")
+    }
+})
+
+router.post('/whole-adopted_out-answer', function(request, response) {
+
+    var sameName = request.session.data['whole_adoptedOut']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/whole_blood/other_siblings")
+    } else {
+        response.redirect("intestacy/people_applying/whole_blood/adopted_out-cannot_apply_online")
+    }
+})
+
+router.post('/whole-other_siblings-answer', function(request, response) {
+
+    var sameName = request.session.data['whole-other_siblings']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/deceased_siblings")
+    } else {
+        response.redirect("intestacy/people_applying/applicant-name")
+    }
+})
+
 router.post('/deceased_children-answer', function(request, response) {
 
     var sameName = request.session.data['deceased_children']
@@ -211,6 +313,16 @@ router.post('/deceased_children-answer', function(request, response) {
         response.redirect("intestacy/people_applying/children_over_18")
     } else {
         response.redirect("intestacy/people_applying/surviving_grandchildren")
+    }
+})
+
+router.post('/deceased_sibling-answer', function(request, response) {
+
+    var sameName = request.session.data['deceased_sibling']
+    if (sameName == "No"){
+        response.redirect("intestacy/people_applying/sibling_over_18")
+    } else {
+        response.redirect("intestacy/people_applying/surviving_niblings")
     }
 })
 
@@ -225,6 +337,21 @@ router.post('/surviving_grandchildren-answer', function (req, res) {
     res.redirect("intestacy/people_applying/applicant-name")
     } else {
     res.redirect("intestacy/people_applying/grandchildren_over_18")
+    }
+
+})
+
+router.post('/surviving_niblings-answer', function (req, res) {
+
+    var survivingNiblings = req.session.data['surviving_niblings']
+    var deceasedSiblings = req.session.data['deceased_siblings']
+    
+    if (survivingNiblings.includes("No") && deceasedSiblings.includes("some")) {
+    res.redirect('intestacy/people_applying/siblings_over_18')
+    } else if (survivingNiblings.includes("No") && deceasedSiblings.includes("all")){
+    res.redirect("intestacy/people_applying/applicant-name")
+    } else {
+    res.redirect("intestacy/people_applying/niblings_over_18")
     }
 
 })

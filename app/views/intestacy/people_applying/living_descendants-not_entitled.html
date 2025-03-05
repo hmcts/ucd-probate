@@ -2,7 +2,7 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-You cannot apply for probate online – {{ serviceName }} – GOV.UK Prototype Kit
+You are not entitled to apply – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -11,21 +11,21 @@ You cannot apply for probate online – {{ serviceName }} – GOV.UK Prototype K
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        You cannot apply for probate online
+        You are not entitled to apply
       </h1>
 
       <form class="form" action="#" method="post">
 
         <p class="govuk-body">
-          As your relationship to {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} is not listed, you cannot use the online service to apply for probate. 
+          As you have told us that {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} has living descendants, you are not the most entitled person to apply for probate.
         </p>
 
         <p class="govuk-body">
-          You may still be able to apply for probate by post. <a href="https://www.gov.uk/inherits-someone-dies-without-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Check if you are the most entitled person to apply (opens in a new tab)</a> before you start.
+          You can <a href="https://www.gov.uk/inherits-someone-dies-without-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">use the inheritance calculator (opens in a new tab)</a> to work out who is the most entitled to apply.
         </p>
 
         <p class="govuk-body govuk-!-padding-bottom-4">
-          If you are the most entitled person, you can use <a href="https://www.gov.uk/government/publications/apply-for-probate-by-post-if-there-is-not-a-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Form PA1A (opens in a new tab)</a> to apply.
+          If the most entitled person is under the age of 18, whoever has parental responsibility for them can apply by post on their behalf <a href="https://www.gov.uk/government/publications/apply-for-probate-by-post-if-there-is-not-a-will" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">using Form PA1A (opens in a new tab)</a> to apply.
         </p>
 
         <details class="govuk-details">
