@@ -26,21 +26,44 @@ What is the other applicant’s relationship to {{ data['deceased-firstName'] }}
 
             <div class="govuk-radios govuk-!-padding-bottom-4" data-module="govuk-radios">
               
+              {% if data['other_children'] === "Yes" %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="applicant_3-relationship" name="applicant_3-relationship" type="radio" value="Child">
-                <label class="govuk-label govuk-radios__label" for="applicant_3-relationship">
+                <input class="govuk-radios__input" id="applicant_2-relationship" name="applicant_2-relationship" type="radio" value="Child">
+                <label class="govuk-label govuk-radios__label" for="applicant_2-relationship">
                   Child
                 </label>
               </div>
+              {%endif %}  
 
               {% if data['grandchildren_over_18'] === "Yes" %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="applicant_3-relationship" name="applicant_3-relationship" type="radio" value="Grandchild" aria-describedby="applicant_3-relationship-item-hint">
-                <label class="govuk-label govuk-radios__label" for="applicant_3-relationship">
+                <input class="govuk-radios__input" id="applicant_2-relationship-2" name="applicant_2-relationship" type="radio" value="Grandchild" aria-describedby="applicant_2-relationship-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="applicant_2-relationship-2">
                   Grandchild
                 </label>
-                <div id="applicant_3-relationship-item-hint" class="govuk-hint govuk-radios__hint">
+                <div id="applicant_2-relationship-2-item-hint" class="govuk-hint govuk-radios__hint">
                   This can only be through any of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s children that died before {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}
+                </div>
+              </div>
+              {%endif %}
+
+              {% if data['whole-other_siblings'] === "Yes" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applicant_2-relationship-3" name="applicant_2-relationship" type="radio" value="Sibling">
+                <label class="govuk-label govuk-radios__label" for="applicant_2-relationship-3">
+                  Sibling
+                </label>
+              </div>
+              {%endif %}
+              
+              {% if data['niblings_over_18'] === "Yes" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applicant_2-relationship-4" name="applicant_2-relationship" type="radio" value="Grandchild" aria-describedby="applicant_2-relationship-4-item-hint">
+                <label class="govuk-label govuk-radios__label" for="applicant_2-relationship-4">
+                  Niece or nephew
+                </label>
+                <div id="applicant_2-relationship-4-item-hint" class="govuk-hint govuk-radios__hint">
+                  This can only be through any of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s siblings that died before {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}
                 </div>
               </div>
               {%endif %}

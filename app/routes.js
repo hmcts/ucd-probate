@@ -316,11 +316,11 @@ router.post('/deceased_children-answer', function(request, response) {
     }
 })
 
-router.post('/deceased_sibling-answer', function(request, response) {
+router.post('/deceased_siblings-answer', function(request, response) {
 
-    var sameName = request.session.data['deceased_sibling']
+    var sameName = request.session.data['deceased_siblings']
     if (sameName == "No"){
-        response.redirect("intestacy/people_applying/sibling_over_18")
+        response.redirect("intestacy/people_applying/siblings_over_18")
     } else {
         response.redirect("intestacy/people_applying/surviving_niblings")
     }
@@ -346,9 +346,9 @@ router.post('/surviving_niblings-answer', function (req, res) {
     var survivingNiblings = req.session.data['surviving_niblings']
     var deceasedSiblings = req.session.data['deceased_siblings']
     
-    if (survivingNiblings.includes("No") && deceasedSiblings.includes("some")) {
+    if (survivingNiblings.includes("No") && deceasedSiblings.includes("Yes, some of them")) {
     res.redirect('intestacy/people_applying/siblings_over_18')
-    } else if (survivingNiblings.includes("No") && deceasedSiblings.includes("all")){
+    } else if (survivingNiblings.includes("No") && deceasedSiblings.includes("Yes, all of them")){
     res.redirect("intestacy/people_applying/applicant-name")
     } else {
     res.redirect("intestacy/people_applying/niblings_over_18")
@@ -371,6 +371,21 @@ router.post('/grandchildren_over_18-answer', function (req, res) {
 
 })
 
+router.post('/niblings_over_18-answer', function (req, res) {
+
+    var survivingGrandchildren = req.session.data['niblings_over_18']
+    var deceasedChildren = req.session.data['deceased_siblings']
+    
+    if (survivingGrandchildren.includes("Yes") && deceasedChildren.includes("Yes, some of them")) {
+    res.redirect('intestacy/people_applying/siblings_over_18')
+    } else if (survivingGrandchildren.includes("Yes") && deceasedChildren.includes("Yes, all of them")){
+    res.redirect("intestacy/people_applying/applicant-name")
+    } else {
+    res.redirect("intestacy/people_applying/niblings_under_18-cannot_apply_online")
+    }
+
+})
+
 router.post('/children_over_18-answer', function(request, response) {
 
     var sameName = request.session.data['children_over_18']
@@ -378,6 +393,16 @@ router.post('/children_over_18-answer', function(request, response) {
         response.redirect("intestacy/people_applying/applicant-name")
     } else {
         response.redirect("intestacy/people_applying/child_under_18-cannot_apply_online")
+    }
+})
+
+router.post('/siblings_over_18-answer', function(request, response) {
+
+    var sameName = request.session.data['siblings_over_18']
+    if (sameName == "Yes"){
+        response.redirect("intestacy/people_applying/applicant-name")
+    } else {
+        response.redirect("intestacy/people_applying/siblings_under_18-cannot_apply_online")
     }
 })
 
