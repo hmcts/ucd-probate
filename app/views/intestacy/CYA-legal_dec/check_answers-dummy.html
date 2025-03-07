@@ -264,7 +264,7 @@
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} adopted?
+                    Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s parents legally adopt them in to their family?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['deceased_adoptedIn'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/deceased-adopted_in">Change</a></dd>
@@ -272,7 +272,7 @@
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} legally adopted out of the family (given up for adoption)?
+                    Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s parents legally adopt them out of their family (give them up for adoption)?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['deceased_adoptedOut'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/deceased-adopted_out">Change</a></dd>
@@ -290,7 +290,7 @@
                 {% if data['same_parents'] === "Both of my parents are the same" %}
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Did your parents ({{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s parents) legally adopt you in to the family?
+                    Did your parents ({{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s parents) legally adopt you in to their family?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['whole_adoptedIn'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/whole_blood/adopted_in">Change</a></dd>
@@ -310,7 +310,7 @@
                 {% if data['whole_adoptedIn'] === "No" %}
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                    Did your parents ({{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s parents) legally adopt you out of the family (given up for adoption)?
+                    Did your parents ({{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s parents) legally adopt you out of their family (given up for adoption)?
                   </dt>
                   <dd class="govuk-summary-list__value">{{ data['whole_adoptedOut'] }}</dd>
                   <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="../people_applying/whole_blood/adopted_out">Change</a></dd>
