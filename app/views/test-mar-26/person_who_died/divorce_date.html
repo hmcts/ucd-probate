@@ -1,0 +1,123 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+Do you know the date the divorce or dissolution took place? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="../people_applying/task-list" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="divorce_date-answer">
+            Do you know the date the divorce or dissolution took place?
+          </label>
+        </h1>
+
+        <p class="govuk-body">
+          You can find the date on the decree absolute or final order. 
+        </p>
+
+        <p class="govuk-body">
+          If you do not have this, you can <a href="https://www.gov.uk/copy-decree-absolute-final-order" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">get an official copy of the decree absolute or final order (opens in a new tab)</a>.
+        </p>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="divorce_date-answer" name="divorce_date-answer" type="radio" value="Yes, I know the date" data-aria-controls="conditional-divorce_date-answer">
+            <label class="govuk-label govuk-radios__label" for="divorce_date-answer">
+              Yes, I know the date
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-divorce_date-answer">
+            <label class="govuk-label govuk-!-padding-bottom-2" for="divorce_date">
+              Date of divorce or dissolution
+            </label>
+            <div class="govuk-date-input" id="divorce_date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="divorce_date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="divorce_date-day" name="divorce_date-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="divorce_date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="divorce_date-month" name="divorce_date-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="divorce_date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="divorce_date-year" name="divorce_date-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="divorce_date-answer-2" name="divorce_date-answer" type="radio" value="No, I do not know the date" aria-describedby="divorce_date-answer-item-hint">
+              <label class="govuk-label govuk-radios__label" for="divorce_date-answer-2">
+                No, I do not know the date
+              </label>
+              <div id="divorce_date-answer-item-hint" class="govuk-hint govuk-radios__hint">
+                A caseworker will need to ask you for more information which may delay your application
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

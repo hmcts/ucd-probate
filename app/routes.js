@@ -731,3 +731,27 @@ router.post('/not-applying_reason2', function(request, response) {
         response.redirect("co-executor_journey/E&D-questions")
     }
 })
+
+// usability testing Mar 2026
+
+router.post('/marital_status', (req, res) => {   
+
+  
+  let deceased_marital_status = req.session.data['deceased-marital_status']
+
+  if (deceased_marital_status === "Divorced or had ended their civil partnership (also known as a dissolution)") {        
+    return res.redirect('/test-mar-26/person_who_died/divorce_jurisdiction');  
+    
+  } else if (deceased_marital_status === "Married or in a civil partnership") { 
+    return res.redirect('/test-mar-26/person_who_died/spouse-name');
+    
+  } else if (deceased_marital_status === "Legally separated (also known as judicially separated)") {        
+    return res.redirect('/test-mar-26/person_who_died/separation_jurisdiction');
+
+  } else if (deceased_marital_status === "Widowed or surviving civil partner") {  
+    return res.redirect('/test-mar-26/person_who_died/deceased-was-widowed');
+
+  } else {       
+    return res.redirect('/test-mar-26/task-list-2');    
+  }
+});
