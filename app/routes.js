@@ -556,9 +556,9 @@ router.post('/applicant-name_answer', function(request, response) {
 
     var sameName = request.session.data['sameName']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/applicant-number")
+        response.redirect("test-mar-26/executors/applicant-number")
     } else {
-        response.redirect("co-executor_journey/applicant-alias")
+        response.redirect("test-mar-26/executors/applicant-alias")
     }
 })
 
@@ -566,9 +566,9 @@ router.post('/other-executors', function(request, response) {
 
     var sameName = request.session.data['otherExecutors']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-name")
+        response.redirect("test-mar-26/executors/executor-name")
     } else {
-        response.redirect("co-executor_journey/E&D-questions")
+        response.redirect("test-mar-26/executors/E&D-questions")
     }
 })
 
@@ -576,9 +576,9 @@ router.post('/other-executors_2', function(request, response) {
 
     var sameName = request.session.data['2otherExecutors']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-name_2")
+        response.redirect("test-mar-26/executors/executor-name_2")
     } else {
-        response.redirect("co-executor_journey/deceased-executor")
+        response.redirect("test-mar-26/executors/deceased-executor")
     }
 })
 
@@ -586,9 +586,9 @@ router.post('/other-executors_3', function(request, response) {
 
     var sameName = request.session.data['3otherExecutors']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-name_3")
+        response.redirect("test-mar-26/executors/executor-name_3")
     } else {
-        response.redirect("co-executor_journey/deceased-executors")
+        response.redirect("test-mar-26/executors/deceased-executors")
     }
 })
 
@@ -596,9 +596,9 @@ router.post('/other-executors_4', function(request, response) {
 
     var sameName = request.session.data['4otherExecutors']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-name_4")
+        response.redirect("test-mar-26/executors/executor-name_4")
     } else {
-        response.redirect("co-executor_journey/deceased-executors")
+        response.redirect("test-mar-26/executors/deceased-executors")
     }
 })
 
@@ -606,9 +606,9 @@ router.post('/other-executors_5', function(request, response) {
 
     var sameName = request.session.data['5otherExecutors']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-summary_5")
+        response.redirect("test-mar-26/executors/executor-summary_5")
     } else {
-        response.redirect("co-executor_journey/deceased-executors")
+        response.redirect("test-mar-26/executors/deceased-executors")
     }
 })
 
@@ -616,9 +616,9 @@ router.post('/remove-executor_answer', function(request, response) {
 
     var sameName = request.session.data['removeExecutor']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-summary")
+        response.redirect("test-mar-26/executors/executor-summary")
     } else {
-        response.redirect("co-executor_journey/executor-summary_2")
+        response.redirect("test-mar-26/executors/executor-summary_2")
     }
 })
 
@@ -626,9 +626,9 @@ router.post('/remove-executor_answer2', function(request, response) {
 
     var sameName = request.session.data['removeExecutor2']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-summary_2")
+        response.redirect("test-mar-26/executors/executor-summary_2")
     } else {
-        response.redirect("co-executor_journey/executor-summary_3")
+        response.redirect("test-mar-26/executors/executor-summary_3")
     }
 })
 
@@ -636,9 +636,9 @@ router.post('/remove-executor_answer3', function(request, response) {
 
     var sameName = request.session.data['removeExecutor3']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-summary_3")
+        response.redirect("test-mar-26/executors/executor-summary_3")
     } else {
-        response.redirect("co-executor_journey/executor-summary_4")
+        response.redirect("test-mar-26/executors/executor-summary_4")
     }
 })
 
@@ -646,9 +646,9 @@ router.post('/remove-executor_answer4', function(request, response) {
 
     var sameName = request.session.data['removeExecutor4']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-summary_4")
+        response.redirect("test-mar-26/executors/executor-summary_4")
     } else {
-        response.redirect("co-executor_journey/executor-summary_5")
+        response.redirect("test-mar-26/executors/executor-summary_5")
     }
 })
 
@@ -656,9 +656,9 @@ router.post('/deceased-executor-answer', function(request, response) {
 
     var sameName = request.session.data['deceasedExecutor']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-deceased_before")
+        response.redirect("test-mar-26/executors/executor-deceased_before")
     } else {
-        response.redirect("co-executor_journey/executor-applying")
+        response.redirect("test-mar-26/executors/executor-applying")
     }
 })
 
@@ -666,9 +666,9 @@ router.post('/deceased-executors-answer', function(request, response) {
 
     var sameName = request.session.data['deceasedExecutors']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/deceased-executors_select")
+        response.redirect("test-mar-26/executors/deceased-executors_select")
     } else {
-        response.redirect("co-executor_journey/executors-applying")
+        response.redirect("test-mar-26/executors/executors-applying")
     }
 })
 
@@ -676,9 +676,9 @@ router.post('/selected-deceased_executors', function(request, response) {
 
     var exports = request.session.data['select-deceasedExecutors']
     if (exports.includes("johnDoe")){
-        response.redirect("co-executor_journey/executor-deceased_before2")
+        response.redirect("test-mar-26/executors/executor-deceased_before2")
     } else {
-        response.redirect("co-executor_journey//executors-applying")
+        response.redirect("test-mar-26/executors//executors-applying")
     }
 })
 
@@ -686,9 +686,9 @@ router.post('/applying-executor', function(request, response) {
 
     var sameName = request.session.data['applyingExecutor']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-name_match")
+        response.redirect("test-mar-26/executors/executor-name_match")
     } else {
-        response.redirect("co-executor_journey/executor-not_applying")
+        response.redirect("test-mar-26/executors/executor-not_applying")
     }
 })
 
@@ -696,9 +696,9 @@ router.post('/executor-name-answer', function(request, response) {
 
     var sameName = request.session.data['executorName-answer']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-alias")
+        response.redirect("test-mar-26/executors/executor-alias")
     } else {
-        response.redirect("co-executor_journey/executor-not_applying")
+        response.redirect("test-mar-26/executors/executor-not_applying")
     }
 })
 
@@ -706,9 +706,9 @@ router.post('/executor-name2-answer', function(request, response) {
 
     var sameName = request.session.data['executorName2-answer']
     if (sameName == "yes"){
-        response.redirect("co-executor_journey/executor-alias2")
+        response.redirect("test-mar-26/executors/executor-alias2")
     } else {
-        response.redirect("co-executor_journey/executor-contact2")
+        response.redirect("test-mar-26/executors/executor-contact2")
     }
 })
 
@@ -716,9 +716,9 @@ router.post('/not-applying_reason', function(request, response) {
 
     var sameName = request.session.data['not-applyingReason']
     if (sameName == "powerReserved"){
-        response.redirect("co-executor_journey/executor-power_reserved")
+        response.redirect("test-mar-26/executors/executor-power_reserved")
     } else {
-        response.redirect("co-executor_journey/E&D-questions")
+        response.redirect("test-mar-26/executors/E&D-questions")
     }
 })
 
@@ -726,13 +726,20 @@ router.post('/not-applying_reason2', function(request, response) {
 
     var sameName = request.session.data['not-applyingReason2']
     if (sameName == "powerReserved"){
-        response.redirect("co-executor_journey/executor-power_reserved2")
+        response.redirect("test-mar-26/executors/executor-power_reserved2")
     } else {
-        response.redirect("co-executor_journey/E&D-questions")
+        response.redirect("test-mar-26/executors/E&D-questions")
     }
 })
 
 // usability testing Mar 2026
+
+router.post('/deceased-place-death', function (req, res) {
+  req.session.data['placeofdeath'] = req.body.placeofdeath
+  res.redirect('/test-mar-26/person_who_died/marital-status')
+})
+
+
 
 router.post('/marital_status', (req, res) => {   
 
@@ -754,4 +761,122 @@ router.post('/marital_status', (req, res) => {
   } else {       
     return res.redirect('/test-mar-26/task-list-2');    
   }
-});
+})
+
+
+router.post('/separation-answer', function(request, response) {
+
+    var sameName = request.session.data['separationJurisdiction-answer']
+    if (sameName == "Yes"){
+        response.redirect("test-mar-26/person_who_died/separation_date")
+    } else {
+        response.redirect("test-mar-26/person_who_died/separated-apply_by_post")
+    }
+})
+
+
+router.post('/divorce-answer', function(request, response) {
+
+    var sameName = request.session.data['divorceJurisdiction-answer']
+    if (sameName == "Yes"){
+        response.redirect("test-mar-26/person_who_died/divorce_date")
+    } else {
+        response.redirect("test-mar-26/person_who_died/divorced-apply_by_post")
+    }
+})
+
+router.post('/applicant-name_will', function(request, response) {
+
+    var sameName = request.session.data['sameName']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/applicant-number")
+    } else {
+        response.redirect("test-mar-26/executors/applicant-alias")
+    }
+})
+
+
+// testing mar 2026 - executors
+
+
+router.post('/other-executors-will_1', function(request, response) {
+
+    var sameName = request.session.data['otherExecutors']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-name")
+    } else {
+        response.redirect("test-mar-26/executors/E&D-questions")
+    }
+})
+
+router.post('/other-executors-will_2', function(request, response) {
+
+    var sameName = request.session.data['2otherExecutors']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-name_2")
+    } else {
+        response.redirect("test-mar-26/executors/deceased-executor")
+    }
+})
+
+router.post('/other-executors-will_3', function(request, response) {
+
+    var sameName = request.session.data['3otherExecutors']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-name_3")
+    } else {
+        response.redirect("test-mar-26/executors/deceased-executors")
+    }
+})
+
+router.post('/other-executors-will_4', function(request, response) {
+
+    var sameName = request.session.data['4otherExecutors']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-name_4")
+    } else {
+        response.redirect("test-mar-26/executors/deceased-executors")
+    }
+})
+
+
+
+router.post('/remove-executor_answer', function(request, response) {
+
+    var sameName = request.session.data['removeExecutor']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-summary")
+    } else {
+        response.redirect("test-mar-26/executors/executor-summary_2")
+    }
+})
+
+router.post('/remove-executor_answer2', function(request, response) {
+
+    var sameName = request.session.data['removeExecutor2']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-summary_2")
+    } else {
+        response.redirect("test-mar-26/executors/executor-summary_3")
+    }
+})
+
+router.post('/remove-executor_answer3', function(request, response) {
+
+    var sameName = request.session.data['removeExecutor3']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-summary_3")
+    } else {
+        response.redirect("test-mar-26/executors/executor-summary_4")
+    }
+})
+
+router.post('/remove-executor_answer4', function(request, response) {
+
+    var sameName = request.session.data['removeExecutor4']
+    if (sameName == "yes"){
+        response.redirect("test-mar-26/executors/executor-summary_4")
+    } else {
+        response.redirect("test-mar-26/executors/executor-summary_5")
+    }
+})

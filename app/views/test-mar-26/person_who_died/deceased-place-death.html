@@ -8,12 +8,12 @@ What was the date that {{ data['deceased-firstName'] }} {{ data['deceased-lastNa
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="marital-status" method="post" novalidate>
+    <form action="/deceased-place-death" method="post" novalidate>
 
 
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+  <fieldset class="govuk-fieldset" >
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
       Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} die in England or Wales?
@@ -22,14 +22,15 @@ What was the date that {{ data['deceased-firstName'] }} {{ data['deceased-lastNa
 
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="changedName">
+        <input class="govuk-radios__input" id="placeofdeath" name="placeofdeath" type="radio" value="Yes"  {{ 'checked' if data['placeofdeath'] == 'Yes' }}>
+        <label class="govuk-label govuk-radios__label" for="placeofdeath" >
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="changedName-2">
+        <input class="govuk-radios__input" id="placeofdeath-2" name="placeofdeath" type="radio" value="No"
+          {{ 'checked' if data['placeofdeath'] == 'No' }}>
+        <label class="govuk-label govuk-radios__label" for="placeofdeath-2">
           No
         </label>
       </div>

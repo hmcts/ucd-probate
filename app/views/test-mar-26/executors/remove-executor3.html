@@ -1,47 +1,48 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Did the divorce or dissolution take place in England or Wales? – {{ serviceName }} – GOV.UK Prototype Kit
+  Are you sure you want to remove {{ data['executor4-willName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/divorce-answer" method="post">
+    <form class="govuk-form" action="/remove-executor_answer3" method="post">
 
       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="removeExecutor">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="divorceJurisdiction-answer-hint">
-  
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="divorceJurisdiction-answer">
-                Did the divorce or dissolution take place in England or Wales?
+          <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+            <label class="govuk-label govuk-label--l" for="removeExecutor">
+              Are you sure you want to remove {{ data['executor4-willName'] }}?
+            </label>
+          </h1>
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="removeExecutor3" name="removeExecutor3" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="removeExecutor3">
+                Yes
               </label>
-            </h1>
-    
-            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="divorceJurisdiction-answer" name="divorceJurisdiction-answer" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="divorceJurisdiction-answer">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="divorceJurisdiction-answer-2" name="divorceJurisdiction-answer" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="divorceJurisdiction-answer-2">
-                  No
-                </label>
-              </div>
             </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="removeExecutor3-2" name="removeExecutor3" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="removeExecutor3-2">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
 
       <p class="govuk-body">
-        <a href="../task-list-1.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

@@ -9,20 +9,35 @@ What was {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s ma
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<form method="post" action="#" novalidate>
+<form action="will-timing" method="post" novalidate>
 
 
 
-      <div class="govuk-form-group">
+  <h1 class="govuk-heading-l">What is {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s husband's, wife's or civil partner's name?</h1>
 
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="deceased-marital_status">
-            What was the name of {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}’s deceased spouse or civil partner?
-          </label>
-        </h1>
 
-       
-      </div>
+  <p class="govuk-body">If they are mentioned in the will or any codicils, enter their name exactly how it is written there.</p>
+
+
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-body" for="dead-spouse-name">
+Full name of  {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s husband, wife or civil partner
+    </label>
+  </h1>
+
+
+
+    <!-- <div id="alive-spouse-name-hint" class="govuk-hint">
+    If {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}'s husband, wife or civil partner is mentioned in the will or any codicils, enter their name exactly how it is written there.
+  </div> -->
+   <input class="govuk-input" id="dead-spouse-name" name="deceased spouse name" type="text" value="{{ data['deceased spouse name'] }}">
+</div>
+</div>
+
+</div>
+
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue

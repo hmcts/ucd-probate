@@ -1,0 +1,229 @@
+
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-full">
+                        
+        <div>
+            <h1 class="govuk-heading-l">Check your answers</h1>
+                    
+            <p class="govuk-body">
+                Check the information below carefully. This will form a record of your application for probate. It will also be stored as a public record, and will be able to be viewed online.
+            </p>
+
+            <h2 class="govuk-heading-m">About the person who died</h2>
+            
+            <dl class="govuk-summary-list">
+                
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Do you require a bilingual grant in English and Welsh?
+                    </dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        What is the full name of the person who died?
+                    </dt>
+                    <dd class="govuk-summary-list__value">Jane Elizabeth Doe</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        Is {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} exactly how the name is written on the will?
+                    </dt>
+                    <dd class="govuk-summary-list__value">Yes</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        What was their date of birth?
+                    </dt>
+                    <dd class="govuk-summary-list__value">4 October 1949</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+            
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        What was the date that they died?
+                    </dt>
+                    <dd class="govuk-summary-list__value">30 May 2024</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        What was the permanent address at the time of their death?
+                    </dt>
+                    <dd class="govuk-summary-list__value">1 Main Street, London, SW1H 9AB</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        Did Jane Elizabeth Doe die in England or Wales?
+                    </dt>
+                    <dd class="govuk-summary-list__value">Yes</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        Do you have a death certificate or an interim death certificate?
+                    </dt>
+                    <dd class="govuk-summary-list__value">Death certificate</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        Did Jane Elizabeth Doe have any assets outside of the England or Wales?
+                    </dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        Did Jane Elizabeth Doe have assets in another name?
+                    </dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+        
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                        Did Jane Elizabeth Doe get married or enter into a civil partnership after the will was signed?                            </h1>
+                    </dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+            </dl>
+
+            <h2 class="govuk-heading-m">Condition of the will</h2>
+            
+            <dl class="govuk-summary-list">
+                
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Does the will have any damage or marks?
+                    </dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+            </dl>
+
+            <h2 class="govuk-heading-m">Condition of the codicils</h2>
+            
+            <dl class="govuk-summary-list">
+                
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Were any codicils made to the will?
+                    </dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Did the person who died leave any other written wishes?
+                    </dt>
+                    <dd class="govuk-summary-list__value">No</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+                
+            </dl>
+
+            <h2 class="govuk-heading-m">Inheritance tax</h2>
+            
+            <dl class="govuk-summary-list">
+                
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Have you checked whether you need to report the estate value to HMRC?
+                    </dt>
+                    <dd class="govuk-summary-list__value">Yes</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Which forms did you submit to HMRC?
+                    </dt>
+                    <dd class="govuk-summary-list__value">No forms required</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Gross value for probate
+                    </dt>
+                    <dd class="govuk-summary-list__value">£250000</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-half">
+                        Net value for probate
+                    </dt>
+                    <dd class="govuk-summary-list__value">£250000</dd>
+                    <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#">Change</a></dd>
+                </div>
+                
+            </dl>
+
+        </div>
+                
+            <br>
+                
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+                {{ govukButton({
+                  text: "Save and continue",
+                  href:"task-list.html"
+                }) }}
+            
+                <details class="govuk-details">
+
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Contact us for help
+                      </span>
+                    </summary>
+
+                    <div class="govuk-details__text">
+                      <h3 class="govuk-heading-s">Webchat</h3>
+                        <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+                      <h3 class="govuk-heading-s">Telephone</h3>
+                        <p class="govuk-body">0300 303 0648</p>
+                      <h3 class="govuk-heading-s">Email</h3>
+                        <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+                      <br>
+                      <h3 class="govuk-heading-s">Opening times</h3>
+                      <h3 class="govuk-heading-s">Telephone</h3>
+                        <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+                      <h3 class="govuk-heading-s">Webchat</h3>
+                        <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+                      <br>
+                      <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+                    </div>
+
+                </details>
+        
+    </div>
+</div>
+
+{% endblock %}

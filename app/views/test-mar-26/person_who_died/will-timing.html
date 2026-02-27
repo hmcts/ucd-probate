@@ -1,36 +1,36 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Did the divorce or dissolution take place in England or Wales? – {{ serviceName }} – GOV.UK Prototype Kit
+Did the legal separation take place in England or Wales? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/divorce-answer" method="post">
+    <form class="form" action="../task-list-2" method="post">
 
       <div class="govuk-form-group">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="divorceJurisdiction-answer-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="will-timing-hint">
   
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="divorceJurisdiction-answer">
-                Did the divorce or dissolution take place in England or Wales?
+              <label class="govuk-label govuk-label--l" for="will-timing">
+                Did {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }} get married or form a civil partnership after the will was signed?
               </label>
             </h1>
     
             <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="divorceJurisdiction-answer" name="divorceJurisdiction-answer" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="divorceJurisdiction-answer">
+                <input class="govuk-radios__input" id="will-timing" name="will-timing" type="radio" value="Yes" {{ 'checked' if data['will-timing'] == 'Yes' }}>
+                <label class="govuk-label govuk-radios__label" for="will-timing">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="divorceJurisdiction-answer-2" name="divorceJurisdiction-answer" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="divorceJurisdiction-answer-2">
+                <input class="govuk-radios__input" id="will-timing-2" name="will-timing" type="radio" value="No" {{ 'checked' if data['will-timing'] == 'No' }}>
+                <label class="govuk-label govuk-radios__label" for="will-timing-2">
                   No
                 </label>
               </div>

@@ -1,47 +1,39 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-Did the divorce or dissolution take place in England or Wales? – {{ serviceName }} – GOV.UK Prototype Kit
+How is Deborah Elizabeth Doe’s name written in their passport or other form of ID?   – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/divorce-answer" method="post">
+    <form action="executor-alias_reason2" method="post" novalidate>
 
       <div class="govuk-form-group">
 
+        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+          <label class="govuk-label govuk-label--l" for="executor3-idName">
+            How is Deborah Elizabeth Doe's name written in their passport or other form of ID?
+          </label>
+        </h1>
+
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="divorceJurisdiction-answer-hint">
-  
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="divorceJurisdiction-answer">
-                Did the divorce or dissolution take place in England or Wales?
-              </label>
-            </h1>
+          <label class="govuk-label" for="width-20">
+            Name
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor3-idName" name="executor3-idName" type="text" value="{{ data['executor3-idName'] }}" maxlength="100">
+        </div>
+
+      </div>
     
-            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="divorceJurisdiction-answer" name="divorceJurisdiction-answer" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="divorceJurisdiction-answer">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="divorceJurisdiction-answer-2" name="divorceJurisdiction-answer" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="divorceJurisdiction-answer-2">
-                  No
-                </label>
-              </div>
-            </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
 
       <p class="govuk-body">
-        <a href="../task-list-1.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

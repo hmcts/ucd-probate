@@ -1,0 +1,130 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+What is Deborah Elizabeth Mustermann’s address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="executor-address_select2" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+          <label class="govuk-label govuk-label--l">
+            What is Deborah Elizabeth Mustermann’s address?
+          </label>
+        </h1>
+
+        <p class="govuk-hint">
+          This will be printed on the grant of probate.
+        </p>
+
+        <div>
+          <label class="govuk-label" for="executor2-address-postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-!-width-one-quarter" id="executor2-address-postcode" name="executor2-address-postcode" type="text" autocomplete="postal-code" value="{{ data['executor2-address-postcode'] }}">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Find UK address
+          </button>
+        </div>
+
+        <details class="govuk-details" id="details-panel" data-module="govuk-details">
+
+          <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Enter their address instead</span>
+          </summary>
+
+          <div class="govuk-details__text">
+                                  
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="executor2-addressLine1">
+                    Address
+                  </label>
+                  <input class="govuk-input govuk-!-width-three-quarters" id="executor2-address" name="executor2-addressLine1" type="text" value="" autocomplete="off" maxlength="150">
+              </div>
+
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="executor2-addressLine2">
+                    Address Line 2 (optional)
+                  </label>
+                  <input class="govuk-input govuk-!-width-three-quarters" id="executor2-addressLine2" name="executor2-addressLine2" type="text" value="" autocomplete="off" maxlength="50">
+              </div>
+
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="executor2-addressLine3">
+                    Address Line 3 (optional)
+                  </label>
+                  <input class="govuk-input govuk-!-width-three-quarters" id="executor2-addressLine3" name="executor2-addressLine3" type="text" value="" autocomplete="off" maxlength="50">
+              </div>
+
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="executor2-postTown">
+                    Town or city
+                  </label>
+                  <input class="govuk-input govuk-!-width-three-quarters" id="executor2-postTown" name="executor2-postTown" type="text" value="" autocomplete="off" maxlength="50">
+              </div>
+
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="executor2-newPostCode">
+                    Postcode
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-quarter" id="executor2-newPostCode" name="executor2-newPostCode" type="text" value="" autocomplete="off" maxlength="14">
+              </div>                      
+
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="executor2-country">
+                    Country (optional)
+                  </label>
+                  <input class="govuk-input govuk-!-width-three-quarters" id="executor2-country" name="executor2-country" type="text" value="" autocomplete="off" maxlength="50">
+              </div>
+          </div>
+
+        </details>
+
+      </div>
+
+    </form>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+    </p>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

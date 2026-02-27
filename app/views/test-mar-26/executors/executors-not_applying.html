@@ -1,0 +1,95 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Why is Stephen Thomas Doe not applying for probate? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/not-applying_reason2" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4">
+              Why is Stephen Thomas Doe not applying for probate?
+            </h1>
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="not-applyingReason2" name="not-applyingReason2" type="radio" value="powerReserved" data-aria-controls="conditional-not-applyingReason2">
+              <label class="govuk-label govuk-radios__label" for="not-applyingReason2">
+                Stephen Thomas Doe is reserving the right to apply later (also known as holding ‘power reserved’) and has informed you of this in writing
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason2">
+              <div class="govuk-form-group">
+                <p class="govuk-body" for="not-applyingReason-powerReserved">
+                  You will need to inform them in writing that you are making this application.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="not-applyingReason2-2" name="not-applyingReason2" type="radio" value="renunciation" data-aria-controls="conditional-not-applyingReason2-2">
+              <label class="govuk-label govuk-radios__label" for="not-applyingReason2-2">
+                Stephen Thomas Doe is giving up their right to apply permanently (also known as ‘renunciation’)
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason2-2">
+              <div class="govuk-form-group">
+                <p class="govuk-body" for="not-applyingReason-renunciation">
+                  You will need to send us their completed <a href="https://www.gov.uk/government/publications/form-pa15-give-up-probate-executor-rights" class="govuk-link" rel="noreferrer noopener" target="_blank">PA15 renunciation form (opens in a new tab)</a> along with your other documents.
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </fieldset>
+      </div>  
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

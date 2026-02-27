@@ -1,0 +1,116 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Executors applying for probate – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/applying-executor" method="post">
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-heading-l">
+            Executors applying for probate
+        </h1>
+
+        <p class="govuk-body">
+          Up to 4 executors, including yourself, can be named on the application and the grant of probate.
+        </p>
+
+        <p class="govuk-body">All executors will be given the legal right to deal with Jane Elizabeth Doe’s estate. This includes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>collecting the estate’s assets (property, money and possessions)</li>
+            <li>paying any taxes and debts</li>
+            <li>distributing what is left to the people entitled to it (the ‘beneficiaries’)</li>
+          </ul>
+
+        <p class="govuk-body">
+          We will contact the other executors and ask them to check the information you have provided in this application and confirm that it is correct.
+        </p>
+
+        <details class="govuk-details">
+
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              If an executor does not want to apply
+            </span>
+          </summary>
+
+          <div class="govuk-details__text">
+            <p class="govuk-body">If any executor does not want to deal with the estate, they will have to either:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>reserve the right to apply later – this is known as holding ‘power reserved’ and they will have to inform you of this in writing</li>
+                <li>permanently give up their right to apply – this is known as ‘renunciation’ and they will have to fill in a form to do this</li>
+              </ul>
+          </div>
+
+        </details>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="applyingExecutor-hint">
+  
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="applyingExecutor">
+                Does {{ data['executor2-willName'] }} also want to apply for probate?
+              </label>
+            </h1>
+  
+            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applyingExecutor" name="applyingExecutor" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="applyingExecutor">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="applyingExecutor-2" name="applyingExecutor" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="applyingExecutor-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

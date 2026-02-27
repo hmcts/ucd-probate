@@ -1,0 +1,88 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+What are {{ data['executor2-willName'] }}’s contact details? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="executor-address" method="post" novalidate>
+
+      <div class="govuk-form-group">
+
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l">
+            What are {{ data['executor2-willName'] }}’s contact details?
+          </label>
+        </h1>
+
+        <p class="govuk-body govuk-!-padding-top-4">
+          We will send {{ data['executor2-willName'] }} an email and text message to verify their identity and to confirm details of the estate.
+        </p>
+
+        <p class="govuk-body">
+          You must provide their current email address and mobile phone number. For international numbers include the country code.
+        </p>
+
+        <div class="govuk-form-group govuk-!-padding-top-2">
+          <label class="govuk-label" for="width-20">
+            Email address
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor-email" name="executor-email" type="text" value="{{ data['executor-email'] }}" maxlength="100">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-padding-top-2" for="width-20">
+            Phone number
+          </label>
+          <p class="govuk-hint">
+            For example, 07700900900 or +39133457090
+          </p>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor-number" name="executor-number" type="text" value="{{ data['executor-number'] }}" maxlength="100">
+        </div>
+
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}

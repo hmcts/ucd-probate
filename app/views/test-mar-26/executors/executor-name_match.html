@@ -1,0 +1,95 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Is the name ‘{{ data['executor2-willName'] }}’ different to how it appears on their passport or other form of ID? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/executor-name-answer" method="post">
+
+      <div class="govuk-form-group">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="executorName-answer-hint">
+  
+            <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+              <label class="govuk-label govuk-label--l" for="executorName-answer">
+                Is the name ‘{{ data['executor2-willName'] }}’ different to how it appears on their passport or other form of ID?
+              </label>
+            </h1>
+
+            <p class="govuk-body">
+              You should make sure that this is the same form of identification {{ data['executor2-willName'] }} will use when they are dealing with Jane Elizabeth Doe’s estate.
+            </p>
+    
+            <p class="govuk-body">Their name could be different because:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>{{ data['executor2-willName'] }} changed their name after the will was made</li>
+                <li>part of {{ data['executor2-willName'] }}’s name was not included in the will</li>
+                <li>there was a spelling mistake in the will</li>
+                <li>{{ data['executor2-willName'] }} is also known by a different name</li>
+              </ul>
+    
+            <p class="govuk-body">
+              If there is a difference, you’ll be able to tell us why later.
+            </p>
+  
+            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="executorName-answer" name="executorName-answer" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="executorName-answer">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="executorName-answer-2" name="executorName-answer" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="executorName-answer-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}
