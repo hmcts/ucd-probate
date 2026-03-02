@@ -1,14 +1,16 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Is the name ‘{{ data['executor2-willName'] }}’ different to how it appears on their passport or other form of ID? – {{ serviceName }} – GOV.UK Prototype Kit
+ It the executor neame different to how it appears on their passport or other form of ID? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+{% set applying = data['select-applyingExecutors'] or [] %}
+{% set selectedExecutor = applying[0] or 'executor2' %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/executor-name-answer" method="post">
+    <form class="form" action="/executor-name-match-answer" method="post">
 
       <div class="govuk-form-group">
 
@@ -17,20 +19,20 @@
   
             <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
               <label class="govuk-label govuk-label--l" for="executorName-answer">
-                Is the name ‘{{ data['executor2-willName'] }}’ different to how it appears on their passport or other form of ID?
+  Is the name '{{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }}' different to how it appears on their passport or other form of ID?
               </label>
             </h1>
 
             <p class="govuk-body">
-              You should make sure that this is the same form of identification {{ data['executor2-willName'] }} will use when they are dealing with Jane Elizabeth Doe’s estate.
+  You should make sure that this is the same form of identification {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }} will use when they are dealing with Jane Elizabeth Doe’s estate.
             </p>
     
             <p class="govuk-body">Their name could be different because:</p>
               <ul class="govuk-list govuk-list--bullet">
-                <li>{{ data['executor2-willName'] }} changed their name after the will was made</li>
-                <li>part of {{ data['executor2-willName'] }}’s name was not included in the will</li>
+                <li>{{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }} changed their name after the will was made</li>
+                <li>part of {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }}’s name was not included in the will</li>
                 <li>there was a spelling mistake in the will</li>
-                <li>{{ data['executor2-willName'] }} is also known by a different name</li>
+                <li>{{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }} is also known by a different name</li>
               </ul>
     
             <p class="govuk-body">
@@ -39,13 +41,13 @@
   
             <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="executorName-answer" name="executorName-answer" type="radio" value="yes">
+                <input class="govuk-radios__input" id="executorName-answer" name="executorName-answer" type="radio" value="Yes">
                 <label class="govuk-label govuk-radios__label" for="executorName-answer">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="executorName-answer-2" name="executorName-answer" type="radio" value="no">
+                <input class="govuk-radios__input" id="executorName-answer-2" name="executorName-answer" type="radio" value="No">
                 <label class="govuk-label govuk-radios__label" for="executorName-answer-2">
                   No
                 </label>
@@ -57,7 +59,7 @@
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

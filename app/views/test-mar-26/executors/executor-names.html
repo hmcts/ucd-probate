@@ -1,48 +1,47 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Are you sure you want to remove {{ data['executor3-willName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
+  How is the executor’s name written in the will or codicil? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="govuk-form" action="/remove-executor_answer2" method="post">
+    <form action="executor-add" method="post" novalidate>
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="removeExecutor">
 
-          <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
-            <label class="govuk-label govuk-label--l" for="removeExecutor2">
-              Are you sure you want to remove {{ data['executor3-willName'] }}?
-            </label>
-          </h1>
+        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+          <label class="govuk-label govuk-label--l" for="executor2-willName">
+            How is the executor’s name written in the will or codicil?
+          </label>
+        </h1>
 
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removeExecutor2" name="removeExecutor2" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="removeExecutor2">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="removeExecutor2-2" name="removeExecutor2" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="removeExecutor2-2">
-                No
-              </label>
-            </div>
-          </div>
+        <p class="govuk-body">
+          Enter the name of the executor exactly as it is written in the will or codicil.
+        </p>
 
-        </fieldset>
+        <p class="govuk-body">
+          If there are more executors, you will be able to add them in the next step.
+        </p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+            Name
+          </label>
+          <input class="govuk-input govuk-!-width-three-quarters" id="executor2-willName" name="executor2-willName" type="text" value="{{ data['executor2-willName'] }}" maxlength="100">
+        </div>
+
       </div>
+    
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

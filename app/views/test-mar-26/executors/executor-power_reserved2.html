@@ -5,6 +5,23 @@
 {% endblock %}
 
 {% block content %}
+{% set applying = data['select-applyingExecutors'] or [] %}
+
+{# Simple logic - pick first executor that exists and wasn't selected #}
+{% set selectedExecutor = null %}
+{% if data['executor2-willName'] and not applying.includes('executor2') %}
+  {% set selectedExecutor = 'executor2' %}
+{% elif data['executor3-willName'] and not applying.includes('executor3') %}
+  {% set selectedExecutor = 'executor3' %}
+{% elif data['executor4-willName'] and not applying.includes('executor4') %}
+  {% set selectedExecutor = 'executor4' %}
+{% elif data['executor5-willName'] and not applying.includes('executor5') %}
+  {% set selectedExecutor = 'executor5' %}
+{% elif data['executor6-willName'] and not applying.includes('executor6') %}
+  {% set selectedExecutor = 'executor6' %}
+{% else %}
+  {% set selectedExecutor = 'executor2' %}
+{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -15,7 +32,7 @@
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h2 class="govuk-fieldset__heading">
-                Have you notified Stephen Thomas Doe in writing that you are making this application?
+                Have you notified {{ data[selectedExecutor + '-willName'] }} in writing that you are making this application?
               </h2>
             </legend>
 
@@ -42,7 +59,7 @@
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

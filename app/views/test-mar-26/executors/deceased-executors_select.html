@@ -8,7 +8,7 @@ Which executors have died? – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/selected-deceased_executors" method="post" novalidate>
+    <form action="executor-applying" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="select-deceasedExecutors-hint">
@@ -21,36 +21,102 @@ Which executors have died? – {{ serviceName }} – GOV.UK Prototype Kit
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="select-deceasedExecutors" name="select-deceasedExecutors" type="checkbox" value="johnDoe">
-              <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors">
-                John Thomas Doe
-              </label>
-            </div>
- 
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="select-deceasedExecutors-2" name="select-deceasedExecutors" type="checkbox" value="executor3">
-                <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-2">
-                  Deborah Elizabeth Doe
-                </label>
-              </div>
+{% if data['executor2-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors" name="select-deceasedExecutors" type="checkbox" value="executor2"
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor2') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors">
+{{ data['executor2-willName'] }}
+</label>
+</div>
+{%endif %}
 
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="select-deceasedExecutors-3" name="select-deceasedExecutors" type="checkbox" value="executor4">
-                <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-3">
-                  Stephen Thomas Doe
-                </label>
-              </div>
 
-            {% if (data['4otherExecutors'] == "yes" ) %}
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="select-deceasedExecutors-4" name="select-deceasedExecutors" type="checkbox" value="{{ data['executor5-willName'] }}">
-                <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-4">
-                  {{ data['executor5-willName'] }}
-                </label>
-              </div>
-            {% endif %}
-            
+{% if data['executor3-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-3" name="select-deceasedExecutors" type="checkbox" value="executor3"
+
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor3') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-3">
+{{ data['executor3-willName'] }}
+</label>
+</div>
+{%endif %}
+
+
+{% if data['executor4-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-4" name="select-deceasedExecutors" type="checkbox" value="executor4"
+
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor4') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-4">
+{{ data['executor4-willName'] }}
+</label>
+</div>
+{%endif %}
+
+
+{% if data['executor5-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-5" name="select-deceasedExecutors" type="checkbox" value="executor5"
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor5') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-5">
+{{ data['executor5-willName'] }}
+</label>
+</div>
+{%endif %}
+
+{% if data['executor6-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-6" name="select-deceasedExecutors" type="checkbox" value="executor6"
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor6') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-6">
+{{ data['executor6-willName'] }}
+</label>
+</div>
+{%endif %}
+
+
+{% if data['executor7-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-7" name="select-deceasedExecutors" type="checkbox" value="executor7"
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor7') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-7">
+{{ data['executor7-willName'] }}
+</label>
+</div>
+{%endif %}
+
+{% if data['executor8-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-8" name="select-deceasedExecutors" type="checkbox" value="executor8"
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor8') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-8">
+{{ data['executor8-willName'] }}
+</label>
+</div>
+{%endif %}
+
+{% if data['executor9-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-9" name="select-deceasedExecutors" type="checkbox" value="executor9"
+                {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor9') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-9">
+{{ data['executor9-willName'] }}
+</label>
+</div>
+{%endif %}
+
+{% if data['executor10-willName'] %}
+<div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="select-deceasedExecutors-10" name="select-deceasedExecutors" type="checkbox" value="executor10" 
+{% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor10') %}checked{% endif %}>
+<label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-10">
+{{ data['executor10-willName'] }}
+</label>
+</div>
+{%endif %}
+
           </div>
         </fieldset>
       </div>

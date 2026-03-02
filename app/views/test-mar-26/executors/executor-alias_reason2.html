@@ -1,10 +1,12 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Why is Deborah Elizabeth Mustermann’s name different to how it is written in the will or any codicils? – {{ serviceName }} – GOV.UK Prototype Kit
+  Why is {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }}’s name different to how it is written in the will or any codicils? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+{% set applying = data['select-applyingExecutors'] or [] %}
+{% set selectedExecutor = applying[0] or 'executor2' %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -15,12 +17,12 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4">
-              Why is Deborah Elizabeth Mustermann’s name different to how it is written in the will or any codicils?
+              Why is {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }}’s name different to how it is written in the will or any codicils?
             </h1>
           </legend>
 
           <p class="govuk-body">
-            You must explain the reason for the difference, for example, Deborah Elizabeth Mustermann changed their name since the will was written, or their middle name was not included.
+            You must explain the reason for the difference, for example, {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }} changed their name since the will was written, or their middle name was not included.
           </p>
 
           <div class="govuk-radios" data-module="govuk-radios">
@@ -28,35 +30,35 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="executor-aliasReason2" name="executor-aliasReason2" type="radio" value="executor got married or formed a civil partnership">
               <label class="govuk-label govuk-radios__label" for="executor-aliasReason2">
-                Deborah Elizabeth Mustermann got married or formed a civil partnership
+                {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }} got married or formed a civil partnership
               </label>
             </div>
             
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="executor-aliasReason2-2" name="executor-aliasReason2" type="radio" value="executor got divorced or ended my civil partnership">
               <label class="govuk-label govuk-radios__label" for="executor-aliasReason2-2">
-                Deborah Elizabeth Mustermann got divorced or ended their civil partnership
+                {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }} got divorced or ended their civil partnership
               </label>
             </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="executor-aliasReason2-3" name="executor-aliasReason2" type="radio" value="executor changed my name by deed poll">
               <label class="govuk-label govuk-radios__label" for="executor-aliasReason2-3">
-                Deborah Elizabeth Mustermann changed their name by deed poll
+                {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }} changed their name by deed poll
               </label>
             </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="executor-aliasReason2-4" name="executor-aliasReason2" type="radio" value="executor name was spelled differently">
               <label class="govuk-label govuk-radios__label" for="executor-aliasReason2-4">
-                Deborah Elizabeth Mustermann's name was spelled differently
+                {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }}'s name was spelled differently
               </label>
             </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="executor-aliasReason2-5" name="executor-aliasReason2" type="radio" value="Part of executor name was not included">
               <label class="govuk-label govuk-radios__label" for="executor-aliasReason2-5">
-                Part of Deborah Elizabeth Mustermann’s name was not included
+                Part of {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }}’s name was not included
               </label>
             </div>
 
@@ -85,7 +87,7 @@
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

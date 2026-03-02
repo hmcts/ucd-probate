@@ -1,21 +1,39 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Why is Stephen Thomas Doe not applying for probate? – {{ serviceName }} – GOV.UK Prototype Kit
+  Why is this person not applying for probate? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+{% set applying = data['select-applyingExecutors'] or [] %}
+
+{# Simple logic - pick first executor that exists and wasn't selected #}
+{% set selectedExecutor = null %}
+{% if data['executor2-willName'] and not applying.includes('executor2') %}
+  {% set selectedExecutor = 'executor2' %}
+{% elif data['executor3-willName'] and not applying.includes('executor3') %}
+  {% set selectedExecutor = 'executor3' %}
+{% elif data['executor4-willName'] and not applying.includes('executor4') %}
+  {% set selectedExecutor = 'executor4' %}
+{% elif data['executor5-willName'] and not applying.includes('executor5') %}
+  {% set selectedExecutor = 'executor5' %}
+{% elif data['executor6-willName'] and not applying.includes('executor6') %}
+  {% set selectedExecutor = 'executor6' %}
+{% else %}
+  {% set selectedExecutor = 'executor2' %}
+{% endif %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/not-applying_reason2" method="post">
+    <form class="form" action="/not-applying-executor" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4">
-              Why is Stephen Thomas Doe not applying for probate?
+              Why is {{ data[selectedExecutor + '-willName'] }} not applying for probate?
             </h1>
           </legend>
           
@@ -23,7 +41,7 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="not-applyingReason2" name="not-applyingReason2" type="radio" value="powerReserved" data-aria-controls="conditional-not-applyingReason2">
               <label class="govuk-label govuk-radios__label" for="not-applyingReason2">
-                Stephen Thomas Doe is reserving the right to apply later (also known as holding ‘power reserved’) and has informed you of this in writing
+                {{ data[selectedExecutor + '-willName'] }} is reserving the right to apply later (also known as holding ‘power reserved’) and has informed you of this in writing
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason2">
@@ -37,7 +55,7 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="not-applyingReason2-2" name="not-applyingReason2" type="radio" value="renunciation" data-aria-controls="conditional-not-applyingReason2-2">
               <label class="govuk-label govuk-radios__label" for="not-applyingReason2-2">
-                Stephen Thomas Doe is giving up their right to apply permanently (also known as ‘renunciation’)
+                {{ data[selectedExecutor + '-willName'] }} is giving up their right to apply permanently (also known as ‘renunciation’)
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-not-applyingReason2-2">
@@ -57,7 +75,7 @@
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

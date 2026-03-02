@@ -5,6 +5,8 @@ How is Deborah Elizabeth Doe’s name written in their passport or other form of
 {% endblock %}
 
 {% block content %}
+{% set applying = data['select-applyingExecutors'] or [] %}
+{% set selectedExecutor = applying[0] or 'executor2' %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -14,7 +16,7 @@ How is Deborah Elizabeth Doe’s name written in their passport or other form of
 
         <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
           <label class="govuk-label govuk-label--l" for="executor3-idName">
-            How is Deborah Elizabeth Doe's name written in their passport or other form of ID?
+            How is {{ data[selectedExecutor + '-willName'] or data['executor2-willName'] }}'s name written in their passport or other form of ID?
           </label>
         </h1>
 
@@ -33,7 +35,7 @@ How is Deborah Elizabeth Doe’s name written in their passport or other form of
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

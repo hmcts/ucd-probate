@@ -8,7 +8,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/other-executors_2" method="post">
+    <form class="form" action="/other-executors-will_2" method="post">
 
       <div class="govuk-form-group">
 
@@ -23,7 +23,7 @@
                 Executor (you)
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if (data['sameName'] == "yes") %}
+                {% if (data['sameName'] == "Yes") %}
 
                   {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}
 
@@ -36,13 +36,118 @@
               <dd class="govuk-summary-list__actions"> </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
-              Executor
-            </dt>
-            <dd class="govuk-summary-list__value">{{ data['executor2-willName'] }}</dd>
-            <dd class="govuk-summary-list__actions"><a href="executor-summary" class="govuk-link">Remove</a></dd>
-        </div>
+
+
+{% if data['executor2-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor2-willName'] }}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/2" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+
+{% if data['executor3-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor3-willName'] }}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/3" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+
+
+{% if data['executor4-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor4-willName'] }}</dd>  
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/4" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['executor5-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor5-willName'] }}</dd>  
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/5" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['executor6-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor6-willName'] }}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/6" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['executor7-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor7-willName'] }}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/7" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['executor8-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor8-willName'] }}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/8" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['executor9-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor9-willName'] }}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/9" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['executor10-willName'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular govuk-!-width-one-third govuk-!-font-weight-bold">
+    Executor
+  </dt>
+  <dd class="govuk-summary-list__value">{{ data['executor10-willName'] }}</dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/remove-executor/10" class="govuk-link">Remove</a>
+  </dd>
+</div>
+{% endif %}
 
       </dl>
 
@@ -89,7 +194,7 @@
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

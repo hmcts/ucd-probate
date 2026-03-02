@@ -14,54 +14,59 @@ How is your name written in the will or any codicils? – {{ serviceName }} – 
         <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4">
+            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-4" for="applicant-aliasReason">
               Why is your name different to how it is written in the will or any codicils?
             </h1>
           </legend>
 
           <p class="govuk-body">
-            You must explain the reason for the difference, for example, you changed your name since the will was written, or your middle name was not included.
+            You must explain the reason for the difference, for example, you changed your name since the will was written, or your middle name was not included. 
           </p>
 
           <div class="govuk-radios" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="applicant-aliasReason" name="applicant-aliasReason" type="radio" value="I got married or formed a civil partnership">
+              <input class="govuk-radios__input" id="applicant-aliasReason" 
+              name="applicant-aliasReason"
+              type="radio" 
+              value="I got married or formed a civil partnership" 
+              {{ 'checked' if data['applicant-aliasReason'] == 'I got married or formed a civil partnership' }}>
+
               <label class="govuk-label govuk-radios__label" for="applicant-aliasReason">
                 I got married or formed a civil partnership
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="applicant-aliasReason-2" name="applicant-aliasReason" type="radio" value="I got divorced or ended my civil partnership">
+              <input class="govuk-radios__input" id="applicant-aliasReason-2" name="applicant-aliasReason" type="radio" value="I got divorced or ended my civil partnership" {{ 'checked' if data['applicant-aliasReason'] == 'I got divorced or ended my civil partnership' }}>
               <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-2">
                 I got divorced or ended my civil partnership
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="applicant-aliasReason-3" name="applicant-aliasReason" type="radio" value="I changed my name by deed poll">
+              <input class="govuk-radios__input" id="applicant-aliasReason-3" name="applicant-aliasReason" type="radio" value="I changed my name by deed poll" {{ 'checked' if data['applicant-aliasReason'] == 'I changed my name by deed poll' }}>
               <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-3">
                 I changed my name by deed poll
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="applicant-aliasReason-4" name="applicant-aliasReason" type="radio" value="My name was spelled differently">
+              <input class="govuk-radios__input" id="applicant-aliasReason-4" name="applicant-aliasReason" type="radio" value="My name was spelled differently" {{ 'checked' if data['applicant-aliasReason'] == 'My name was spelled differently' }}>
               <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-4">
                 My name was spelled differently
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="applicant-aliasReason-5" name="applicant-aliasReason" type="radio" value="Part of my name was not included">
+              <input class="govuk-radios__input" id="applicant-aliasReason-5" name="applicant-aliasReason" type="radio" value="Part of my name was not included" {{ 'checked' if data['applicant-aliasReason'] == 'Part of my name was not included' }}>
               <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-5">
                 Part of my name was not included
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="applicant-aliasReason-6" name="applicant-aliasReason" type="radio" value="text" data-aria-controls="conditional-applicant-aliasReason">
+              <input class="govuk-radios__input" id="applicant-aliasReason-6" name="applicant-aliasReason" type="radio" value="Other" data-aria-controls="conditional-applicant-aliasReason" {{ 'checked' if data['applicant-aliasReason'] == 'Other' }}>
               <label class="govuk-label govuk-radios__label" for="applicant-aliasReason-6">
                 Other
               </label>
@@ -72,7 +77,7 @@ How is your name written in the will or any codicils? – {{ serviceName }} – 
                 <label class="govuk-label" for="applicant-aliasReason-other">
                   Reason for difference
                 </label>
-                <input class="govuk-input govuk-!-width-full-width" id="applicant-aliasReason-other" name="applicant-aliasReason" type="text" spellcheck="false" autocomplete="text">
+                <input class="govuk-input govuk-!-width-full-width" id="applicant-aliasReason-other" name="applicant-aliasReason-other" type="text" spellcheck="false" autocomplete="text" value="{{ data['applicant-aliasReason-other'] }}" maxlength="100" >
               </div>
             </div>
 
@@ -85,7 +90,7 @@ How is your name written in the will or any codicils? – {{ serviceName }} – 
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

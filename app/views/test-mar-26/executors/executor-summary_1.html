@@ -23,13 +23,13 @@
                 Executor (you)
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if (data['sameName'] == "yes") %}
+                {% if (data['sameName'] == "Yes") %}
 
-                  {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}
+                  {{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }} 
 
                 {% else %}
 
-                  {{ data['applicant-willName'] }}
+                  {{ data['applicant-willName'] }} 
 
                 {% endif %}
               </dd>
@@ -81,7 +81,7 @@
       </button>
 
       <p class="govuk-body">
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
       </p>
 
     </form>

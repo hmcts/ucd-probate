@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-
+ 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/applying-executor" method="post">
+    <form action="executor-name_match" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -49,29 +49,157 @@
 
         </details>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="applyingExecutor-hint">
+        <div class="govuk-form-group govuk-!-padding-bottom-7">
+          <fieldset class="govuk-fieldset" aria-describedby="select-applyingExecutors-hint">
   
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="applyingExecutor">
-                Does {{ data['executor2-willName'] }} also want to apply for probate?
-              </label>
-            </h1>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Which executors are also applying for probate?
+              </h1>
+            </legend>
   
-            <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="applyingExecutor" name="applyingExecutor" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="applyingExecutor">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="applyingExecutor-2" name="applyingExecutor" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="applyingExecutor-2">
-                  No
-                </label>
-              </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+   
+ {% set deceased = data['select-deceasedExecutors'] or [] %}
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+  {# executor2 #}
+  {% if data['executor2-willName'] and not deceased.includes('executor2') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-2"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor2">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-2">
+        {{ data['executor2-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+
+
+
+  {# executor3 #}
+  {% if data['executor3-willName'] and not deceased.includes('executor3') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-3"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor3">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-3">
+        {{ data['executor3-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+  {# executor4 #}
+  {% if data['executor4-willName'] and not deceased.includes('executor4') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-4"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor4">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-4">
+        {{ data['executor4-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+  {# executor5 #}
+  {% if data['executor5-willName'] and not deceased.includes('executor5') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-5"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor5">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-5">
+        {{ data['executor5-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+      {# executor6 #}
+  {% if data['executor6-willName'] and not deceased.includes('executor6') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-6"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor6">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-6">
+        {{ data['executor6-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+    {# executor7 #}
+  {% if data['executor7-willName'] and not deceased.includes('executor7') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-7"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor7">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-7">
+        {{ data['executor7-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+      {# executor8 #}
+  {% if data['executor8-willName'] and not deceased.includes('executor8') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-8"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor8">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-8">
+        {{ data['executor8-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+      {# executor9 #}
+  {% if data['executor9-willName'] and not deceased.includes('executor9') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-9"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor9">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-9">
+        {{ data['executor9-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+
+      {# executor10 #}
+  {% if data['executor10-willName'] and not deceased.includes('executor10') %}
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="select-applyingExecutors-10"
+             name="select-applyingExecutors"
+             type="checkbox"
+             value="executor10">
+      <label class="govuk-label govuk-checkboxes__label" for="select-applyingExecutors-10">
+        {{ data['executor10-willName'] }}
+      </label>
+    </div>
+  {% endif %}
+
+</div>
+
+              
             </div>
+          </fieldset>
+        </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
@@ -95,7 +223,7 @@
         <h3 class="govuk-heading-s">Webchat</h3>
           <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
         <h3 class="govuk-heading-s">Telephone</h3>
-          <p class="govuk-body">0300 303 0648</p>
+          <p class="govuk-body">0300 303 0748</p>
         <h3 class="govuk-heading-s">Email</h3>
           <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
         <br>

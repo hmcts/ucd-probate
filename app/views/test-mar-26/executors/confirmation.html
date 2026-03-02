@@ -1,0 +1,147 @@
+{% extends "layouts/navigation+back-link.html" %}
+
+{% block pageTitle %}
+  Are you sure you want to remove {{ data['executor2-willName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="govuk-form" action="/confirm-executors" method="post">
+
+
+<!-- https://design-system.service.gov.uk/styles/typography/ -->
+<h1 class="govuk-heading-l">Confirm you have added all executors</h1>
+
+<p class="govuk-body">Check the will and any codicils to confirm you have added everyone who is named as an executor to your application.</p>
+
+<p class="govuk-body">You must add everyone who is named, even if they have died or if they have been replaced by a substitute executor.</p>
+
+<div class="govuk-warning-text govuk-!-padding-top-5">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Your application will be delayed if you do not add all named executors.</span>
+  </strong>
+</div>
+
+
+<p class="govuk-body">Executors you have added:</p> 
+  
+  <ul class="govuk-list govuk-list--bullet">
+
+    {% if data['executor2-willName'] %}
+    <li>{{ data['executor2-willName'] }}</li>
+    {%endif %}
+    
+    {% if data['executor3-willName'] %}
+    <li>{{ data['executor3-willName'] }}</li>
+    {%endif %}
+
+
+    {% if data['executor4-willName'] %}
+    <li>{{ data['executor4-willName'] }}</li>
+    {%endif %}
+
+
+    {% if data['executor5-willName'] %}
+    <li>{{ data['executor5-willName'] }}</li>
+    {%endif %}
+
+        {% if data['executor6-willName'] %}
+    <li>{{ data['executor6-willName'] }}</li>
+    {%endif %}
+
+
+    {% if data['executor7-willName'] %}
+    <li>{{ data['executor7-willName'] }}</li>
+    {%endif %}
+
+      {% if data['executor8-willName'] %}
+    <li>{{ data['executor8-willName'] }}</li>
+    {%endif %}
+
+      {% if data['executor9-willName'] %}
+    <li>{{ data['executor9-willName'] }}</li>
+    {%endif %}
+
+    {% if data['executor10-willName'] %}
+    <li>{{ data['executor10-willName'] }}</li>
+    {%endif %}
+
+
+
+
+  </ul>
+
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="confirmexecutors">
+
+          <h1 class="govuk-label-wrapper govuk-!-padding-top-5">
+            <label class="govuk-label govuk-label--m" for="confirmexecutors">
+            Have you added everyone named as an executor in the will and any codicils?
+            </label>
+          </h1>
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirmexecutors" name="confirmexecutors" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="confirmexecutors">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirmexecutors-2" name="confirmexecutors" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="confirmexecutors-2">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <p class="govuk-body">
+        <a href="../task-list-2.html" class="govuk-link govuk-link--no-visited-state">Save and close</a>
+      </p>
+
+    </form>
+
+    <details class="govuk-details">
+
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+
+      <div class="govuk-details__text">
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Sorry, we’re having technical difficulties. Try email or telephone instead.</p>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">0300 303 0648</p>
+        <h3 class="govuk-heading-s">Email</h3>
+          <p class="govuk-body">Email us at <a href="#">contactprobate@justice.gov.uk</a>.</p>
+        <br>
+        <h3 class="govuk-heading-s">Opening times</h3>
+        <h3 class="govuk-heading-s">Telephone</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 1pm</p>
+        <h3 class="govuk-heading-s">Webchat</h3>
+          <p class="govuk-body">Monday to Friday, 9am to 5pm</p>
+        <br>
+        <p class="govuk-body">Telephone and webchat closed on Saturdays, Sundays and bank holidays</p>
+      </div>
+      
+    </details>
+    
+  </div>
+</div>
+
+{% endblock %}
+
