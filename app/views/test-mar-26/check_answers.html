@@ -224,6 +224,311 @@ option 5: Never married or never in a civil partnership  -->
 {%endif %}
 
 
+
+
+ {% if data['2otherExecutors'] %}
+ <h1 class="govuk-heading-m govuk-!-margin-top-9">The executors</h1>
+
+<!-- executors named -->
+
+
+ {% if data['2otherExecutors'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+
+Are there any other executors named?
+
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+Yes
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/executor-summary_2.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
+
+ {% if data['executorName'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+
+Executors named
+
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+
+          {% if data['executor2-willName'] %}
+    <p>{{ data['executor2-willName'] }}</p>
+    {%endif %}
+    
+    {% if data['executor3-willName'] %}
+    <p>{{ data['executor3-willName'] }}</p>
+    {%endif %}
+
+
+    {% if data['executor4-willName'] %}
+    <p>{{ data['executor4-willName'] }}</p>
+    {%endif %}
+
+
+    {% if data['executor5-willName'] %}
+    <p>{{ data['executor5-willName'] }}</p>
+    {%endif %}
+
+        {% if data['executor6-willName'] %}
+    <p>{{ data['executor6-willName'] }}</p>
+    {%endif %}
+
+
+    {% if data['executor7-willName'] %}
+    <p>{{ data['executor7-willName'] }}</p>
+    {%endif %}
+
+      {% if data['executor8-willName'] %}
+    <p>{{ data['executor8-willName'] }}</p>
+    {%endif %}
+
+      {% if data['executor9-willName'] %}
+    <p>{{ data['executor9-willName'] }}</p>
+    {%endif %}
+
+    {% if data['executor10-willName'] %}
+    <p>{{ data['executor10-willName'] }}</p>
+    {%endif %}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/executor-summary_2.html">Change</a>
+    </dd>
+    </div>
+
+{%endif %}
+
+
+{% if data['deceasedExecutors'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+Have any of the executors died since the will was signed?
+
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+{{ data['deceasedExecutors'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/deceased-executors.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
+
+{% if data['deceasedExecutors'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+
+Which executors have died?
+
+
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+
+
+  {% for id in (data['select-deceasedExecutors'] or []) %}
+    {{ data[id ~ '-willName'] or id }}<br>
+  {% endfor %}
+
+
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/deceased-executors_select.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
+
+
+{% if data['not-applyingReason2'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+Why is Deborah Elizabeth Mustermann not applying for probate? 
+
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+{{ data['not-applyingReason2'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/deceased-executors.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
+
+{% if data['powerReserved'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+Have you notified Deborah Elizabeth Mustermann in writing that you are making this application?
+
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+{{ data['powerReserved'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/deceased-executors.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
+
+
+<!-- About the applicant section -->
+
+ <h3 class="govuk-heading-s govuk-!-margin-top-9">About you</h3>
+
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+First name and any middle names
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+
+
+    {{ data['applicant-firstName'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/applicant-name.html">Change</a>
+    </dd>
+    </div>
+
+       <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+Last name
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+    {{ data['applicant-lastName'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/applicant-name.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
+
+<!-- section applicant alias -->
+
+ {% if data['sameName'] %}
+
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+Is '{{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }}' exactly how your name is written in the will or any codicils?
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+    {{ data['sameName'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/applicant-name_will.html">Change</a>
+    </dd>
+    </div>
+
+
+ {% if data['sameName']== 'No' %}
+
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+How is your name written in the will or any codicils?
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+    {{ data['applicant-willName'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/applicant-alias.html">Change</a>
+    </dd>
+    </div>
+
+{%endif %}
+
+ {% if data['applicant-aliasReason'] %}
+
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+    Why is your name different to how it is written in the will or any codicils?
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+    {{ data['applicant-aliasReason'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/applicant-alias_reason.html">Change</a>
+    </dd>
+    </div>
+
+{%endif %}
+
+{%endif %}
+
+ {% if data['applicant-number'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+   What is your phone number? 
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+    {{ data['applicant-number'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/applicant-number.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
+ {% if data['applicant-address-postcode'] %}
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+   What is your address?
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+    {{ data['applicant-address-postcode'] }}
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/applicant-number.html">Change</a>
+    </dd>
+    </div>
+{%endif %}
+
   </dl>
 
   </div>
@@ -232,13 +537,13 @@ option 5: Never married or never in a civil partnership  -->
   <!-- Buttons -->
 
 
-<a href="task-list-2" role="button" draggable="false" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+<a href="task-list_complete" role="button" draggable="false" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
   Save and continue
 </a>
 
 
 <p class="govuk-body">
-<a href="task-list-2" class="govuk-link govuk-link--no-visited-state">
+<a href="task-list-1" class="govuk-link govuk-link--no-visited-state">
   Save and close
 </a>
 </p>

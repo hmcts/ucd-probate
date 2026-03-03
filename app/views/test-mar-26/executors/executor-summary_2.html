@@ -151,35 +151,48 @@
 
       </dl>
 
-      <div class="govuk-form-group govuk-!-padding-top-4">
-        <fieldset class="govuk-fieldset" aria-describedby="2otherExecutors-hint">
-
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--m" for="2otherExecutors">
-              Are there any other executors named?
-            </label>
-          </h1>
+        <h2 class="govuk-heading-m govuk-!-padding-top-4" >XXX TBC XXX</h2>
 
           <p class="govuk-body">You must make sure to include every executor named in the will and any codicils, including anyone who:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>has died</li>
               <li>is not applying for probate</li>
               <li>has given up their right to apply</li>
+              <li> XXX TBC XXX</li>
+              <li> XXX TBC XXX</li>
             </ul>
 
           <p class="govuk-body">
             You’ll be able to tell us more about each executor later.
           </p>
 
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive govuk-visually-hidden">Warning</span>
+              message TBC
+            </strong>
+          </div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="otherExecutors-hint">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Are there any other executors named?
+      </h2>
+    </legend>
+
           <div class="govuk-radios govuk-radios--inline govuk-!-padding-bottom-4" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="2otherExecutors" name="2otherExecutors" type="radio" value="yes">
+              <input class="govuk-radios__input" id="2otherExecutors" name="2otherExecutors" type="radio" value="yes" {{ 'checked' if data['2otherExecutors'] == 'yes' }}>
               <label class="govuk-label govuk-radios__label" for="2otherExecutors">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="2otherExecutors-2" name="2otherExecutors" type="radio" value="no">
+              <input class="govuk-radios__input" id="2otherExecutors-2" name="2otherExecutors" type="radio" value="no" {{ 'checked' if data['2otherExecutors'] == 'no' }}>
               <label class="govuk-label govuk-radios__label" for="2otherExecutors-2">
                 No
               </label>

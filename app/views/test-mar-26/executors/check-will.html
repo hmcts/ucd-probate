@@ -8,7 +8,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="executor-summary_1" method="post" novalidate>
+    <form action="executor-summary_2" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -23,7 +23,7 @@ We need to know about everyone
 
 {% if (data['deceased-firstName']) %}
 
-{{ data['applicant-firstName'] }} {{ data['applicant-lastName'] }} 
+{{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}
 
 {% else %}
 

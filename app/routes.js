@@ -812,7 +812,7 @@ router.post('/other-executors-will_2', function(req, res) {
   if (req.session.data['2otherExecutors'] === 'yes') {
     res.redirect('test-mar-26/executors/executor-add')  // Single add page
   } else {
-    res.redirect('test-mar-26/executors/confirmation')
+    res.redirect('test-mar-26/executors/deceased-executors')
   }
 })
 
@@ -920,7 +920,7 @@ router.post('/executor-name-match-answer', function(request, response) {
 router.post('/not-applying-executor', function(request, response) {
 
     var sameName = request.session.data['not-applyingReason2']
-    if (sameName == "powerReserved"){
+    if (sameName == "Power Reserved"){
         response.redirect("test-mar-26/executors/executor-power_reserved2")
     } else {
         response.redirect("test-mar-26/executors/E&D-questions")
