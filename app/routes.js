@@ -816,22 +816,18 @@ router.post('/other-executors-will_2', function(req, res) {
   }
 })
 
-
-
 router.post('/executor-add', function(req, res) {
   console.log('=== EXECUTOR-ADD ROUTE HIT ===');
-  console.log('req.session.data:', req.session.data);
-  console.log('req.body:', req.body);
   
-  const name = req.session.data['executorName'] || req.body['executorName']
-  console.log('name:', name);
+  // Use req.body directly, NOT session data
+  const name = req.body.executorName?.trim()
   
   if (!name) {
     console.log('NO NAME - redirecting back');
     return res.redirect('test-mar-26/executors/executor-add')
   }
   
-  // Find next empty slot (2-6)
+  // Find next empty slot (2-10)
   let nextSlot = null
   for (let i = 2; i <= 10; i++) {
     if (!req.session.data[`executor${i}-willName`]) {
@@ -839,16 +835,50 @@ router.post('/executor-add', function(req, res) {
       break
     }
   }
-  console.log('nextSlot:', nextSlot);
   
   if (nextSlot) {
     req.session.data[`executor${nextSlot}-willName`] = name
     console.log('Stored:', `executor${nextSlot}-willName = ${name}`);
   }
   
-  console.log('Redirecting to summary_2');
+  // CRITICAL: Do NOT set req.session.data.executorName = name
+  // This is why your input was repopulating!
+  
   res.redirect('test-mar-26/executors/executor-summary_2')
 })
+
+
+// router.post('/executor-add', function(req, res) {
+//   console.log('=== EXECUTOR-ADD ROUTE HIT ===');
+//   console.log('req.session.data:', req.session.data);
+//   console.log('req.body:', req.body);
+  
+//   const name = req.session.data['executorName'] || req.body['executorName']
+//   console.log('name:', name);
+  
+//   if (!name) {
+//     console.log('NO NAME - redirecting back');
+//     return res.redirect('test-mar-26/executors/executor-add')
+//   }
+  
+//   // Find next empty slot (2-6)
+//   let nextSlot = null
+//   for (let i = 2; i <= 10; i++) {
+//     if (!req.session.data[`executor${i}-willName`]) {
+//       nextSlot = i
+//       break
+//     }
+//   }
+//   console.log('nextSlot:', nextSlot);
+  
+//   if (nextSlot) {
+//     req.session.data[`executor${nextSlot}-willName`] = name
+//     console.log('Stored:', `executor${nextSlot}-willName = ${name}`);
+//   }
+  
+//   console.log('Redirecting to summary_2');
+//   res.redirect('test-mar-26/executors/executor-summary_2')
+// })
 
 router.get('/remove-executor/:n', function (req, res) {
   const n = req.params.n
@@ -880,7 +910,7 @@ router.post('/deceased-executors-answer', function(request, response) {
     if (deceasedExecutors == "Yes"){
         response.redirect("test-mar-26/executors/deceased-executors_select")
     } else {
-        response.redirect("test-mar-26/executors/executor-deceased_before2")
+        response.redirect("test-mar-26/executors/executor-applying")
     }
 })
 
@@ -927,3 +957,4 @@ router.post('/not-applying-executor', function(request, response) {
 
             }
 })
+

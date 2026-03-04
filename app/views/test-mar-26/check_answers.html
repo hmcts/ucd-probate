@@ -354,6 +354,44 @@ Which executors have died?
       <a class="govuk-link govuk-link--no-visited-state" href="executors/deceased-executors_select.html">Change</a>
     </dd>
     </div>
+
+
+
+{% if data['deceasedExecutors'] %}
+
+   <div class="govuk-summary-list__row">
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+
+    Did   {% for id in (data['select-deceasedExecutors'] or []) %}
+    {{ data[id ~ '-willName'] or id }}
+  {% endfor %}
+  
+  die before {{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}?
+
+
+    </dt>
+
+    <dd class="govuk-summary-list__value">
+
+
+{{ data['deceasedExecutor2'] }}
+
+
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link govuk-link--no-visited-state" href="executors/deceased-executors_select.html">Change</a>
+    </dd>
+    </div>
+
+
+
+
+
+{%endif %}
+
+    
 {%endif %}
 
 

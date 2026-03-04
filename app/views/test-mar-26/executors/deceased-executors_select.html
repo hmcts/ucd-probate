@@ -8,7 +8,7 @@ Which executors have died? – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="executor-applying" method="post" novalidate>
+    <form action="executor-deceased_before2" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="select-deceasedExecutors-hint">
@@ -37,6 +37,7 @@ Which executors have died? – {{ serviceName }} – GOV.UK Prototype Kit
 <input class="govuk-checkboxes__input" id="select-deceasedExecutors-3" name="select-deceasedExecutors" type="checkbox" value="executor3"
 
                 {% if data['select-deceasedExecutors'] and data['select-deceasedExecutors'].includes('executor3') %}checked{% endif %}>
+                
 <label class="govuk-label govuk-checkboxes__label" for="select-deceasedExecutors-3">
 {{ data['executor3-willName'] }}
 </label>
