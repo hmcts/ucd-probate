@@ -1,56 +1,44 @@
 {% extends "layouts/navigation+back-link.html" %}
 
 {% block pageTitle %}
-  Check the original will and codicils now – {{ serviceName }} – GOV.UK Prototype Kit
+  Are you sure you want to remove {{ data['executor4-willName'] }}? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="executor-summary_2" method="post" novalidate>
+    <form class="govuk-form" action="/remove-executor-will_answer3" method="post">
 
       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="removeExecutor">
 
-        <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
-          <label class="govuk-label govuk-label--l" for="sameName">
-            Check the original will and codicils now
-          </label>
-        </h1>
+          <h1 class="govuk-label-wrapper govuk-!-padding-bottom-4">
+            <label class="govuk-label govuk-label--l" for="removeExecutor">
+              Are you sure you want to remove {{ data['executor4-willName'] }}?
+            </label>
+          </h1>
 
-        <p class="govuk-body">
-We need to know about everyone 
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="removeExecutor3" name="removeExecutor3" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="removeExecutor3">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="removeExecutor3-2" name="removeExecutor3" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="removeExecutor3-2">
+                No
+              </label>
+            </div>
+          </div>
 
-{% if (data['deceased-firstName']) %}
-
-{{ data['deceased-firstName'] }} {{ data['deceased-lastName'] }}
-
-{% else %}
-
-Jane Elizabeth Doe
-
-{% endif %}
-
-named as an executor in the will and any codicils.
-        </p>
-
-        <p class="govuk-body">You only need to include any substitute executors if the originally appointed executors are unable or unwilling to act.</p>
-
-        <p class="govuk-body">This includes anyone who:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>has died </li>
-
-            <li>has been replaced by a substitute executor</li>
-
-
-
-
-            <li>does not want to apply</li>
-            <li>has given up their right to apply</li>
-          </ul>
+        </fieldset>
+      </div>
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
-        Continue
+        Save and continue
       </button>
 
       <p class="govuk-body">
